@@ -1,1 +1,158 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>کات مستر</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- هدر -->
+        <header class="header">
+            <div>
+                <h1>کات مستر</h1>
+                <p>طراحی و محاسبه یونیت کابینت</p>
+            </div>
+
+            <button class="icon-btn" onclick="showMessage('تنظیمات به‌زودی اضافه می‌شود')">
+                ⚙️
+            </button>
+        </header>
+
+
+        <!-- محتوای اصلی -->
+        <main class="main">
+
+            <section class="welcome-card">
+                <div class="welcome-icon">🪚</div>
+
+                <div>
+                    <h2>شروع یک پروژه جدید</h2>
+                    <p>
+                        ابعاد یونیت را وارد کنید تا قطعات،
+                        لیست برش و چیدمان ورق محاسبه شود.
+                    </p>
+                </div>
+
+                <button class="primary-btn" onclick="newProject()">
+                    + پروژه جدید
+                </button>
+            </section>
+
+
+            <!-- بخش‌های برنامه -->
+            <section class="section-title">
+                <h2>ابزارهای پروژه</h2>
+                <span>انتخاب کنید</span>
+            </section>
+
+
+            <div class="menu-grid">
+
+                <button class="menu-card" onclick="openPage('unit')">
+                    <div class="menu-icon">📐</div>
+                    <h3>ورود ابعاد یونیت</h3>
+                    <p>تعریف ابعاد و مشخصات یونیت</p>
+                </button>
+
+
+                <button class="menu-card" onclick="openPage('view')">
+                    <div class="menu-icon">🗄️</div>
+                    <h3>نمایش یونیت</h3>
+                    <p>مشاهده نقشه و اندازه‌گذاری</p>
+                </button>
+
+
+                <button class="menu-card" onclick="openPage('cutlist')">
+                    <div class="menu-icon">📋</div>
+                    <h3>لیست برش</h3>
+                    <p>قطعات و ابعاد برش</p>
+                </button>
+
+
+                <button class="menu-card" onclick="openPage('layout')">
+                    <div class="menu-icon">🪚</div>
+                    <h3>نقشه چیدمان ورق</h3>
+                    <p>چیدمان بهینه قطعات روی ورق</p>
+                </button>
+
+
+                <button class="menu-card" onclick="openPage('material')">
+                    <div class="menu-icon">📊</div>
+                    <h3>گزارش متریال</h3>
+                    <p>ورق، پرت و مصرف متریال</p>
+                </button>
+
+
+                <button class="menu-card" onclick="openPage('export')">
+                    <div class="menu-icon">📤</div>
+                    <h3>خروجی پروژه</h3>
+                    <p>PDF و اشتراک‌گذاری</p>
+                </button>
+
+            </div>
+
+
+            <!-- پروژه‌های اخیر -->
+            <section class="recent-section">
+
+                <div class="section-title">
+                    <h2>پروژه‌های اخیر</h2>
+                    <span>۰ پروژه</span>
+                </div>
+
+                <div class="empty-projects">
+                    <div>📂</div>
+                    <p>هنوز پروژه‌ای ساخته نشده</p>
+                    <small>
+                        برای شروع روی «پروژه جدید» بزنید.
+                    </small>
+                </div>
+
+            </section>
+
+        </main>
+
+
+        <!-- منوی پایین -->
+        <nav class="bottom-nav">
+
+            <button class="nav-item active" onclick="goHome()">
+                <span>⌂</span>
+                <small>خانه</small>
+            </button>
+
+            <button class="nav-item" onclick="openPage('projects')">
+                <span>📁</span>
+                <small>پروژه‌ها</small>
+            </button>
+
+            <button class="nav-item new-btn" onclick="newProject()">
+                <span>＋</span>
+            </button>
+
+            <button class="nav-item" onclick="openPage('units')">
+                <span>▦</span>
+                <small>یونیت‌ها</small>
+            </button>
+
+            <button class="nav-item" onclick="openPage('settings')">
+                <span>⚙</span>
+                <small>تنظیمات</small>
+            </button>
+
+        </nav>
+
+    </div>
+
+
+    <script src="app.js"></script>
+
+</body>
+</html>

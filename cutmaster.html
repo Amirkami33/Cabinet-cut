@@ -4,22 +4,24 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>کات مستر | کابینت‌یار</title>
+
 <style>
-*{
-    box-sizing:border-box;
-}
+*{box-sizing:border-box}
+
 body{
     margin:0;
     font-family:Tahoma,Arial,sans-serif;
     background:#f4f7fb;
     color:#1f2937;
 }
+
 .container{
     width:100%;
     max-width:1100px;
     margin:auto;
     padding:15px;
 }
+
 .header{
     background:#0f2a4a;
     color:white;
@@ -28,14 +30,17 @@ body{
     margin-bottom:18px;
     text-align:center;
 }
+
 .header h1{
     margin:0 0 8px;
     font-size:28px;
 }
+
 .header p{
     margin:0;
     opacity:.85;
 }
+
 .card{
     background:white;
     border-radius:18px;
@@ -43,18 +48,20 @@ body{
     margin-bottom:18px;
     box-shadow:0 5px 20px rgba(0,0,0,.07);
 }
+
 .card h2{
     margin-top:0;
     color:#0f2a4a;
     font-size:21px;
 }
+
 label{
     display:block;
     margin-top:12px;
     font-weight:bold;
 }
-input,
-select{
+
+input,select{
     width:100%;
     padding:13px;
     margin-top:7px;
@@ -64,10 +71,11 @@ select{
     font-size:16px;
     outline:none;
 }
-input:focus,
-select:focus{
+
+input:focus,select:focus{
     border-color:#0f2a4a;
 }
+
 button{
     width:100%;
     border:0;
@@ -80,21 +88,15 @@ button{
     background:#0f2a4a;
     color:white;
 }
+
 button:hover{
     opacity:.9;
 }
-.btn-danger{
-    background:#b42318;
-}
-.btn-secondary{
-    background:#667085;
-}
-.btn-success{
-    background:#087443;
-}
-.btn-blue{
-    background:#175cd3;
-}
+
+.btn-danger{background:#b42318}
+.btn-secondary{background:#667085}
+.btn-success{background:#087443}
+
 .message{
     display:none;
     margin-top:12px;
@@ -102,48 +104,66 @@ button:hover{
     border-radius:10px;
     text-align:center;
 }
+
 .table-wrapper{
     overflow-x:auto;
 }
+
 table{
     width:100%;
     border-collapse:collapse;
-    min-width:600px;
+    min-width:650px;
 }
+
 th{
     background:#0f2a4a;
     color:white;
     padding:12px;
 }
+
 td{
     padding:10px;
     border-bottom:1px solid #e5e7eb;
     text-align:center;
 }
+
 .empty{
     padding:25px;
     color:#777;
 }
+
 .action-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
     gap:10px;
 }
+
 .summary{
     line-height:2;
     background:#f8fafc;
     padding:15px;
     border-radius:12px;
 }
+
 .kerf-box{
     background:#eef4ff;
     padding:14px;
     border-radius:12px;
     margin-top:15px;
 }
+
+.optimize-box{
+    background:#ecfdf3;
+    color:#067647;
+    padding:14px;
+    border-radius:12px;
+    margin-top:15px;
+}
+
 .sheet-result{
     margin-top:20px;
 }
+
 .sheet-title{
     background:#0f2a4a;
     color:white;
@@ -151,12 +171,15 @@ td{
     border-radius:12px 12px 0 0;
     font-weight:bold;
 }
+
 .sheet-info{
     background:#f8fafc;
     padding:12px;
     border-radius:0 0 12px 12px;
     margin-bottom:12px;
+    line-height:2;
 }
+
 .canvas-wrapper{
     width:100%;
     overflow:auto;
@@ -165,6 +188,7 @@ td{
     padding:12px;
     text-align:center;
 }
+
 .sheet-canvas{
     display:block;
     margin:auto;
@@ -173,1000 +197,1707 @@ td{
     background:white;
     box-shadow:0 3px 12px rgba(0,0,0,.15);
 }
+
 .legend{
     margin-top:12px;
     font-size:13px;
     color:#667085;
+    line-height:1.8;
 }
-.warning{
-    background:#fff4e5;
-    color:#9a3412;
-    padding:12px;
-    border-radius:10px;
-    margin-top:12px;
-}
-.success-box{
-    background:#ecfdf3;
-    color:#067647;
-    padding:12px;
-    border-radius:10px;
-    margin-top:12px;
-}
+
 @media(max-width:600px){
+
     .container{
         padding:10px;
     }
+
     .header h1{
         font-size:24px;
     }
+
     .action-grid{
         grid-template-columns:1fr;
     }
 }
 </style>
 </head>
+
 <body>
+
 <div class="container">
+
 <div class="header">
-<h1>✂️ کات مستر</h1>
-<p>
-سیستم مدیریت و چیدمان برش ورق کابینت
-</p>
+    <h1>✂️ کات مستر</h1>
+    <p>سیستم هوشمند مدیریت و چیدمان برش ورق کابینت</p>
 </div>
+
+
 <!-- مشخصات ورق -->
+
 <div class="card">
+
 <h2>📦 مشخصات ورق</h2>
-<label>
-ابعاد ورق
-</label>
+
+<label>ابعاد ورق</label>
+
 <select id="sheetSize">
-<option value="366x183">
-366 × 183 سانتی‌متر
-</option>
-<option value="280x207">
-280 × 207 سانتی‌متر
-</option>
-<option value="244x122">
-244 × 122 سانتی‌متر
-</option>
+    <option value="366x183">366 × 183 سانتی‌متر</option>
+    <option value="280x207">280 × 207 سانتی‌متر</option>
+    <option value="244x122">244 × 122 سانتی‌متر</option>
 </select>
-<label>
-ضخامت ورق
-</label>
+
+<label>ضخامت ورق</label>
+
 <select id="thickness">
-<option value="16">
-16 میلی‌متر
-</option>
-<option value="18">
-18 میلی‌متر
-</option>
-<option value="25">
-25 میلی‌متر
-</option>
+    <option value="16">16 میلی‌متر</option>
+    <option value="18">18 میلی‌متر</option>
+    <option value="25">25 میلی‌متر</option>
 </select>
-<label>
-جنس ورق
-</label>
+
+<label>جنس ورق</label>
+
 <select id="material">
-<option>
-MDF
-</option>
-<option>
-هایگلاس
-</option>
-<option>
-پلی گلاس
-</option>
-<option>
-ملامینه
-</option>
+    <option>MDF</option>
+    <option>هایگلاس</option>
+    <option>پلی گلاس</option>
+    <option>ملامینه</option>
 </select>
+
 <div class="kerf-box">
-<strong>
-📏 فاصله تیغ برش:
-</strong>
-<span>
-۳ میلی‌متر
-</span>
+    📏 فاصله تیغ برش:
+    <strong>۳ میلی‌متر</strong>
 </div>
+
+<div class="optimize-box">
+    🧠 موتور بهینه‌سازی فعال است.
+    چند حالت مختلف چیدمان بررسی می‌شود و بهترین حالت انتخاب خواهد شد.
 </div>
+
+</div>
+
+
 <!-- افزودن قطعه -->
+
 <div class="card">
-<h2>
-➕ افزودن قطعه
-</h2>
-<label>
-نام قطعه
-</label>
+
+<h2>➕ افزودن قطعه</h2>
+
+<label>نام قطعه</label>
+
 <input
-id="partName"
-type="text"
-placeholder="مثلاً درب کابینت"
+    id="partName"
+    type="text"
+    placeholder="مثلاً درب کابینت"
 >
-<label>
-طول قطعه (سانتی‌متر)
-</label>
+
+<label>طول قطعه (سانتی‌متر)</label>
+
 <input
-id="partLength"
-type="number"
-min="1"
-placeholder="مثلاً 72"
+    id="partLength"
+    type="number"
+    min="1"
+    step="0.1"
+    placeholder="مثلاً 72"
 >
-<label>
-عرض قطعه (سانتی‌متر)
-</label>
+
+<label>عرض قطعه (سانتی‌متر)</label>
+
 <input
-id="partWidth"
-type="number"
-min="1"
-placeholder="مثلاً 45"
+    id="partWidth"
+    type="number"
+    min="1"
+    step="0.1"
+    placeholder="مثلاً 45"
 >
-<label>
-تعداد
-</label>
+
+<label>تعداد</label>
+
 <input
-id="partQty"
-type="number"
-min="1"
-value="1"
+    id="partQty"
+    type="number"
+    min="1"
+    step="1"
+    value="1"
 >
-<button
-id="addPart"
-type="button"
->
-➕ افزودن قطعه
+
+<button id="addPart" type="button">
+    ➕ افزودن قطعه
 </button>
-<div
-id="message"
-class="message"
-></div>
+
+<div id="message" class="message"></div>
+
 </div>
+
+
 <!-- لیست قطعات -->
+
 <div class="card">
-<h2>
-📋 لیست قطعات
-</h2>
+
+<h2>📋 لیست قطعات</h2>
+
 <div class="table-wrapper">
+
 <table>
+
 <thead>
+
 <tr>
-<th>
-نام قطعه
-</th>
-<th>
-طول
-</th>
-<th>
-عرض
-</th>
-<th>
-تعداد
-</th>
-<th>
-وضعیت
-</th>
-<th>
-حذف
-</th>
+    <th>شماره</th>
+    <th>نام قطعه</th>
+    <th>طول</th>
+    <th>عرض</th>
+    <th>تعداد</th>
+    <th>حذف</th>
 </tr>
+
 </thead>
+
 <tbody id="partsTable">
+
 <tr>
-<td
-colspan="6"
-class="empty"
->
-هنوز قطعه‌ای اضافه نشده است.
-</td>
+    <td colspan="6" class="empty">
+        هنوز قطعه‌ای اضافه نشده است.
+    </td>
 </tr>
+
 </tbody>
+
 </table>
+
 </div>
+
 <div class="action-grid">
+
 <button
-id="clearParts"
-class="btn-secondary"
-type="button"
+    id="clearParts"
+    class="btn-secondary"
+    type="button"
 >
-🗑️ پاک کردن همه
+    🗑️ پاک کردن همه
 </button>
+
 <button
-id="calculate"
-class="btn-success"
-type="button"
+    id="calculate"
+    class="btn-success"
+    type="button"
 >
-📐 محاسبه چیدمان
+    🧠 محاسبه و بهینه‌سازی
 </button>
+
 </div>
+
 </div>
+
+
 <!-- خلاصه -->
+
 <div
-class="card"
-id="summaryCard"
-style="display:none"
+    class="card"
+    id="summaryCard"
+    style="display:none"
 >
-<h2>
-📊 خلاصه پروژه
-</h2>
+
+<h2>📊 خلاصه پروژه</h2>
+
 <div
-id="summary"
-class="summary"
+    id="summary"
+    class="summary"
 ></div>
+
 </div>
-<!-- نتیجه چیدمان -->
+
+
+<!-- نقشه -->
+
 <div
-class="card"
-id="layoutCard"
-style="display:none"
+    class="card"
+    id="layoutCard"
+    style="display:none"
 >
-<h2>
-🧩 نقشه برش ورق
-</h2>
+
+<h2>🧩 نقشه بهینه برش</h2>
+
 <div id="layoutResults"></div>
+
 </div>
+
 </div>
+
+
 <script>
-const parts = [];
-const KERF = 0.3;
-const addPartButton =
+
+const parts=[];
+
+const KERF=0.3;
+
+const addPartButton=
 document.getElementById("addPart");
-const partsTable =
+
+const partsTable=
 document.getElementById("partsTable");
-const message =
+
+const message=
 document.getElementById("message");
+
+
 function showMessage(text,error=false){
+
     message.innerText=text;
     message.style.display="block";
+
     if(error){
+
         message.style.background="#fef3f2";
         message.style.color="#b42318";
+
     }else{
+
         message.style.background="#ecfdf3";
         message.style.color="#067647";
+
     }
+
     setTimeout(function(){
+
         message.style.display="none";
+
     },2500);
 }
+
+
 function escapeHTML(text){
+
     return String(text)
-    .replace(/&/g,"&amp;")
-    .replace(/</g,"&lt;")
-    .replace(/>/g,"&gt;")
-    .replace(/"/g,"&quot;")
-    .replace(/'/g,"&#039;");
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
+
 }
+
+
 function renderParts(){
+
     partsTable.innerHTML="";
+
     if(parts.length===0){
+
         partsTable.innerHTML=`
+
         <tr>
-        <td
-        colspan="6"
-        class="empty"
-        >
-        هنوز قطعه‌ای اضافه نشده است.
-        </td>
+            <td colspan="6" class="empty">
+                هنوز قطعه‌ای اضافه نشده است.
+            </td>
         </tr>
+
         `;
+
         return;
     }
+
     parts.forEach(function(part,index){
+
         const row=
         document.createElement("tr");
+
         row.innerHTML=`
+
+        <td>${index+1}</td>
+
+        <td>${escapeHTML(part.name)}</td>
+
+        <td>${part.length}</td>
+
+        <td>${part.width}</td>
+
+        <td>${part.qty}</td>
+
         <td>
-        ${escapeHTML(part.name)}
+
+            <button
+                class="btn-danger"
+                type="button"
+                onclick="deletePart(${index})"
+            >
+                حذف
+            </button>
+
         </td>
-        <td>
-        ${part.length}
-        </td>
-        <td>
-        ${part.width}
-        </td>
-        <td>
-        ${part.qty}
-        </td>
-        <td>
-        آماده
-        </td>
-        <td>
-        <button
-        class="btn-danger"
-        type="button"
-        onclick="deletePart(${index})"
-        >
-        حذف
-        </button>
-        </td>
+
         `;
+
         partsTable.appendChild(row);
+
     });
 }
+
+
 addPartButton.addEventListener(
 "click",
 function(){
+
     const name=
-    document
-    .getElementById("partName")
-    .value
-    .trim();
+    document.getElementById("partName")
+    .value.trim();
+
     const length=
     Number(
-    document.getElementById("partLength").value
+        document.getElementById("partLength").value
     );
+
     const width=
     Number(
-    document.getElementById("partWidth").value
+        document.getElementById("partWidth").value
     );
+
     const qty=
     Number(
-    document.getElementById("partQty").value
+        document.getElementById("partQty").value
     );
+
+
     if(!name){
+
         showMessage(
-        "نام قطعه را وارد کنید.",
-        true
+            "نام قطعه را وارد کنید.",
+            true
         );
+
         return;
     }
-    if(length<=0){
-        showMessage(
-        "طول قطعه معتبر نیست.",
-        true
-        );
-        return;
-    }
-    if(width<=0){
-        showMessage(
-        "عرض قطعه معتبر نیست.",
-        true
-        );
-        return;
-    }
+
+
     if(
-    qty<=0 ||
-    !Number.isInteger(qty)
+        !Number.isFinite(length) ||
+        length<=0
     ){
+
         showMessage(
-        "تعداد قطعه معتبر نیست.",
-        true
+            "طول قطعه معتبر نیست.",
+            true
         );
+
         return;
     }
+
+
+    if(
+        !Number.isFinite(width) ||
+        width<=0
+    ){
+
+        showMessage(
+            "عرض قطعه معتبر نیست.",
+            true
+        );
+
+        return;
+    }
+
+
+    if(
+        !Number.isInteger(qty) ||
+        qty<=0
+    ){
+
+        showMessage(
+            "تعداد قطعه معتبر نیست.",
+            true
+        );
+
+        return;
+    }
+
+
     parts.push({
+
         name:name,
+
         length:length,
+
         width:width,
+
         qty:qty
+
     });
+
+
     renderParts();
+
+
     showMessage(
-    "قطعه با موفقیت اضافه شد."
+        "قطعه با موفقیت اضافه شد."
     );
-    document.getElementById(
-    "partName"
-    ).value="";
-    document.getElementById(
-    "partLength"
-    ).value="";
-    document.getElementById(
-    "partWidth"
-    ).value="";
-    document.getElementById(
-    "partQty"
-    ).value=1;
-    document.getElementById(
-    "partName"
-    ).focus();
+
+
+    document.getElementById("partName").value="";
+    document.getElementById("partLength").value="";
+    document.getElementById("partWidth").value="";
+    document.getElementById("partQty").value=1;
+
+    document.getElementById("partName").focus();
+
 });
+
+
 function deletePart(index){
+
     parts.splice(index,1);
+
     renderParts();
+
 }
+
+
 document
 .getElementById("clearParts")
 .addEventListener(
 "click",
 function(){
+
     parts.length=0;
+
     renderParts();
+
     document.getElementById(
-    "summaryCard"
+        "summaryCard"
     ).style.display="none";
+
     document.getElementById(
-    "layoutCard"
+        "layoutCard"
     ).style.display="none";
+
     showMessage(
-    "تمام قطعات پاک شدند."
+        "تمام قطعات پاک شدند."
     );
+
 });
-/*
-=================================================
-موتور چیدمان
-=================================================
-*/
+
+
+/* =========================================
+   ساخت لیست قطعات تکی
+========================================= */
+
 function expandParts(){
+
     const result=[];
-    parts.forEach(function(part){
-        for(
-        let i=0;
-        i<part.qty;
-        i++
-        ){
+
+    parts.forEach(function(part,index){
+
+        for(let i=0;i<part.qty;i++){
+
             result.push({
+
+                id:result.length+1,
+
+                sourceIndex:index,
+
                 name:part.name,
-                originalLength:part.length,
-                originalWidth:part.width,
+
                 length:part.length,
+
                 width:part.width,
-                rotated:false
+
+                rotated:false,
+
+                placed:false
+
             });
+
         }
+
     });
+
     return result;
 }
-/*
-بررسی می‌کند آیا قطعه
-در یک مستطیل مشخص جا می‌شود یا نه
-*/
-function fits(part,x,y,w,h){
-    return (
-        x + w <= h.sheetWidth + 0.0001 &&
-        y + h <= h.sheetLength + 0.0001
-    );
-}
-/*
-الگوریتم ساده و سریع Shelf Packing
-*/
-function createSheet(sheetWidth,sheetLength){
+
+
+/* =========================================
+   ساخت ورق
+========================================= */
+
+function createSheet(width,height){
+
     return {
-        sheetWidth:sheetWidth,
-        sheetLength:sheetLength,
-        pieces:[],
-        shelves:[]
+
+        width:width,
+
+        height:height,
+
+        pieces:[]
+
     };
 }
-function tryPlaceOnSheet(sheet,part){
-    /*
-    ابتدا بین ردیف‌های موجود
-    دنبال فضای مناسب می‌گردیم
-    */
-    for(
-    let i=0;
-    i<sheet.shelves.length;
-    i++
-    ){
-        const shelf=
-        sheet.shelves[i];
-        /*
-        حالت عادی
-        */
-        if(
-        part.width <= shelf.height &&
-        shelf.x + part.length <= sheet.sheetWidth
-        ){
-            part.x=shelf.x;
-            part.y=shelf.y;
-            part.placedLength=part.length;
-            part.placedWidth=part.width;
-            shelf.x +=
-            part.length + KERF;
-            sheet.pieces.push(part);
-            return true;
-        }
-        /*
-        حالت چرخیده
-        */
-        if(
-        part.length <= shelf.height &&
-        shelf.x + part.width <= sheet.sheetWidth
-        ){
-            part.x=shelf.x;
-            part.y=shelf.y;
-            part.placedLength=part.width;
-            part.placedWidth=part.length;
-            part.rotated=true;
-            shelf.x +=
-            part.width + KERF;
-            sheet.pieces.push(part);
-            return true;
-        }
-    }
-    /*
-    ساخت ردیف جدید
-    */
-    let y=0;
-    if(sheet.shelves.length){
-        const last=
-        sheet.shelves[
-        sheet.shelves.length-1
-        ];
-        y=
-        last.y +
-        last.height +
-        KERF;
-    }
-    /*
-    حالت عادی
-    */
-    if(
-    y + part.width <= sheet.sheetLength &&
-    part.length <= sheet.sheetWidth
-    ){
-        const shelf={
-            x:part.length + KERF,
-            y:y,
-            height:part.width
-        };
-        part.x=0;
-        part.y=y;
-        part.placedLength=part.length;
-        part.placedWidth=part.width;
-        part.rotated=false;
-        sheet.shelves.push(shelf);
-        sheet.pieces.push(part);
-        return true;
-    }
-    /*
-    حالت چرخیده
-    */
-    if(
-    y + part.length <= sheet.sheetLength &&
-    part.width <= sheet.sheetWidth
-    ){
-        const shelf={
-            x:part.width + KERF,
-            y:y,
-            height:part.length
-        };
-        part.x=0;
-        part.y=y;
-        part.placedLength=part.width;
-        part.placedWidth=part.length;
-        part.rotated=true;
-        sheet.shelves.push(shelf);
-        sheet.pieces.push(part);
-        return true;
-    }
-    return false;
+
+
+/* =========================================
+   بررسی برخورد دو مستطیل
+========================================= */
+
+function overlaps(a,b){
+
+    return !(
+        a.x+a.w+KERF<=b.x ||
+        b.x+b.w+KERF<=a.x ||
+        a.y+a.h+KERF<=b.y ||
+        b.y+b.h+KERF<=a.y
+    );
 }
-function packParts(sheetWidth,sheetLength){
-    const pieces=
-    expandParts();
-    /*
-    قطعات بزرگ‌تر ابتدا
-    */
-    pieces.sort(function(a,b){
-        return (
-            b.length*b.width
-            -
-            a.length*a.width
-        );
-    });
-    const sheets=[];
-    pieces.forEach(function(piece){
-        let placed=false;
-        /*
-        تلاش برای قرار دادن
-        روی ورق‌های موجود
-        */
-        for(
+
+
+/* =========================================
+   بررسی امکان قرارگیری قطعه
+========================================= */
+
+function canPlace(sheet,piece,x,y,w,h){
+
+    if(
+        x<0 ||
+        y<0 ||
+        x+w>sheet.width ||
+        y+h>sheet.height
+    ){
+
+        return false;
+    }
+
+
+    const test={
+        x:x,
+        y:y,
+        w:w,
+        h:h
+    };
+
+
+    for(
         let i=0;
-        i<sheets.length;
+        i<sheet.pieces.length;
         i++
+    ){
+
+        if(
+            overlaps(
+                test,
+                sheet.pieces[i]
+            )
         ){
-            if(
-            tryPlaceOnSheet(
-            sheets[i],
-            piece
-            )
-            ){
-                placed=true;
-                break;
-            }
+
+            return false;
         }
+    }
+
+
+    return true;
+}
+
+
+/* =========================================
+   پیدا کردن بهترین جای ممکن روی یک ورق
+========================================= */
+
+function findBestPosition(
+    sheet,
+    piece
+){
+
+    const orientations=[
+
+        {
+            w:piece.length,
+            h:piece.width,
+            rotated:false
+        },
+
+        {
+            w:piece.width,
+            h:piece.length,
+            rotated:true
+        }
+
+    ];
+
+
+    let best=null;
+
+
+    for(
+        let o=0;
+        o<orientations.length;
+        o++
+    ){
+
+        const orientation=
+        orientations[o];
+
+
         /*
-        اگر جا نشد
-        ورق جدید
+        نقاط کاندید:
+        گوشه ورق و کنار تمام قطعات
         */
-        if(!placed){
-            const newSheet=
-            createSheet(
-            sheetWidth,
-            sheetLength
+
+        const xs=[0];
+
+        const ys=[0];
+
+
+        sheet.pieces.forEach(function(p){
+
+            xs.push(
+                p.x+p.w+KERF
             );
-            if(
-            !tryPlaceOnSheet(
-            newSheet,
-            piece
-            )
+
+            ys.push(
+                p.y+p.h+KERF
+            );
+
+        });
+
+
+        for(
+            let xi=0;
+            xi<xs.length;
+            xi++
+        ){
+
+            for(
+                let yi=0;
+                yi<ys.length;
+                yi++
             ){
-                piece.unplaceable=true;
+
+                const x=xs[xi];
+
+                const y=ys[yi];
+
+
+                if(
+                    !canPlace(
+                        sheet,
+                        piece,
+                        x,
+                        y,
+                        orientation.w,
+                        orientation.h
+                    )
+                ){
+
+                    continue;
+                }
+
+
+                /*
+                امتیاز:
+                پایین‌تر و چپ‌تر بهتر است
+                */
+
+                const score=
+                    y*100000+
+                    x+
+                    orientation.w*
+                    orientation.h*
+                    0.001;
+
+
+                if(
+                    best===null ||
+                    score<best.score
+                ){
+
+                    best={
+
+                        x:x,
+
+                        y:y,
+
+                        w:orientation.w,
+
+                        h:orientation.h,
+
+                        rotated:
+                        orientation.rotated,
+
+                        score:score
+
+                    };
+
+                }
+
             }
-            sheets.push(newSheet);
+
         }
+
+    }
+
+
+    return best;
+}
+
+
+/* =========================================
+   یک روش کامل چیدمان
+========================================= */
+
+function packWithOrder(
+    sourcePieces,
+    sheetWidth,
+    sheetHeight
+){
+
+    const pieces=
+    sourcePieces.map(function(p){
+
+        return {...p};
+
     });
+
+
+    const sheets=[];
+
+
+    pieces.forEach(function(piece){
+
+        let bestSheet=null;
+
+        let bestPosition=null;
+
+        let bestScore=Infinity;
+
+
+        for(
+            let i=0;
+            i<sheets.length;
+            i++
+        ){
+
+            const position=
+            findBestPosition(
+                sheets[i],
+                piece
+            );
+
+
+            if(position){
+
+                /*
+                ترجیح با ورقی است که
+                کمترین فضای خالی بعد از
+                قرارگیری داشته باشد.
+                */
+
+                const used=
+                sheets[i].pieces.reduce(
+                    function(sum,p){
+
+                        return sum+
+                        p.w*p.h;
+
+                    },
+                    0
+                );
+
+
+                const newUsed=
+                used+
+                position.w*
+                position.h;
+
+
+                const waste=
+                sheetWidth*
+                sheetHeight-
+                newUsed;
+
+
+                if(waste<bestScore){
+
+                    bestScore=waste;
+
+                    bestSheet=sheets[i];
+
+                    bestPosition=position;
+
+                }
+
+            }
+
+        }
+
+
+        if(!bestSheet){
+
+            bestSheet=
+            createSheet(
+                sheetWidth,
+                sheetHeight
+            );
+
+
+            sheets.push(bestSheet);
+
+
+            bestPosition=
+            findBestPosition(
+                bestSheet,
+                piece
+            );
+
+        }
+
+
+        if(bestPosition){
+
+            piece.x=bestPosition.x;
+
+            piece.y=bestPosition.y;
+
+            piece.w=bestPosition.w;
+
+            piece.h=bestPosition.h;
+
+            piece.rotated=
+            bestPosition.rotated;
+
+            piece.placed=true;
+
+            bestSheet.pieces.push(piece);
+
+        }else{
+
+            piece.placed=false;
+
+            piece.unplaceable=true;
+
+        }
+
+    });
+
+
     return sheets;
 }
-/*
-=================================================
-نمایش ورق
-=================================================
-*/
+
+
+/* =========================================
+   تولید چند ترتیب مختلف
+========================================= */
+
+function generateOrders(){
+
+    const base=expandParts();
+
+
+    const orders=[];
+
+
+    /*
+    حالت ۱:
+    مساحت بزرگ به کوچک
+    */
+
+    orders.push(
+        [...base].sort(function(a,b){
+
+            return (
+                b.length*b.width-
+                a.length*a.width
+            );
+
+        })
+    );
+
+
+    /*
+    حالت ۲:
+    طول بزرگ به کوچک
+    */
+
+    orders.push(
+        [...base].sort(function(a,b){
+
+            return b.length-a.length;
+
+        })
+    );
+
+
+    /*
+    حالت ۳:
+    عرض بزرگ به کوچک
+    */
+
+    orders.push(
+        [...base].sort(function(a,b){
+
+            return b.width-a.width;
+
+        })
+    );
+
+
+    /*
+    حالت ۴:
+    بزرگ‌ترین ضلع اول
+    */
+
+    orders.push(
+        [...base].sort(function(a,b){
+
+            const maxA=
+            Math.max(a.length,a.width);
+
+            const maxB=
+            Math.max(b.length,b.width);
+
+            return maxB-maxA;
+
+        })
+    );
+
+
+    /*
+    حالت ۵:
+    محیط بزرگ‌تر اول
+    */
+
+    orders.push(
+        [...base].sort(function(a,b){
+
+            const pA=
+            2*(a.length+a.width);
+
+            const pB=
+            2*(b.length+b.width);
+
+            return pB-pA;
+
+        })
+    );
+
+
+    /*
+    حالت ۶:
+    ترکیبی
+    */
+
+    orders.push(
+        [...base].sort(function(a,b){
+
+            const scoreA=
+            a.length*a.width+
+            Math.max(a.length,a.width)*100;
+
+            const scoreB=
+            b.length*b.width+
+            Math.max(b.length,b.width)*100;
+
+            return scoreB-scoreA;
+
+        })
+    );
+
+
+    return orders;
+}
+
+
+/* =========================================
+   امتیازدهی نتیجه
+========================================= */
+
+function scoreLayout(
+    sheets,
+    sheetWidth,
+    sheetHeight
+){
+
+    const sheetCount=
+    sheets.length;
+
+
+    let totalUsed=0;
+
+
+    sheets.forEach(function(sheet){
+
+        sheet.pieces.forEach(
+            function(piece){
+
+                totalUsed+=
+                piece.w*piece.h;
+
+            }
+        );
+
+    });
+
+
+    const totalArea=
+    sheetWidth*
+    sheetHeight*
+    sheetCount;
+
+
+    const waste=
+    totalArea-totalUsed;
+
+
+    /*
+    اول تعداد ورق مهم است.
+    سپس پرت.
+    */
+
+    return (
+        sheetCount*100000000+
+        waste
+    );
+}
+
+
+/* =========================================
+   اجرای بهینه‌سازی
+========================================= */
+
+function optimizeLayout(
+    sheetWidth,
+    sheetHeight
+){
+
+    const orders=
+    generateOrders();
+
+
+    let best=null;
+
+    let bestScore=Infinity;
+
+
+    orders.forEach(function(order){
+
+        const result=
+        packWithOrder(
+            order,
+            sheetWidth,
+            sheetHeight
+        );
+
+
+        const score=
+        scoreLayout(
+            result,
+            sheetWidth,
+            sheetHeight
+        );
+
+
+        if(score<bestScore){
+
+            bestScore=score;
+
+            best=result;
+
+        }
+
+    });
+
+
+    return best;
+}
+
+
+/* =========================================
+   رسم ورق
+========================================= */
+
 function drawSheet(canvas,sheet){
+
     const ctx=
     canvas.getContext("2d");
+
+
     const maxWidth=900;
+
+    const maxHeight=650;
+
+
     const scale=
     Math.min(
-        maxWidth / sheet.sheetWidth,
-        650 / sheet.sheetLength
+        maxWidth/sheet.width,
+        maxHeight/sheet.height
     );
+
+
     canvas.width=
     Math.max(
         300,
-        Math.round(sheet.sheetWidth*scale)
+        Math.round(sheet.width*scale)
     );
+
+
     canvas.height=
     Math.max(
         220,
-        Math.round(sheet.sheetLength*scale)
+        Math.round(sheet.height*scale)
     );
+
+
     ctx.clearRect(
-    0,
-    0,
-    canvas.width,
-    canvas.height
+        0,
+        0,
+        canvas.width,
+        canvas.height
     );
+
+
     /*
-    پس‌زمینه ورق
+    زمینه ورق
     */
+
     ctx.fillStyle="#f7e7bd";
+
     ctx.fillRect(
-    0,
-    0,
-    canvas.width,
-    canvas.height
+        0,
+        0,
+        canvas.width,
+        canvas.height
     );
+
+
     ctx.strokeStyle="#8b7355";
+
     ctx.lineWidth=3;
+
     ctx.strokeRect(
-    0,
-    0,
-    canvas.width,
-    canvas.height
+        0,
+        0,
+        canvas.width,
+        canvas.height
     );
-    /*
-    قطعات
-    */
+
+
+    const colors=[
+
+        "#dbeafe",
+        "#dcfce7",
+        "#fef3c7",
+        "#fce7f3",
+        "#ede9fe",
+        "#cffafe",
+        "#ffedd5",
+        "#e0f2fe"
+
+    ];
+
+
     sheet.pieces.forEach(
     function(piece,index){
+
         const x=
         piece.x*scale;
+
         const y=
         piece.y*scale;
+
         const w=
-        piece.placedLength*scale;
+        piece.w*scale;
+
         const h=
-        piece.placedWidth*scale;
-        /*
-        رنگ قطعه
-        */
-        const colors=[
-            "#dbeafe",
-            "#dcfce7",
-            "#fef3c7",
-            "#fce7f3",
-            "#ede9fe",
-            "#cffafe",
-            "#ffedd5"
-        ];
+        piece.h*scale;
+
+
         ctx.fillStyle=
-        colors[index % colors.length];
+        colors[index%colors.length];
+
+
         ctx.fillRect(
-        x,
-        y,
-        w,
-        h
+            x,
+            y,
+            w,
+            h
         );
+
+
         ctx.strokeStyle="#334155";
+
         ctx.lineWidth=1;
+
         ctx.strokeRect(
-        x,
-        y,
-        w,
-        h
+            x,
+            y,
+            w,
+            h
         );
+
+
         /*
-        متن قطعه
+        شماره
         */
+
         ctx.fillStyle="#111827";
+
+        ctx.font=
+        "bold "+
+        Math.max(9,11*scale)+
+        "px Tahoma";
+
+        ctx.textAlign="right";
+
+        ctx.textBaseline="top";
+
+        ctx.fillText(
+            "#"+piece.id,
+            x+4,
+            y+4
+        );
+
+
+        /*
+        متن
+        */
+
+        ctx.textAlign="center";
+
+        ctx.textBaseline="middle";
+
         const fontSize=
         Math.max(
-            10,
+            9,
             Math.min(
                 18,
                 12*scale
             )
         );
+
+
         ctx.font=
-        fontSize+"px Tahoma";
-        ctx.textAlign="center";
-        ctx.textBaseline="middle";
-        const centerX=
-        x+w/2;
-        const centerY=
-        y+h/2;
-        /*
-        نام قطعه
-        */
+        fontSize+
+        "px Tahoma";
+
+
+        let name=
+        piece.name;
+
+
+        if(name.length>18){
+
+            name=
+            name.substring(0,18)+
+            "…";
+
+        }
+
+
         ctx.fillText(
-        piece.name,
-        centerX,
-        centerY-8
+            name,
+            x+w/2,
+            y+h/2-8
         );
-        /*
-        ابعاد
-        */
+
+
         ctx.font=
         Math.max(
             8,
             fontSize-2
-        )+"px Tahoma";
+        )+
+        "px Tahoma";
+
+
         ctx.fillText(
-        piece.placedLength+
-        " × "+
-        piece.placedWidth,
-        centerX,
-        centerY+9
+            piece.w+
+            " × "+
+            piece.h,
+            x+w/2,
+            y+h/2+9
         );
-        /*
-        شماره قطعه
-        */
-        ctx.textAlign="right";
-        ctx.textBaseline="top";
-        ctx.fillText(
-        "#"+(index+1),
-        x+4,
-        y+4
-        );
+
+
+        if(piece.rotated){
+
+            ctx.fillText(
+                "↻ چرخش",
+                x+w/2,
+                y+h/2+25
+            );
+
+        }
+
     });
+
+
     /*
     ابعاد ورق
     */
+
     ctx.fillStyle="#111827";
+
     ctx.font="bold 14px Tahoma";
+
     ctx.textAlign="center";
+
     ctx.textBaseline="bottom";
+
     ctx.fillText(
-    sheet.sheetWidth+
-    " × "+
-    sheet.sheetLength+
-    " cm",
-    canvas.width/2,
-    canvas.height-5
+        sheet.width+
+        " × "+
+        sheet.height+
+        " cm",
+        canvas.width/2,
+        canvas.height-5
     );
+
 }
-function calculateSheetArea(sheet){
-    return (
-        sheet.sheetWidth *
-        sheet.sheetLength
-    );
-}
-function calculateUsedArea(sheet){
-    let area=0;
-    sheet.pieces.forEach(
-    function(piece){
-        area +=
-        piece.placedLength *
-        piece.placedWidth;
-    });
-    return area;
-}
+
+
+/* =========================================
+   نمایش نتایج
+========================================= */
+
 function renderLayouts(
-sheets,
-sheetWidth,
-sheetLength
+    sheets,
+    sheetWidth,
+    sheetHeight
 ){
+
     const container=
     document.getElementById(
-    "layoutResults"
+        "layoutResults"
     );
+
+
     container.innerHTML="";
+
+
     sheets.forEach(
     function(sheet,index){
-        const area=
-        calculateSheetArea(sheet);
-        const used=
-        calculateUsedArea(sheet);
-        const waste=
-        Math.max(
-        0,
-        100 -
-        (used/area*100)
+
+        const sheetArea=
+        sheetWidth*
+        sheetHeight;
+
+
+        const usedArea=
+        sheet.pieces.reduce(
+            function(sum,piece){
+
+                return sum+
+                piece.w*piece.h;
+
+            },
+            0
         );
+
+
+        const efficiency=
+        usedArea/
+        sheetArea*
+        100;
+
+
+        const waste=
+        100-efficiency;
+
+
         const section=
         document.createElement("div");
+
+
         section.className=
         "sheet-result";
+
+
         section.innerHTML=`
+
         <div class="sheet-title">
-        📄 ورق شماره ${index+1}
+
+            📄 ورق شماره ${index+1}
+
         </div>
+
+
         <div class="sheet-info">
-        ابعاد ورق:
-        <b>
-        ${sheetWidth} × ${sheetLength}
-        </b>
-        سانتی‌متر
-        <br>
-        تعداد قطعات:
-        <b>
-        ${sheet.pieces.length}
-        </b>
-        <br>
-        استفاده از سطح ورق:
-        <b>
-        ${(100-waste).toFixed(1)}%
-        </b>
-        <br>
-        پرت تئوری:
-        <b>
-        ${waste.toFixed(1)}%
-        </b>
+
+            ابعاد ورق:
+            <strong>
+                ${sheetWidth} × ${sheetHeight}
+            </strong>
+            سانتی‌متر
+
+            <br>
+
+            تعداد قطعات:
+            <strong>
+                ${sheet.pieces.length}
+            </strong>
+
+            <br>
+
+            استفاده از ورق:
+            <strong>
+                ${efficiency.toFixed(1)}%
+            </strong>
+
+            <br>
+
+            پرت تئوری:
+            <strong>
+                ${waste.toFixed(1)}%
+            </strong>
+
         </div>
+
+
         <div class="canvas-wrapper">
-        <canvas
-        class="sheet-canvas"
-        id="sheetCanvas${index}"
-        ></canvas>
+
+            <canvas
+                class="sheet-canvas"
+                id="sheetCanvas${index}"
+            ></canvas>
+
         </div>
+
+
         <div class="legend">
-        📏 فاصله تیغ:
-        ۳ میلی‌متر
-        <br>
-        🔄 قطعاتی که چرخیده‌اند با علامت
-        «چرخش» در ادامه نمایش داده می‌شوند.
+
+            📏 تیغ برش:
+            ۳ میلی‌متر
+
+            <br>
+
+            🔄 علامت «چرخش» یعنی قطعه
+            برای استفاده بهتر از فضا چرخانده شده است.
+
         </div>
+
         `;
+
+
         container.appendChild(section);
+
+
         const canvas=
         document.getElementById(
-        "sheetCanvas"+index
+            "sheetCanvas"+index
         );
+
+
         drawSheet(
-        canvas,
-        sheet
+            canvas,
+            sheet
         );
+
     });
+
 }
-/*
-=================================================
-محاسبه نهایی
-=================================================
-*/
+
+
+/* =========================================
+   محاسبه
+========================================= */
+
 document
 .getElementById("calculate")
 .addEventListener(
 "click",
 function(){
+
     if(parts.length===0){
+
         showMessage(
-        "ابتدا حداقل یک قطعه اضافه کنید.",
-        true
+            "ابتدا حداقل یک قطعه اضافه کنید.",
+            true
         );
+
         return;
     }
-    const sheetSize=
+
+
+    const size=
     document
     .getElementById("sheetSize")
     .value
     .split("x");
+
+
     const sheetWidth=
-    Number(sheetSize[0]);
-    const sheetLength=
-    Number(sheetSize[1]);
+    Number(size[0]);
+
+
+    const sheetHeight=
+    Number(size[1]);
+
+
     const totalPieces=
     parts.reduce(
-    function(sum,part){
-        return sum+part.qty;
-    },
-    0
+        function(sum,part){
+
+            return sum+part.qty;
+
+        },
+        0
     );
+
+
     const totalArea=
     parts.reduce(
-    function(sum,part){
-        return sum+
-        (
+        function(sum,part){
+
+            return sum+
             part.length*
             part.width*
-            part.qty
+            part.qty;
+
+        },
+        0
+    );
+
+
+    showMessage(
+        "در حال محاسبه بهترین چیدمان..."
+    );
+
+
+    /*
+    اجرای موتور بهینه‌سازی
+    */
+
+    setTimeout(function(){
+
+        const sheets=
+        optimizeLayout(
+            sheetWidth,
+            sheetHeight
         );
-    },
-    0
-    );
-    const sheets=
-    packParts(
-    sheetWidth,
-    sheetLength
-    );
-    const totalSheetArea=
-    sheets.length*
-    sheetWidth*
-    sheetLength;
-    const efficiency=
-    (
+
+
+        const totalSheetArea=
+        sheets.length*
+        sheetWidth*
+        sheetHeight;
+
+
+        const efficiency=
         totalArea/
         totalSheetArea*
-        100
-    ).toFixed(1);
-    document.getElementById(
-    "summary"
-    ).innerHTML=`
-    <b>📦 اطلاعات ورق</b>
-    <br>
-    جنس:
-    <b>
-    ${document.getElementById("material").value}
-    </b>
-    <br>
-    ضخامت:
-    <b>
-    ${document.getElementById("thickness").value}
-    میلی‌متر
-    </b>
-    <br>
-    ابعاد:
-    <b>
-    ${sheetWidth} × ${sheetLength}
-    </b>
-    سانتی‌متر
-    <hr>
-    تعداد کل قطعات:
-    <b>
-    ${totalPieces}
-    </b>
-    <br>
-    تعداد ورق موردنیاز:
-    <b>
-    ${sheets.length}
-    </b>
-    <br>
-    مساحت کل قطعات:
-    <b>
-    ${totalArea.toLocaleString("fa-IR")}
-    </b>
-    سانتی‌متر مربع
-    <br>
-    راندمان کلی:
-    <b>
-    ${efficiency}%
-    </b>
-    <br>
-    تیغ برش:
-    <b>
-    ۳ میلی‌متر
-    </b>
-    `;
-    document.getElementById(
-    "summaryCard"
-    ).style.display="block";
-    document.getElementById(
-    "layoutCard"
-    ).style.display="block";
-    renderLayouts(
-    sheets,
-    sheetWidth,
-    sheetLength
-    );
-    document.getElementById(
-    "layoutCard"
-    ).scrollIntoView({
-        behavior:"smooth"
-    });
+        100;
+
+
+        const waste=
+        100-efficiency;
+
+
+        document.getElementById(
+            "summary"
+        ).innerHTML=`
+
+        <b>📦 مشخصات ورق</b>
+
+        <br>
+
+        جنس:
+        <strong>
+            ${escapeHTML(
+                document.getElementById(
+                    "material"
+                ).value
+            )}
+        </strong>
+
+        <br>
+
+        ضخامت:
+        <strong>
+            ${document.getElementById(
+                "thickness"
+            ).value
+            } میلی‌متر
+        </strong>
+
+        <br>
+
+        ابعاد:
+        <strong>
+            ${sheetWidth} × ${sheetHeight}
+        </strong>
+        سانتی‌متر
+
+        <hr>
+
+        تعداد کل قطعات:
+        <strong>
+            ${totalPieces}
+        </strong>
+
+        <br>
+
+        تعداد ورق موردنیاز:
+        <strong>
+            ${sheets.length}
+        </strong>
+
+        <br>
+
+        مساحت کل قطعات:
+        <strong>
+            ${totalArea.toLocaleString("fa-IR")}
+        </strong>
+        سانتی‌متر مربع
+
+        <br>
+
+        راندمان کلی:
+        <strong>
+            ${efficiency.toFixed(1)}%
+        </strong>
+
+        <br>
+
+        پرت کلی:
+        <strong>
+            ${waste.toFixed(1)}%
+        </strong>
+
+        <br>
+
+        تیغ برش:
+        <strong>
+            ۳ میلی‌متر
+        </strong>
+
+        `;
+
+
+        document.getElementById(
+            "summaryCard"
+        ).style.display="block";
+
+
+        document.getElementById(
+            "layoutCard"
+        ).style.display="block";
+
+
+        renderLayouts(
+            sheets,
+            sheetWidth,
+            sheetHeight
+        );
+
+
+        document.getElementById(
+            "layoutCard"
+        ).scrollIntoView({
+            behavior:"smooth"
+        });
+
+
+    },50);
+
 });
+
+
 renderParts();
+
 </script>
+
 </body>
 </html>

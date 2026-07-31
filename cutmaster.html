@@ -1,1 +1,562 @@
-
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>کات مستر | کابینت‌یار</title>
+<style>
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: Tahoma, Arial, sans-serif;
+    background: #f4f7fb;
+    color: #1f2937;
+}
+.container {
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+.header {
+    background: #0f2a4a;
+    color: white;
+    padding: 25px 20px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.header h1 {
+    margin: 0 0 8px;
+    font-size: 28px;
+}
+.header p {
+    margin: 0;
+    opacity: 0.85;
+}
+.card {
+    background: white;
+    border-radius: 18px;
+    padding: 20px;
+    margin-bottom: 18px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+}
+.card h2 {
+    margin-top: 0;
+    color: #0f2a4a;
+    font-size: 21px;
+}
+label {
+    display: block;
+    margin-top: 12px;
+    font-weight: bold;
+}
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 13px;
+    margin-top: 7px;
+    border: 1px solid #d5dbe3;
+    border-radius: 11px;
+    font-family: Tahoma, Arial, sans-serif;
+    font-size: 16px;
+    outline: none;
+}
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #0f2a4a;
+}
+button {
+    width: 100%;
+    border: none;
+    border-radius: 12px;
+    padding: 14px;
+    margin-top: 15px;
+    font-size: 16px;
+    font-family: Tahoma, Arial, sans-serif;
+    cursor: pointer;
+    background: #0f2a4a;
+    color: white;
+}
+button:hover {
+    opacity: 0.9;
+}
+.btn-danger {
+    background: #b42318;
+}
+.btn-secondary {
+    background: #667085;
+}
+.btn-success {
+    background: #087443;
+}
+.message {
+    display: none;
+    margin-top: 12px;
+    padding: 12px;
+    border-radius: 10px;
+    text-align: center;
+}
+.table-wrapper {
+    overflow-x: auto;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+}
+th {
+    background: #0f2a4a;
+    color: white;
+    padding: 12px;
+}
+td {
+    padding: 10px;
+    border-bottom: 1px solid #e5e7eb;
+    text-align: center;
+}
+.empty {
+    padding: 25px;
+    color: #777;
+}
+.action-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+.summary {
+    line-height: 2;
+    background: #f8fafc;
+    padding: 15px;
+    border-radius: 12px;
+}
+@media (max-width: 600px) {
+    .container {
+        padding: 12px;
+    }
+    .header h1 {
+        font-size: 24px;
+    }
+    .action-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>✂️ کات مستر</h1>
+        <p>مدیریت و محاسبه برش ورق MDF</p>
+    </div>
+    <!-- مشخصات ورق -->
+    <div class="card">
+        <h2>📦 مشخصات ورق</h2>
+        <label>ابعاد ورق</label>
+        <select id="sheetSize">
+            <option value="366x183">
+                366 × 183 سانتی‌متر
+            </option>
+            <option value="280x207">
+                280 × 207 سانتی‌متر
+            </option>
+            <option value="244x122">
+                244 × 122 سانتی‌متر
+            </option>
+        </select>
+        <label>ضخامت ورق</label>
+        <select id="thickness">
+            <option value="16">
+                16 میلی‌متر
+            </option>
+            <option value="18">
+                18 میلی‌متر
+            </option>
+            <option value="25">
+                25 میلی‌متر
+            </option>
+        </select>
+        <label>جنس ورق</label>
+        <select id="material">
+            <option>
+                MDF
+            </option>
+            <option>
+                هایگلاس
+            </option>
+            <option>
+                پلی گلاس
+            </option>
+            <option>
+                ملامینه
+            </option>
+        </select>
+    </div>
+    <!-- افزودن قطعه -->
+    <div class="card">
+        <h2>➕ افزودن قطعه</h2>
+        <label>
+            نام قطعه
+        </label>
+        <input
+            id="partName"
+            type="text"
+            placeholder="مثلاً درب کابینت"
+        >
+        <label>
+            طول قطعه (سانتی‌متر)
+        </label>
+        <input
+            id="partLength"
+            type="number"
+            min="1"
+            placeholder="مثلاً 72"
+        >
+        <label>
+            عرض قطعه (سانتی‌متر)
+        </label>
+        <input
+            id="partWidth"
+            type="number"
+            min="1"
+            placeholder="مثلاً 45"
+        >
+        <label>
+            تعداد
+        </label>
+        <input
+            id="partQty"
+            type="number"
+            min="1"
+            value="1"
+        >
+        <button
+            id="addPart"
+            type="button"
+        >
+            ➕ افزودن قطعه
+        </button>
+        <div
+            id="message"
+            class="message"
+        ></div>
+    </div>
+    <!-- لیست قطعات -->
+    <div class="card">
+        <h2>📋 لیست قطعات</h2>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>نام قطعه</th>
+                        <th>طول</th>
+                        <th>عرض</th>
+                        <th>تعداد</th>
+                        <th>حذف</th>
+                    </tr>
+                </thead>
+                <tbody id="partsTable">
+                    <tr>
+                        <td
+                            colspan="5"
+                            class="empty"
+                        >
+                            هنوز قطعه‌ای اضافه نشده است.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="action-grid">
+            <button
+                id="clearParts"
+                class="btn-secondary"
+                type="button"
+            >
+                🗑️ پاک کردن همه
+            </button>
+            <button
+                id="calculate"
+                class="btn-success"
+                type="button"
+            >
+                📐 محاسبه
+            </button>
+        </div>
+    </div>
+    <!-- خلاصه محاسبات -->
+    <div
+        class="card"
+        id="summaryCard"
+        style="display:none;"
+    >
+        <h2>
+            📊 خلاصه محاسبات
+        </h2>
+        <div
+            id="summary"
+            class="summary"
+        ></div>
+    </div>
+</div>
+<script>
+const parts = [];
+const addPartButton =
+    document.getElementById("addPart");
+const partsTable =
+    document.getElementById("partsTable");
+const message =
+    document.getElementById("message");
+function showMessage(text, error = false) {
+    message.innerText = text;
+    message.style.display = "block";
+    if (error) {
+        message.style.background = "#fef3f2";
+        message.style.color = "#b42318";
+    } else {
+        message.style.background = "#ecfdf3";
+        message.style.color = "#067647";
+    }
+    setTimeout(function() {
+        message.style.display = "none";
+    }, 2500);
+}
+function renderParts() {
+    partsTable.innerHTML = "";
+    if (parts.length === 0) {
+        partsTable.innerHTML = `
+            <tr>
+                <td
+                    colspan="5"
+                    class="empty"
+                >
+                    هنوز قطعه‌ای اضافه نشده است.
+                </td>
+            </tr>
+        `;
+        return;
+    }
+    parts.forEach(function(part, index) {
+        const row =
+            document.createElement("tr");
+        row.innerHTML = `
+            <td>
+                ${part.name}
+            </td>
+            <td>
+                ${part.length}
+            </td>
+            <td>
+                ${part.width}
+            </td>
+            <td>
+                ${part.qty}
+            </td>
+            <td>
+                <button
+                    class="btn-danger"
+                    type="button"
+                    onclick="deletePart(${index})"
+                >
+                    حذف
+                </button>
+            </td>
+        `;
+        partsTable.appendChild(row);
+    });
+}
+addPartButton.addEventListener(
+    "click",
+    function() {
+        const name =
+            document
+                .getElementById("partName")
+                .value
+                .trim();
+        const length =
+            Number(
+                document.getElementById("partLength").value
+            );
+        const width =
+            Number(
+                document.getElementById("partWidth").value
+            );
+        const qty =
+            Number(
+                document.getElementById("partQty").value
+            );
+        if (!name) {
+            showMessage(
+                "نام قطعه را وارد کنید.",
+                true
+            );
+            return;
+        }
+        if (length <= 0) {
+            showMessage(
+                "طول قطعه را وارد کنید.",
+                true
+            );
+            return;
+        }
+        if (width <= 0) {
+            showMessage(
+                "عرض قطعه را وارد کنید.",
+                true
+            );
+            return;
+        }
+        if (
+            qty <= 0 ||
+            !Number.isInteger(qty)
+        ) {
+            showMessage(
+                "تعداد قطعه معتبر نیست.",
+                true
+            );
+            return;
+        }
+        parts.push({
+            name: name,
+            length: length,
+            width: width,
+            qty: qty
+        });
+        renderParts();
+        showMessage(
+            "قطعه با موفقیت اضافه شد."
+        );
+        document.getElementById(
+            "partName"
+        ).value = "";
+        document.getElementById(
+            "partLength"
+        ).value = "";
+        document.getElementById(
+            "partWidth"
+        ).value = "";
+        document.getElementById(
+            "partQty"
+        ).value = 1;
+        document.getElementById(
+            "partName"
+        ).focus();
+    }
+);
+function deletePart(index) {
+    parts.splice(index, 1);
+    renderParts();
+}
+document
+    .getElementById("clearParts")
+    .addEventListener(
+        "click",
+        function() {
+            parts.length = 0;
+            renderParts();
+            document.getElementById(
+                "summaryCard"
+            ).style.display = "none";
+            showMessage(
+                "تمام قطعات پاک شدند."
+            );
+        }
+    );
+document
+    .getElementById("calculate")
+    .addEventListener(
+        "click",
+        function() {
+            if (parts.length === 0) {
+                showMessage(
+                    "ابتدا حداقل یک قطعه اضافه کنید.",
+                    true
+                );
+                return;
+            }
+            const sheet =
+                document
+                    .getElementById("sheetSize")
+                    .value
+                    .split("x");
+            const sheetLength =
+                Number(sheet[0]);
+            const sheetWidth =
+                Number(sheet[1]);
+            const sheetArea =
+                sheetLength *
+                sheetWidth;
+            let totalParts = 0;
+            let totalArea = 0;
+            parts.forEach(
+                function(part) {
+                    totalParts +=
+                        part.qty;
+                    totalArea +=
+                        part.length *
+                        part.width *
+                        part.qty;
+                }
+            );
+            const efficiency =
+                (
+                    totalArea /
+                    sheetArea *
+                    100
+                ).toFixed(1);
+            const sheetCount =
+                Math.ceil(
+                    totalArea /
+                    sheetArea
+                );
+            document.getElementById(
+                "summary"
+            ).innerHTML = `
+                تعداد کل قطعات:
+                <b>
+                    ${totalParts}
+                </b>
+                <br>
+                مساحت موردنیاز قطعات:
+                <b>
+                    ${totalArea.toLocaleString("fa-IR")}
+                </b>
+                سانتی‌متر مربع
+                <br>
+                مساحت یک ورق:
+                <b>
+                    ${sheetArea.toLocaleString("fa-IR")}
+                </b>
+                سانتی‌متر مربع
+                <br>
+                راندمان تئوری:
+                <b>
+                    ${efficiency}%
+                </b>
+                <br>
+                حداقل تعداد ورق از نظر مساحت:
+                <b>
+                    ${sheetCount}
+                </b>
+                <br><br>
+                ⚠️ این محاسبه هنوز
+                چیدمان واقعی قطعات را انجام نمی‌دهد.
+            `;
+            document.getElementById(
+                "summaryCard"
+            ).style.display = "block";
+            document.getElementById(
+                "summaryCard"
+            ).scrollIntoView({
+                behavior: "smooth"
+            });
+        }
+    );
+renderParts();
+</script>
+</body>
+</html>

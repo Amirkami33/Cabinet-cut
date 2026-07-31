@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
 
@@ -18,7 +19,7 @@
     <!-- هدر -->
     <header class="header">
         <h1>کابینت‌یار</h1>
-        <p>ابزار حرفه‌ای محاسبات کابینت</p>
+        <p>ابزار حرفه‌ای کابینت‌سازی</p>
     </header>
 
 
@@ -32,56 +33,56 @@
             <div class="menu">
 
                 <!-- محاسبه قیمت کابینت -->
-                <button onclick="openPage('price')">
+                <button onclick="window.location.href='price.html'">
                     <span class="menu-icon">💰</span>
                     محاسبه قیمت کابینت
                 </button>
 
 
                 <!-- نمایش یونیت -->
-                <button onclick="openPage('units')">
+                <button onclick="window.location.href='units.html'">
                     <span class="menu-icon">🗄️</span>
                     نمایش یونیت
                 </button>
 
 
                 <!-- نقشه چیدمان ورق -->
-                <button onclick="openPage('cutting')">
+                <button onclick="window.location.href='cutting.html'">
                     <span class="menu-icon">📐</span>
                     نقشه چیدمان ورق
                 </button>
 
 
                 <!-- کات مستر -->
-                <button onclick="openPage('cutmaster')">
+                <button onclick="window.location.href='cutmaster.html'">
                     <span class="menu-icon">✂️</span>
                     کات مستر
                 </button>
 
 
                 <!-- یراق آلات -->
-                <button onclick="openPage('hardware')">
+                <button onclick="window.location.href='hardware.html'">
                     <span class="menu-icon">🔩</span>
                     یراق‌آلات
                 </button>
 
 
                 <!-- ثبت سفارش -->
-                <button onclick="openPage('orders')">
+                <button onclick="window.location.href='orders.html'">
                     <span class="menu-icon">📝</span>
                     ثبت سفارش مشتری
                 </button>
 
 
                 <!-- محاسبه صفحه کابینت -->
-                <button onclick="openPage('countertop')">
+                <button onclick="window.location.href='countertop.html'">
                     <span class="menu-icon">📏</span>
                     محاسبه صفحه کابینت
                 </button>
 
 
                 <!-- تماس -->
-                <button onclick="openPage('contact')">
+                <button onclick="window.location.href='contact.html'">
                     <span class="menu-icon">📞</span>
                     تماس با ما
                 </button>
@@ -98,46 +99,6 @@
         کابینت‌یار © 2026
     </footer>
 
-
-    <script>
-
-        function openPage(page) {
-
-            if (page === "price") {
-                alert("بخش محاسبه قیمت کابینت");
-            }
-
-            else if (page === "units") {
-                alert("بخش نمایش یونیت");
-            }
-
-            else if (page === "cutting") {
-                alert("بخش نقشه چیدمان ورق");
-            }
-
-            else if (page === "cutmaster") {
-                alert("بخش کات مستر");
-            }
-
-            else if (page === "hardware") {
-                alert("بخش یراق‌آلات");
-            }
-
-            else if (page === "orders") {
-                alert("بخش ثبت سفارش مشتری");
-            }
-
-            else if (page === "countertop") {
-                alert("بخش محاسبه صفحه کابینت");
-            }
-
-            else if (page === "contact") {
-                alert("بخش تماس با ما");
-            }
-
-        }
-
-    </script>
-
 </body>
+
 </html>

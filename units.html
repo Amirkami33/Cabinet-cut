@@ -15,52 +15,318 @@
         content="#0f2a4a"
     >
 
-    <title>
-        نمایش یونیت | کابینت‌یار
-    </title>
-
-    <link
-        rel="stylesheet"
-        href="style.css"
-    >
+    <title>نمایش یونیت | کابینت‌یار</title>
 
     <style>
 
+        * {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            margin: 0;
+            font-family: Tahoma, Arial, sans-serif;
+            background: linear-gradient(
+                180deg,
+                #eef4fa,
+                #ffffff
+            );
+            color: #1f2937;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 950px;
+            margin: auto;
+            padding: 14px;
+        }
+
+        .header {
+            background:
+                linear-gradient(
+                    135deg,
+                    #0f2a4a,
+                    #174b7b
+                );
+
+            color: white;
+
+            padding: 25px 20px;
+
+            border-radius: 24px;
+
+            margin-bottom: 15px;
+
+            box-shadow:
+                0 10px 30px
+                rgba(15,42,74,0.15);
+
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0 0 8px;
+            font-size: 27px;
+        }
+
+        .header p {
+            margin: 0;
+            opacity: 0.8;
+            font-size: 13px;
+        }
+
+        .card {
+            background: white;
+
+            border-radius: 20px;
+
+            padding: 18px;
+
+            margin-bottom: 15px;
+
+            border: 1px solid #e9eef3;
+
+            box-shadow:
+                0 6px 20px
+                rgba(15,42,74,0.06);
+        }
+
+        .card h2 {
+            margin-top: 0;
+            color: #0f2a4a;
+            font-size: 19px;
+        }
+
+        .back-btn {
+            width: 100%;
+
+            border: none;
+
+            background: #e9f1f8;
+
+            color: #0f2a4a;
+
+            padding: 13px;
+
+            border-radius: 15px;
+
+            font-size: 14px;
+
+            margin-bottom: 15px;
+
+            cursor: pointer;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+
+            margin-bottom: 7px;
+
+            font-size: 13px;
+
+            font-weight: bold;
+
+            color: #344054;
+        }
+
+        input,
+        select {
+
+            width: 100%;
+
+            padding: 13px;
+
+            border-radius: 13px;
+
+            border: 1px solid #d9e1e8;
+
+            background: #f8fafc;
+
+            font-family: inherit;
+
+            font-size: 14px;
+
+            outline: none;
+        }
+
+        input:focus,
+        select:focus {
+            border-color: #174b7b;
+            background: white;
+        }
+
+        .btn {
+
+            width: 100%;
+
+            border: none;
+
+            border-radius: 15px;
+
+            padding: 15px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #0f2a4a,
+                    #174b7b
+                );
+
+            color: white;
+
+            font-family: inherit;
+
+            font-size: 15px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 7px 18px
+                rgba(15,42,74,0.18);
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        .result {
+            line-height: 2;
+            font-size: 14px;
+        }
+
+        .result p {
+            margin: 4px 0;
+            border-bottom: 1px solid #f0f2f5;
+            padding-bottom: 5px;
+        }
+
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+            font-size: 13px;
+        }
+
+        th {
+            background: #0f2a4a;
+            color: white;
+            padding: 12px 8px;
+        }
+
+        td {
+            padding: 11px 8px;
+            text-align: center;
+            border-bottom: 1px solid #edf1f5;
+        }
+
+        tr:nth-child(even) {
+            background: #f8fafc;
+        }
+
         /* =========================
-           بخش نمایش یونیت
+           UNIT DRAWING
         ========================= */
 
         #unitDrawing {
+
             width: 100%;
+
+            min-height: 350px;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
             overflow-x: auto;
-            text-align: center;
-            padding: 10px 0;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #f8fafc,
+                    #ffffff
+                );
+
+            border-radius: 18px;
+
+            padding: 10px;
+
+            border: 1px solid #e8edf2;
         }
 
         #unitDrawing svg {
+
             display: block;
-            margin: auto;
-            max-width: 100%;
+
+            width: 100%;
+
+            max-width: 620px;
+
             height: auto;
         }
 
-        .drawing-info {
+        #drawingInfo {
+
             margin-top: 15px;
-            padding: 15px;
-            border-radius: 16px;
-            background: #f5f7fa;
+
+            text-align: center;
+
             line-height: 2;
-            text-align: center;
+
+            font-size: 13px;
+
+            color: #475467;
+
+            background: #f8fafc;
+
+            padding: 12px;
+
+            border-radius: 14px;
         }
 
-        .drawing-info strong {
-            color: #0f2a4a;
+        .footer {
+
+            text-align: center;
+
+            padding: 25px;
+
+            color: #98a2b3;
+
+            font-size: 12px;
         }
 
-        .empty-message {
-            padding: 30px 15px;
-            text-align: center;
-            color: #667085;
+        @media (max-width: 600px) {
+
+            .container {
+                padding: 10px;
+            }
+
+            .card {
+                padding: 15px;
+            }
+
+            .header {
+                border-radius: 20px;
+            }
+
+            .header h1 {
+                font-size: 24px;
+            }
+
         }
 
     </style>
@@ -71,26 +337,25 @@
 <body>
 
 
-<header class="header">
-
-    <h1>
-        نمایش یونیت
-    </h1>
-
-    <p>
-        محاسبه و نمایش دقیق یونیت کابینت
-    </p>
-
-</header>
+<div class="container">
 
 
+    <!-- HEADER -->
 
-<main class="container">
+    <header class="header">
+
+        <h1>
+            📐 نمایش یونیت
+        </h1>
+
+        <p>
+            محاسبه قطعات و نمایش شماتیک یونیت کابینت
+        </p>
+
+    </header>
 
 
-    <!-- =========================
-         بازگشت
-    ========================= -->
+    <!-- BACK -->
 
     <button
         class="back-btn"
@@ -102,15 +367,14 @@
     </button>
 
 
-
     <!-- =========================
-         تنظیمات ساخت
+         SETTINGS
     ========================= -->
 
     <section class="card">
 
         <h2>
-            تنظیمات ساخت
+            ⚙️ تنظیمات ساخت
         </h2>
 
 
@@ -267,15 +531,14 @@
     </section>
 
 
-
     <!-- =========================
-         مشخصات یونیت
+         UNIT
     ========================= -->
 
     <section class="card">
 
         <h2>
-            مشخصات یونیت
+            📦 مشخصات یونیت
         </h2>
 
 
@@ -315,7 +578,7 @@
         <div class="form-group">
 
             <label>
-                عرض یونیت (سانتی‌متر)
+                عرض یونیت
             </label>
 
             <input
@@ -331,7 +594,7 @@
         <div class="form-group">
 
             <label>
-                ارتفاع کلی یونیت (سانتی‌متر)
+                ارتفاع کلی یونیت
             </label>
 
             <input
@@ -347,7 +610,7 @@
         <div class="form-group">
 
             <label>
-                عمق یونیت (سانتی‌متر)
+                عمق یونیت
             </label>
 
             <input
@@ -393,9 +656,8 @@
     </section>
 
 
-
     <!-- =========================
-         خلاصه
+         SUMMARY
     ========================= -->
 
     <section
@@ -405,7 +667,7 @@
     >
 
         <h2>
-            خلاصه محاسبات
+            📊 خلاصه محاسبات
         </h2>
 
         <div
@@ -416,9 +678,8 @@
     </section>
 
 
-
     <!-- =========================
-         جدول قطعات
+         PARTS
     ========================= -->
 
     <section
@@ -428,9 +689,8 @@
     >
 
         <h2>
-            لیست برش
+            🪚 لیست برش
         </h2>
-
 
         <div class="table-container">
 
@@ -464,7 +724,6 @@
 
                 </thead>
 
-
                 <tbody id="partsTable"></tbody>
 
             </table>
@@ -474,9 +733,8 @@
     </section>
 
 
-
     <!-- =========================
-         نمایش یونیت
+         DRAWING
     ========================= -->
 
     <section
@@ -489,12 +747,12 @@
             📐 نمای یونیت
         </h2>
 
-
         <p
             style="
                 text-align:center;
+                color:#667085;
+                font-size:13px;
                 margin-bottom:15px;
-                opacity:0.75;
             "
         >
 
@@ -503,25 +761,15 @@
         </p>
 
 
-        <div id="unitDrawing">
-
-            <div class="empty-message">
-                بعد از محاسبه، نمای یونیت اینجا نمایش داده می‌شود.
-            </div>
-
-        </div>
+        <div id="unitDrawing"></div>
 
 
-        <div
-            id="drawingInfo"
-            class="drawing-info"
-        ></div>
+        <div id="drawingInfo"></div>
 
     </section>
 
 
-</main>
-
+</div>
 
 
 <footer class="footer">
@@ -531,43 +779,35 @@
 </footer>
 
 
-
 <script>
 
 
-/* =================================================
-   تبدیل اعداد فارسی و عربی
-================================================= */
+/* =====================================================
+   تبدیل اندازه
+===================================================== */
 
 function parseMeasurement(value) {
 
     if (
-        value === undefined ||
         value === null ||
+        value === undefined ||
         value === ""
     ) {
+
         return NaN;
+
     }
 
 
-    value =
-        value
-        .toString()
-        .trim();
+    let text =
+        String(value).trim();
 
 
     const persian =
-        [
-            "۰","۱","۲","۳","۴",
-            "۵","۶","۷","۸","۹"
-        ];
-
+        "۰۱۲۳۴۵۶۷۸۹";
 
     const arabic =
-        [
-            "٠","١","٢","٣","٤",
-            "٥","٦","٧","٨","٩"
-        ];
+        "٠١٢٣٤٥٦٧٨٩";
 
 
     for (
@@ -576,37 +816,35 @@ function parseMeasurement(value) {
         i++
     ) {
 
-        value =
-            value.replaceAll(
+        text =
+            text.replaceAll(
                 persian[i],
-                i
+                String(i)
             );
 
-
-        value =
-            value.replaceAll(
+        text =
+            text.replaceAll(
                 arabic[i],
-                i
+                String(i)
             );
 
     }
 
 
-    value =
-        value
+    text =
+        text
         .replaceAll(",", ".")
         .replaceAll("/", ".");
 
 
-    return Number(value);
+    return Number(text);
 
 }
 
 
-
-/* =================================================
+/* =====================================================
    نمایش اندازه
-================================================= */
+===================================================== */
 
 function formatMeasurement(number) {
 
@@ -621,23 +859,18 @@ function formatMeasurement(number) {
     }
 
 
-    const result =
-        Number(
-            Number(number).toFixed(2)
-        );
-
-
-    return result
-        .toString()
-        .replace(".", "/");
+    return Number(
+        number.toFixed(2)
+    )
+    .toString()
+    .replace(".", "/");
 
 }
 
 
-
-/* =================================================
-   کاهش اندازه بابت نوار
-================================================= */
+/* =====================================================
+   محاسبه نوار
+===================================================== */
 
 function edgeSize(
     size,
@@ -657,507 +890,35 @@ function edgeSize(
 }
 
 
-
-/* =================================================
+/* =====================================================
    نام یونیت
-================================================= */
+===================================================== */
 
 function getUnitName(type) {
 
     const names = {
 
-        base:
-            "یونیت زمینی",
+        base: "یونیت زمینی",
 
-        wall:
-            "یونیت دیواری",
+        wall: "یونیت دیواری",
 
-        tall:
-            "یونیت ایستاده",
+        tall: "یونیت ایستاده",
 
-        sink:
-            "یونیت سینک",
+        sink: "یونیت سینک",
 
-        drawer:
-            "یونیت کشویی"
+        drawer: "یونیت کشویی"
 
     };
 
 
-    return names[type] || "یونیت";
+    return names[type] || "یونیت کابینت";
 
 }
 
 
-
-/* =================================================
-   محاسبه یونیت
-================================================= */
-
-function calculateUnit() {
-
-
-    /* =========================
-       دریافت تنظیمات
-    ========================= */
-
-    const thickness =
-        Number(
-            document.getElementById(
-                "boardThickness"
-            ).value
-        );
-
-
-    const edgeThickness =
-        Number(
-            document.getElementById(
-                "edgeThickness"
-            ).value
-        );
-
-
-    const doorGap =
-        Number(
-            document.getElementById(
-                "doorGap"
-            ).value
-        );
-
-
-    const baseHeight =
-        Number(
-            document.getElementById(
-                "baseHeight"
-            ).value
-        );
-
-
-    const backThickness =
-        Number(
-            document.getElementById(
-                "backType"
-            ).value
-        );
-
-
-    /* =========================
-       دریافت ابعاد
-    ========================= */
-
-    const width =
-        parseMeasurement(
-            document.getElementById(
-                "unitWidth"
-            ).value
-        );
-
-
-    const height =
-        parseMeasurement(
-            document.getElementById(
-                "unitHeight"
-            ).value
-        );
-
-
-    const depth =
-        parseMeasurement(
-            document.getElementById(
-                "unitDepth"
-            ).value
-        );
-
-
-    const doorCount =
-        Number(
-            document.getElementById(
-                "doorCount"
-            ).value
-        );
-
-
-    const unitType =
-        document.getElementById(
-            "unitType"
-        ).value;
-
-
-
-    /* جلوگیری از خطای ورودی */
-
-    if (
-        !Number.isFinite(width) ||
-        !Number.isFinite(height) ||
-        !Number.isFinite(depth) ||
-        width <= 0 ||
-        height <= 0 ||
-        depth <= 0
-    ) {
-
-        alert(
-            "لطفاً عرض، ارتفاع و عمق یونیت را درست وارد کنید."
-        );
-
-        return;
-
-    }
-
-
-
-    /* =========================
-       محاسبات اصلی
-    ========================= */
-
-    const boxHeight =
-        height -
-        baseHeight;
-
-
-    const sideHeight =
-        height -
-        baseHeight -
-        thickness;
-
-
-    const innerWidth =
-        width -
-        (thickness * 2);
-
-
-    const floorDepth =
-        depth;
-
-
-
-    /* بررسی منطقی */
-
-    if (
-        boxHeight <= 0 ||
-        sideHeight <= 0 ||
-        innerWidth <= 0
-    ) {
-
-        alert(
-            "ابعاد وارد شده برای ساخت این یونیت مناسب نیست."
-        );
-
-        return;
-
-    }
-
-
-
-    /* =========================
-       پاک کردن جدول
-    ========================= */
-
-    const table =
-        document.getElementById(
-            "partsTable"
-        );
-
-
-    table.innerHTML = "";
-
-
-
-    /* =========================
-       بغل
-    ========================= */
-
-    addPart(
-        "بغل یونیت",
-        2,
-        sideHeight,
-        depth,
-        "─"
-    );
-
-
-
-    /* =========================
-       کف
-    ========================= */
-
-    const floorCutDepth =
-        edgeSize(
-            floorDepth,
-            true,
-            edgeThickness
-        );
-
-
-    addPart(
-        "کف",
-        1,
-        innerWidth,
-        floorCutDepth,
-        "═"
-    );
-
-
-
-    /* =========================
-       قیدها
-    ========================= */
-
-    addPart(
-        "قید جلو 7 سانتی",
-        1,
-        innerWidth,
-        7,
-        "بدون نوار"
-    );
-
-
-    addPart(
-        "قید جلو 5 سانتی",
-        1,
-        innerWidth,
-        5,
-        "بدون نوار"
-    );
-
-
-    addPart(
-        "قید پشت 7 سانتی",
-        1,
-        innerWidth,
-        7,
-        "بدون نوار"
-    );
-
-
-    addPart(
-        "قید پشت 5 سانتی",
-        1,
-        innerWidth,
-        5,
-        "بدون نوار"
-    );
-
-
-
-    /* =========================
-       پشت
-    ========================= */
-
-    addPart(
-        "پشت",
-        1,
-        width,
-        boxHeight,
-        "بدون نوار"
-    );
-
-
-
-    /* =========================
-       درب
-    ========================= */
-
-    const doorHeight =
-        boxHeight -
-        (doorGap * 2);
-
-
-    let doorWidth;
-
-
-    if (doorCount === 1) {
-
-        doorWidth =
-            width -
-            (doorGap * 2);
-
-    }
-
-    else {
-
-        doorWidth =
-            (
-                width -
-                (doorGap * 3)
-            ) / 2;
-
-    }
-
-
-    const doorCutWidth =
-        edgeSize(
-            doorWidth,
-            true,
-            edgeThickness
-        );
-
-
-    const doorCutHeight =
-        edgeSize(
-            doorHeight,
-            true,
-            edgeThickness
-        );
-
-
-    addPart(
-        "درب",
-        doorCount,
-        doorCutWidth,
-        doorCutHeight,
-        "═ ═"
-    );
-
-
-
-    /* =========================
-       نمایش بخش‌ها
-    ========================= */
-
-    document.getElementById(
-        "resultSection"
-    ).style.display =
-        "block";
-
-
-    document.getElementById(
-        "partsSection"
-    ).style.display =
-        "block";
-
-
-    document.getElementById(
-        "unitViewSection"
-    ).style.display =
-        "block";
-
-
-
-    /* =========================
-       خلاصه
-    ========================= */
-
-    document.getElementById(
-        "summary"
-    ).innerHTML = `
-
-        <p>
-            <strong>
-                نوع یونیت:
-            </strong>
-
-            ${getUnitName(unitType)}
-        </p>
-
-
-        <p>
-            <strong>
-                ابعاد کلی:
-            </strong>
-
-            ${formatMeasurement(width)}
-            ×
-            ${formatMeasurement(height)}
-            ×
-            ${formatMeasurement(depth)}
-            سانتی‌متر
-        </p>
-
-
-        <p>
-            <strong>
-                ارتفاع پایه:
-            </strong>
-
-            ${formatMeasurement(baseHeight)}
-            سانتی‌متر
-        </p>
-
-
-        <p>
-            <strong>
-                ارتفاع باکس:
-            </strong>
-
-            ${formatMeasurement(boxHeight)}
-            سانتی‌متر
-        </p>
-
-
-        <p>
-            <strong>
-                ارتفاع بغل:
-            </strong>
-
-            ${formatMeasurement(sideHeight)}
-            سانتی‌متر
-        </p>
-
-
-        <p>
-            <strong>
-                ضخامت ورق:
-            </strong>
-
-            ${formatMeasurement(thickness)}
-            سانتی‌متر
-        </p>
-
-
-        <p>
-            <strong>
-                ضخامت نوار:
-            </strong>
-
-            ${formatMeasurement(edgeThickness)}
-            سانتی‌متر
-        </p>
-
-
-        <p>
-            <strong>
-                بادخور:
-            </strong>
-
-            ${formatMeasurement(doorGap)}
-            سانتی‌متر
-        </p>
-
-
-        <p>
-            <strong>
-                تعداد درب:
-            </strong>
-
-            ${doorCount}
-        </p>
-
-    `;
-
-
-
-    /* =========================
-       رسم یونیت
-    ========================= */
-
-    drawUnit(
-        width,
-        height,
-        depth,
-        baseHeight,
-        thickness,
-        doorCount,
-        doorGap,
-        unitType
-    );
-
-}
-
-
-
-/* =================================================
-   اضافه کردن قطعه به جدول
-================================================= */
+/* =====================================================
+   اضافه کردن قطعه
+===================================================== */
 
 function addPart(
     name,
@@ -1167,7 +928,6 @@ function addPart(
     edge
 ) {
 
-
     const table =
         document.getElementById(
             "partsTable"
@@ -1175,20 +935,14 @@ function addPart(
 
 
     const row =
-        document.createElement(
-            "tr"
-        );
+        document.createElement("tr");
 
 
     row.innerHTML = `
 
-        <td>
-            ${name}
-        </td>
+        <td>${name}</td>
 
-        <td>
-            ${quantity}
-        </td>
+        <td>${quantity}</td>
 
         <td>
             ${formatMeasurement(length)}
@@ -1198,9 +952,7 @@ function addPart(
             ${formatMeasurement(width)}
         </td>
 
-        <td>
-            ${edge}
-        </td>
+        <td>${edge}</td>
 
     `;
 
@@ -1210,10 +962,381 @@ function addPart(
 }
 
 
+/* =====================================================
+   محاسبه اصلی
+===================================================== */
 
-/* =================================================
-   رسم نمای یونیت
-================================================= */
+function calculateUnit() {
+
+    try {
+
+        const thickness =
+            Number(
+                document.getElementById(
+                    "boardThickness"
+                ).value
+            );
+
+
+        const edgeThickness =
+            Number(
+                document.getElementById(
+                    "edgeThickness"
+                ).value
+            );
+
+
+        const doorGap =
+            Number(
+                document.getElementById(
+                    "doorGap"
+                ).value
+            );
+
+
+        const baseHeight =
+            Number(
+                document.getElementById(
+                    "baseHeight"
+                ).value
+            );
+
+
+        const width =
+            parseMeasurement(
+                document.getElementById(
+                    "unitWidth"
+                ).value
+            );
+
+
+        const height =
+            parseMeasurement(
+                document.getElementById(
+                    "unitHeight"
+                ).value
+            );
+
+
+        const depth =
+            parseMeasurement(
+                document.getElementById(
+                    "unitDepth"
+                ).value
+            );
+
+
+        const doorCount =
+            Number(
+                document.getElementById(
+                    "doorCount"
+                ).value
+            );
+
+
+        const unitType =
+            document.getElementById(
+                "unitType"
+            ).value;
+
+
+        /* بررسی */
+
+        if (
+            !Number.isFinite(width) ||
+            !Number.isFinite(height) ||
+            !Number.isFinite(depth) ||
+            width <= 0 ||
+            height <= 0 ||
+            depth <= 0
+        ) {
+
+            alert(
+                "لطفاً عرض، ارتفاع و عمق یونیت را درست وارد کنید."
+            );
+
+            return;
+
+        }
+
+
+        /* ارتفاع باکس */
+
+        const boxHeight =
+            height - baseHeight;
+
+
+        /* ارتفاع بغل */
+
+        const sideHeight =
+            height -
+            baseHeight -
+            thickness;
+
+
+        /* عرض داخلی */
+
+        const innerWidth =
+            width -
+            thickness * 2;
+
+
+        /* پاک کردن قطعات */
+
+        document.getElementById(
+            "partsTable"
+        ).innerHTML = "";
+
+
+        /* بغل */
+
+        addPart(
+            "بغل یونیت",
+            2,
+            sideHeight,
+            depth,
+            "─"
+        );
+
+
+        /* کف */
+
+        addPart(
+            "کف",
+            1,
+            innerWidth,
+            edgeSize(
+                depth,
+                true,
+                edgeThickness
+            ),
+            "═"
+        );
+
+
+        /* قیدها */
+
+        addPart(
+            "قید جلو 7 سانتی",
+            1,
+            innerWidth,
+            7,
+            "بدون نوار"
+        );
+
+
+        addPart(
+            "قید جلو 5 سانتی",
+            1,
+            innerWidth,
+            5,
+            "بدون نوار"
+        );
+
+
+        addPart(
+            "قید پشت 7 سانتی",
+            1,
+            innerWidth,
+            7,
+            "بدون نوار"
+        );
+
+
+        addPart(
+            "قید پشت 5 سانتی",
+            1,
+            innerWidth,
+            5,
+            "بدون نوار"
+        );
+
+
+        /* پشت */
+
+        addPart(
+            "پشت",
+            1,
+            width,
+            boxHeight,
+            "بدون نوار"
+        );
+
+
+        /* درب */
+
+        const doorHeight =
+            boxHeight -
+            doorGap * 2;
+
+
+        let doorWidth;
+
+
+        if (doorCount === 1) {
+
+            doorWidth =
+                width -
+                doorGap * 2;
+
+        } else {
+
+            doorWidth =
+                (
+                    width -
+                    doorGap * 3
+                ) / 2;
+
+        }
+
+
+        addPart(
+            "درب",
+            doorCount,
+            edgeSize(
+                doorWidth,
+                true,
+                edgeThickness
+            ),
+            edgeSize(
+                doorHeight,
+                true,
+                edgeThickness
+            ),
+            "═ ═"
+        );
+
+
+        /* نمایش بخش‌ها */
+
+        document.getElementById(
+            "resultSection"
+        ).style.display = "block";
+
+
+        document.getElementById(
+            "partsSection"
+        ).style.display = "block";
+
+
+        document.getElementById(
+            "unitViewSection"
+        ).style.display = "block";
+
+
+        /* خلاصه */
+
+        document.getElementById(
+            "summary"
+        ).innerHTML = `
+
+            <p>
+                <strong>نوع یونیت:</strong>
+                ${getUnitName(unitType)}
+            </p>
+
+            <p>
+                <strong>ابعاد کلی:</strong>
+                ${formatMeasurement(width)}
+                ×
+                ${formatMeasurement(height)}
+                ×
+                ${formatMeasurement(depth)}
+                سانت
+            </p>
+
+            <p>
+                <strong>ارتفاع پایه:</strong>
+                ${formatMeasurement(baseHeight)}
+                سانت
+            </p>
+
+            <p>
+                <strong>ارتفاع باکس:</strong>
+                ${formatMeasurement(boxHeight)}
+                سانت
+            </p>
+
+            <p>
+                <strong>ارتفاع بغل:</strong>
+                ${formatMeasurement(sideHeight)}
+                سانت
+            </p>
+
+            <p>
+                <strong>ضخامت ورق:</strong>
+                ${formatMeasurement(thickness)}
+                سانت
+            </p>
+
+            <p>
+                <strong>ضخامت نوار:</strong>
+                ${formatMeasurement(edgeThickness)}
+                سانت
+            </p>
+
+            <p>
+                <strong>بادخور درب:</strong>
+                ${formatMeasurement(doorGap)}
+                سانت
+            </p>
+
+            <p>
+                <strong>تعداد درب:</strong>
+                ${doorCount}
+            </p>
+
+        `;
+
+
+        /* رسم */
+
+        drawUnit(
+            width,
+            height,
+            depth,
+            baseHeight,
+            thickness,
+            doorCount,
+            doorGap,
+            unitType
+        );
+
+
+        /* رفتن به بخش نمایش */
+
+        setTimeout(function () {
+
+            document
+                .getElementById(
+                    "unitViewSection"
+                )
+                .scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+
+        }, 100);
+
+
+    }
+
+    catch (error) {
+
+        console.error(error);
+
+        alert(
+            "در محاسبه یونیت خطایی رخ داد. صفحه را دوباره باز کنید."
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   رسم یونیت
+===================================================== */
 
 function drawUnit(
     width,
@@ -1225,7 +1348,6 @@ function drawUnit(
     doorGap,
     unitType
 ) {
-
 
     const drawing =
         document.getElementById(
@@ -1239,87 +1361,153 @@ function drawUnit(
         );
 
 
-    if (!drawing) {
+    /* اندازه SVG */
 
-        console.error(
-            "unitDrawing پیدا نشد."
-        );
+    const svgWidth = 620;
 
-        return;
-
-    }
+    const svgHeight = 470;
 
 
+    /* موقعیت */
 
-    /* =========================
-       ابعاد SVG
-    ========================= */
+    const x = 110;
 
-    const svgWidth = 680;
+    const y = 55;
 
-    const svgHeight = 520;
-
-
-
-    /* =========================
-       بدنه اصلی
-    ========================= */
-
-    const x = 140;
-
-    const y = 70;
 
     const bodyWidth = 400;
 
-    const totalPixelHeight = 330;
+    const totalPixelHeight = 300;
 
 
-
-    /* =========================
-       نسبت پایه
-    ========================= */
+    /* نسبت پایه */
 
     let baseRatio =
         baseHeight / height;
 
 
-    baseRatio =
-        Math.max(
-            0.08,
-            Math.min(
-                baseRatio,
-                0.35
-            )
-        );
+    if (baseRatio > 0.45) {
+
+        baseRatio = 0.45;
+
+    }
 
 
     const basePixelHeight =
-        totalPixelHeight *
-        baseRatio;
+        Math.max(
+            35,
+            totalPixelHeight *
+            baseRatio
+        );
 
 
-    const boxPixelHeight =
+    const bodyPixelHeight =
         totalPixelHeight -
         basePixelHeight;
 
 
-    const floorY =
-        y +
-        boxPixelHeight;
-
-
-
-    /* =========================
-       ضخامت بغل
-    ========================= */
-
     const sidePixelWidth = 22;
 
 
+    const floorY =
+        y +
+        bodyPixelHeight;
 
-    /* =========================
-       فضای درب
-    ========================= */
+
+    /* شروع SVG */
+
+    let svg = `
+
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="${svgWidth}"
+            height="${svgHeight}"
+            viewBox="0 0 ${svgWidth} ${svgHeight}"
+        >
+
+            <!-- عنوان -->
+
+            <text
+                x="310"
+                y="28"
+                text-anchor="middle"
+                font-size="19"
+                font-weight="bold"
+                fill="#0f2a4a"
+            >
+                ${getUnitName(unitType)}
+            </text>
+
+
+            <!-- بدنه -->
+
+            <rect
+                x="${x}"
+                y="${y}"
+                width="${bodyWidth}"
+                height="${bodyPixelHeight}"
+                fill="#e2e8f0"
+                stroke="#0f2a4a"
+                stroke-width="3"
+                rx="5"
+            />
+
+
+            <!-- بغل چپ -->
+
+            <rect
+                x="${x}"
+                y="${y}"
+                width="${sidePixelWidth}"
+                height="${bodyPixelHeight}"
+                fill="#cbd5e1"
+                stroke="#0f2a4a"
+                stroke-width="2"
+            />
+
+
+            <!-- بغل راست -->
+
+            <rect
+                x="${x + bodyWidth - sidePixelWidth}"
+                y="${y}"
+                width="${sidePixelWidth}"
+                height="${bodyPixelHeight}"
+                fill="#cbd5e1"
+                stroke="#0f2a4a"
+                stroke-width="2"
+            />
+
+
+            <!-- قید جلو -->
+
+            <rect
+                x="${x + sidePixelWidth}"
+                y="${y + 12}"
+                width="${bodyWidth - sidePixelWidth * 2}"
+                height="20"
+                fill="#94a3b8"
+                stroke="#0f2a4a"
+                stroke-width="2"
+            />
+
+
+            <!-- قید دوم -->
+
+            <rect
+                x="${x + sidePixelWidth}"
+                y="${y + 38}"
+                width="${bodyWidth - sidePixelWidth * 2}"
+                height="14"
+                fill="#cbd5e1"
+                stroke="#0f2a4a"
+                stroke-width="2"
+            />
+
+    `;
+
+
+    /* فضای درب */
 
     const doorX =
         x +
@@ -1329,147 +1517,20 @@ function drawUnit(
 
     const doorWidth =
         bodyWidth -
-        (sidePixelWidth * 2) -
+        sidePixelWidth * 2 -
         8;
 
 
     const doorY =
-        y +
-        65;
+        y + 58;
 
 
     const doorHeight =
-        boxPixelHeight -
-        72;
+        Math.max(
+            40,
+            bodyPixelHeight - 66
+        );
 
-
-
-    /* =========================
-       SVG
-    ========================= */
-
-    let svg = `
-
-    <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="${svgWidth}"
-        height="${svgHeight}"
-        viewBox="0 0 ${svgWidth} ${svgHeight}"
-        style="
-            max-width:100%;
-            height:auto;
-            font-family:Tahoma,Arial,sans-serif;
-        "
-    >
-
-
-        <!-- عنوان -->
-
-        <text
-            x="340"
-            y="35"
-            text-anchor="middle"
-            font-size="21"
-            font-weight="bold"
-            fill="#0f2a4a"
-        >
-
-            ${getUnitName(unitType)}
-
-        </text>
-
-
-
-        <!-- بدنه -->
-
-        <rect
-            x="${x}"
-            y="${y}"
-            width="${bodyWidth}"
-            height="${boxPixelHeight}"
-            fill="#e8edf3"
-            stroke="#0f172a"
-            stroke-width="3"
-            rx="4"
-        />
-
-
-
-        <!-- بغل چپ -->
-
-        <rect
-            x="${x}"
-            y="${y}"
-            width="${sidePixelWidth}"
-            height="${boxPixelHeight}"
-            fill="#cbd5e1"
-            stroke="#0f172a"
-            stroke-width="2"
-        />
-
-
-
-        <!-- بغل راست -->
-
-        <rect
-            x="${x + bodyWidth - sidePixelWidth}"
-            y="${y}"
-            width="${sidePixelWidth}"
-            height="${boxPixelHeight}"
-            fill="#cbd5e1"
-            stroke="#0f172a"
-            stroke-width="2"
-        />
-
-
-
-        <!-- قید جلو 7 -->
-
-        <rect
-            x="${x + sidePixelWidth}"
-            y="${y + 12}"
-            width="${bodyWidth - sidePixelWidth * 2}"
-            height="18"
-            fill="#94a3b8"
-            stroke="#0f172a"
-            stroke-width="2"
-        />
-
-
-
-        <!-- قید جلو 5 -->
-
-        <rect
-            x="${x + sidePixelWidth}"
-            y="${y + 35}"
-            width="${bodyWidth - sidePixelWidth * 2}"
-            height="14"
-            fill="#cbd5e1"
-            stroke="#0f172a"
-            stroke-width="2"
-        />
-
-
-
-        <!-- کف -->
-
-        <rect
-            x="${x + sidePixelWidth}"
-            y="${floorY - 10}"
-            width="${bodyWidth - sidePixelWidth * 2}"
-            height="10"
-            fill="#94a3b8"
-            stroke="#0f172a"
-            stroke-width="2"
-        />
-
-    `;
-
-
-
-    /* =========================
-       درب‌ها
-    ========================= */
 
     if (doorCount === 1) {
 
@@ -1480,32 +1541,26 @@ function drawUnit(
                 y="${doorY}"
                 width="${doorWidth}"
                 height="${doorHeight}"
-                fill="#f8fafc"
-                stroke="#0f172a"
+                fill="#ffffff"
+                stroke="#0f2a4a"
                 stroke-width="2"
-                rx="3"
+                rx="4"
             />
 
-
-            <!-- دستگیره -->
-
             <circle
-                cx="${doorX + 18}"
+                cx="${doorX + doorWidth - 15}"
                 cy="${doorY + doorHeight / 2}"
                 r="4"
-                fill="#475569"
+                fill="#64748b"
             />
 
         `;
 
-    }
+    } else {
 
+        const gap = 5;
 
-    else {
-
-        const gap = 6;
-
-        const singleDoorWidth =
+        const singleWidth =
             (
                 doorWidth -
                 gap
@@ -1514,51 +1569,40 @@ function drawUnit(
 
         svg += `
 
-            <!-- درب چپ -->
-
             <rect
                 x="${doorX}"
                 y="${doorY}"
-                width="${singleDoorWidth}"
+                width="${singleWidth}"
                 height="${doorHeight}"
-                fill="#f8fafc"
-                stroke="#0f172a"
+                fill="#ffffff"
+                stroke="#0f2a4a"
                 stroke-width="2"
-                rx="3"
+                rx="4"
             />
-
-
-            <!-- درب راست -->
 
             <rect
-                x="${doorX + singleDoorWidth + gap}"
+                x="${doorX + singleWidth + gap}"
                 y="${doorY}"
-                width="${singleDoorWidth}"
+                width="${singleWidth}"
                 height="${doorHeight}"
-                fill="#f8fafc"
-                stroke="#0f172a"
+                fill="#ffffff"
+                stroke="#0f2a4a"
                 stroke-width="2"
-                rx="3"
+                rx="4"
             />
 
-
-            <!-- دستگیره چپ -->
-
             <circle
-                cx="${doorX + singleDoorWidth - 18}"
+                cx="${doorX + singleWidth - 14}"
                 cy="${doorY + doorHeight / 2}"
                 r="4"
-                fill="#475569"
+                fill="#64748b"
             />
 
-
-            <!-- دستگیره راست -->
-
             <circle
-                cx="${doorX + singleDoorWidth + gap + 18}"
+                cx="${doorX + singleWidth + gap + 14}"
                 cy="${doorY + doorHeight / 2}"
                 r="4"
-                fill="#475569"
+                fill="#64748b"
             />
 
         `;
@@ -1566,56 +1610,56 @@ function drawUnit(
     }
 
 
-
-    /* =========================
-       پایه‌ها
-    ========================= */
-
-    const legWidth = 58;
-
-
-    const legHeight =
-        basePixelHeight;
-
+    /* کف */
 
     svg += `
+
+        <rect
+            x="${x + sidePixelWidth}"
+            y="${floorY - 10}"
+            width="${bodyWidth - sidePixelWidth * 2}"
+            height="10"
+            fill="#94a3b8"
+            stroke="#0f2a4a"
+            stroke-width="2"
+        />
+
 
         <!-- پایه چپ -->
 
         <rect
             x="${x + 35}"
             y="${floorY}"
-            width="${legWidth}"
-            height="${legHeight}"
+            width="55"
+            height="${basePixelHeight}"
             fill="#64748b"
-            stroke="#0f172a"
+            stroke="#0f2a4a"
             stroke-width="2"
-            rx="3"
+            rx="4"
         />
 
 
         <!-- پایه راست -->
 
         <rect
-            x="${x + bodyWidth - 35 - legWidth}"
+            x="${x + bodyWidth - 90}"
             y="${floorY}"
-            width="${legWidth}"
-            height="${legHeight}"
+            width="55"
+            height="${basePixelHeight}"
             fill="#64748b"
-            stroke="#0f172a"
+            stroke="#0f2a4a"
             stroke-width="2"
-            rx="3"
+            rx="4"
         />
 
 
-
-        <!-- خط اندازه عرض -->
+        <!-- خط عرض -->
 
         <line
             x1="${x}"
-            y1="${floorY + legHeight + 35}"
+            y1="${floorY + basePixelHeight + 28}"
             x2="${x + bodyWidth}"
-            y2="${floorY + legHeight + 35}"
+            y2="${floorY + basePixelHeight + 28}"
             stroke="#475569"
             stroke-width="2"
         />
@@ -1623,9 +1667,9 @@ function drawUnit(
 
         <line
             x1="${x}"
-            y1="${floorY + legHeight + 27}"
+            y1="${floorY + basePixelHeight + 20}"
             x2="${x}"
-            y2="${floorY + legHeight + 43}"
+            y2="${floorY + basePixelHeight + 36}"
             stroke="#475569"
             stroke-width="2"
         />
@@ -1633,9 +1677,9 @@ function drawUnit(
 
         <line
             x1="${x + bodyWidth}"
-            y1="${floorY + legHeight + 27}"
+            y1="${floorY + basePixelHeight + 20}"
             x2="${x + bodyWidth}"
-            y2="${floorY + legHeight + 43}"
+            y2="${floorY + basePixelHeight + 36}"
             stroke="#475569"
             stroke-width="2"
         />
@@ -1643,37 +1687,34 @@ function drawUnit(
 
         <text
             x="${x + bodyWidth / 2}"
-            y="${floorY + legHeight + 65}"
+            y="${floorY + basePixelHeight + 50}"
             text-anchor="middle"
-            font-size="16"
+            font-size="15"
             font-weight="bold"
             fill="#334155"
         >
-
             عرض:
             ${formatMeasurement(width)}
             سانت
-
         </text>
 
 
-
-        <!-- خط اندازه ارتفاع -->
+        <!-- خط ارتفاع -->
 
         <line
-            x1="${x - 45}"
+            x1="${x - 35}"
             y1="${y}"
-            x2="${x - 45}"
-            y2="${floorY + legHeight}"
+            x2="${x - 35}"
+            y2="${floorY + basePixelHeight}"
             stroke="#475569"
             stroke-width="2"
         />
 
 
         <line
-            x1="${x - 53}"
+            x1="${x - 43}"
             y1="${y}"
-            x2="${x - 37}"
+            x2="${x - 27}"
             y2="${y}"
             stroke="#475569"
             stroke-width="2"
@@ -1681,96 +1722,60 @@ function drawUnit(
 
 
         <line
-            x1="${x - 53}"
-            y1="${floorY + legHeight}"
-            x2="${x - 37}"
-            y2="${floorY + legHeight}"
+            x1="${x - 43}"
+            y1="${floorY + basePixelHeight}"
+            x2="${x - 27}"
+            y2="${floorY + basePixelHeight}"
             stroke="#475569"
             stroke-width="2"
         />
 
 
         <text
-            x="${x - 63}"
-            y="${y + totalPixelHeight / 2}"
+            x="${x - 48}"
+            y="${y + 150}"
             text-anchor="middle"
-            font-size="16"
+            font-size="14"
             font-weight="bold"
             fill="#334155"
-            transform="
-                rotate(
-                    -90
-                    ${x - 63}
-                    ${y + totalPixelHeight / 2}
-                )
-            "
+            transform="rotate(-90 ${x - 48} ${y + 150})"
         >
-
             ارتفاع:
             ${formatMeasurement(height)}
             سانت
-
         </text>
 
 
-
-        <!-- ارتفاع پایه -->
+        <!-- پایه -->
 
         <text
-            x="${x + bodyWidth + 25}"
-            y="${floorY + legHeight / 2}"
-            font-size="14"
+            x="${x + bodyWidth + 20}"
+            y="${floorY + basePixelHeight / 2}"
+            font-size="13"
             fill="#334155"
         >
-
             پایه:
             ${formatMeasurement(baseHeight)}
-            سانت
-
-        </text>
-
-
-
-        <!-- عمق -->
-
-        <text
-            x="${x + bodyWidth}"
-            y="${y - 12}"
-            text-anchor="end"
-            font-size="14"
-            fill="#64748b"
-        >
-
-            عمق:
-            ${formatMeasurement(depth)}
-            سانت
-
         </text>
 
     `;
 
 
+    /* پایان SVG */
 
     svg += `
 
-    </svg>
+        </svg>
 
     `;
 
 
+    /* قرار دادن شکل */
 
-    /* =========================
-       قرار دادن SVG
-    ========================= */
-
-    drawing.innerHTML =
-        svg;
+    drawing.innerHTML = svg;
 
 
-
-    /* =========================
-       اطلاعات پایین شکل
-    ========================= */
+    /* اطلاعات زیر شکل */
 
     info.innerHTML = `
 
@@ -1784,13 +1789,13 @@ function drawUnit(
         ${formatMeasurement(width)}
         سانت
 
-        &nbsp; | &nbsp;
+        |
 
         ارتفاع:
         ${formatMeasurement(height)}
         سانت
 
-        &nbsp; | &nbsp;
+        |
 
         عمق:
         ${formatMeasurement(depth)}
@@ -1801,16 +1806,15 @@ function drawUnit(
         تعداد درب:
         ${doorCount}
 
-        &nbsp; | &nbsp;
+        |
 
-        ارتفاع پایه:
+        پایه:
         ${formatMeasurement(baseHeight)}
         سانت
 
     `;
 
 }
-
 
 </script>
 

@@ -2,6 +2,7 @@
 <html lang="fa" dir="rtl">
 
 <head>
+
     <meta charset="UTF-8">
 
     <meta
@@ -9,9 +10,14 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <meta name="theme-color" content="#0f2a4a">
+    <meta
+        name="theme-color"
+        content="#0f2a4a"
+        id="themeColor"
+    >
 
     <title>کابینت‌یار</title>
+
 
     <style>
 
@@ -20,8 +26,17 @@
             -webkit-tap-highlight-color: transparent;
         }
 
+
+        html {
+            transition:
+                background 0.3s ease;
+        }
+
+
         body {
+
             margin: 0;
+
             font-family:
                 Tahoma,
                 Arial,
@@ -36,21 +51,36 @@
                 );
 
             color: #1f2937;
+
             min-height: 100vh;
+
+            transition:
+                background 0.3s ease,
+                color 0.3s ease;
+
         }
 
+
         .container {
+
             width: 100%;
+
             max-width: 950px;
+
             margin: auto;
+
             padding: 18px;
+
         }
+
+
 
         /* =========================
            HEADER
         ========================= */
 
         .header {
+
             position: relative;
 
             background:
@@ -73,9 +103,12 @@
             box-shadow:
                 0 12px 30px
                 rgba(15, 42, 74, 0.18);
+
         }
 
+
         .header::before {
+
             content: "";
 
             position: absolute;
@@ -90,9 +123,12 @@
 
             top: -80px;
             left: -60px;
+
         }
 
+
         .header::after {
+
             content: "";
 
             position: absolute;
@@ -107,18 +143,26 @@
 
             bottom: -60px;
             right: -30px;
+
         }
+
 
         .header-content {
+
             position: relative;
+
             z-index: 2;
+
         }
 
+
         .logo {
+
             width: 64px;
             height: 64px;
 
             display: flex;
+
             align-items: center;
             justify-content: center;
 
@@ -135,18 +179,26 @@
 
             margin-bottom: 14px;
 
-            backdrop-filter: blur(10px);
+            backdrop-filter:
+                blur(10px);
+
         }
 
+
         .header h1 {
-            margin: 0 0 8px;
+
+            margin:
+                0 0 8px;
 
             font-size: 30px;
 
             font-weight: 800;
+
         }
 
+
         .header p {
+
             margin: 0;
 
             font-size: 14px;
@@ -155,13 +207,74 @@
 
             color:
                 rgba(255,255,255,0.82);
+
         }
+
+
+
+        /* =========================
+           THEME BUTTON
+        ========================= */
+
+        .theme-toggle {
+
+            position: absolute;
+
+            top: 18px;
+            left: 18px;
+
+            z-index: 10;
+
+            width: 48px;
+            height: 48px;
+
+            border: none;
+
+            border-radius: 16px;
+
+            background:
+                rgba(255,255,255,0.12);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.18);
+
+            color: white;
+
+            font-size: 22px;
+
+            cursor: pointer;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            backdrop-filter:
+                blur(10px);
+
+            transition:
+                transform 0.2s ease,
+                background 0.2s ease;
+
+        }
+
+
+        .theme-toggle:active {
+
+            transform:
+                scale(0.90);
+
+        }
+
+
 
         /* =========================
            WELCOME
         ========================= */
 
         .welcome {
+
             background: white;
 
             border-radius: 20px;
@@ -177,9 +290,17 @@
             border:
                 1px solid
                 #edf1f5;
+
+            transition:
+                background 0.3s ease,
+                border 0.3s ease,
+                box-shadow 0.3s ease;
+
         }
 
+
         .welcome-title {
+
             font-size: 20px;
 
             font-weight: bold;
@@ -187,9 +308,12 @@
             color: #0f2a4a;
 
             margin-bottom: 7px;
+
         }
 
+
         .welcome-text {
+
             color: #667085;
 
             font-size: 14px;
@@ -197,50 +321,68 @@
             line-height: 1.9;
 
             margin: 0;
+
         }
+
+
 
         /* =========================
            SECTION TITLE
         ========================= */
 
         .section-title {
+
             display: flex;
 
             align-items: center;
 
             justify-content: space-between;
 
-            margin: 24px 3px 12px;
+            margin:
+                24px 3px 12px;
+
         }
 
+
         .section-title h2 {
+
             margin: 0;
 
             color: #0f2a4a;
 
             font-size: 19px;
+
         }
 
+
         .section-title span {
+
             font-size: 12px;
 
             color: #98a2b3;
+
         }
+
+
 
         /* =========================
            TOOLS GRID
         ========================= */
 
         .tools-grid {
+
             display: grid;
 
             grid-template-columns:
                 repeat(2, 1fr);
 
             gap: 13px;
+
         }
 
+
         .tool-card {
+
             position: relative;
 
             display: flex;
@@ -253,38 +395,56 @@
 
             padding: 18px;
 
-            background: white;
+            background:
+                linear-gradient(
+                    135deg,
+                    #0f2a4a,
+                    #174b7b
+                );
 
             border-radius: 22px;
 
-            border:
-                1px solid
-                #edf1f5;
+            border: none;
 
             text-decoration: none;
 
-            color: inherit;
+            color: white;
 
             overflow: hidden;
 
             box-shadow:
-                0 7px 22px
-                rgba(15, 42, 74, 0.07);
+                0 10px 25px
+                rgba(15, 42, 74, 0.18);
 
             transition:
                 transform 0.18s ease,
                 box-shadow 0.18s ease;
+
         }
 
-        .tool-card:active {
-            transform: scale(0.97);
 
-            box-shadow:
-                0 3px 12px
-                rgba(15, 42, 74, 0.08);
+        .tool-card::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 160px;
+            height: 160px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(255,255,255,0.045);
+
+            top: -80px;
+            left: -60px;
+
         }
+
 
         .tool-card::after {
+
             content: "";
 
             position: absolute;
@@ -295,13 +455,57 @@
             border-radius: 50%;
 
             background:
-                rgba(15,42,74,0.035);
+                rgba(255,255,255,0.035);
 
             left: -35px;
             bottom: -45px;
+
         }
 
+
+        .tool-card:active {
+
+            transform:
+                scale(0.97);
+
+            box-shadow:
+                0 5px 15px
+                rgba(15, 42, 74, 0.18);
+
+        }
+
+
+
+        /* =========================
+           FEATURED
+        ========================= */
+
+        .featured {
+
+            grid-column:
+                span 2;
+
+            min-height: 170px;
+
+        }
+
+
+
+        /* =========================
+           TOOL CONTENT
+        ========================= */
+
+        .tool-card > div {
+
+            position: relative;
+
+            z-index: 2;
+
+        }
+
+
         .tool-icon {
+
             width: 52px;
             height: 52px;
 
@@ -313,39 +517,72 @@
             border-radius: 16px;
 
             background:
-                #edf4fb;
+                rgba(255,255,255,0.13);
+
+            color: white;
 
             font-size: 26px;
 
             margin-bottom: 14px;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.08);
+
+            backdrop-filter:
+                blur(8px);
+
         }
 
+
         .tool-name {
+
             font-size: 17px;
 
             font-weight: bold;
 
-            color: #0f2a4a;
+            color: white;
 
             margin-bottom: 6px;
+
         }
 
+
+        .featured .tool-name {
+
+            font-size: 19px;
+
+        }
+
+
         .tool-description {
+
             font-size: 12px;
 
             line-height: 1.7;
 
-            color: #667085;
+            color:
+                rgba(255,255,255,0.75);
+
+            max-width: 90%;
+
         }
 
+
+
+        /* =========================
+           ARROW
+        ========================= */
+
         .arrow {
+
             position: absolute;
 
             left: 15px;
             bottom: 16px;
 
-            width: 28px;
-            height: 28px;
+            width: 30px;
+            height: 30px;
 
             border-radius: 50%;
 
@@ -355,64 +592,28 @@
             justify-content: center;
 
             background:
-                #f2f5f8;
-
-            color: #0f2a4a;
-
-            font-size: 16px;
-        }
-
-        /* =========================
-           FEATURED CARD
-        ========================= */
-
-        .featured {
-            grid-column: span 2;
-
-            min-height: 170px;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #0f2a4a,
-                    #174b7b
-                );
-
-            color: white;
-
-            border: none;
-        }
-
-        .featured .tool-icon {
-            background:
                 rgba(255,255,255,0.13);
 
             color: white;
+
+            font-size: 17px;
+
+            z-index: 3;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.08);
+
         }
 
-        .featured .tool-name {
-            color: white;
 
-            font-size: 19px;
-        }
-
-        .featured .tool-description {
-            color:
-                rgba(255,255,255,0.75);
-        }
-
-        .featured .arrow {
-            background:
-                rgba(255,255,255,0.13);
-
-            color: white;
-        }
 
         /* =========================
-           QUICK INFO
+           INFO CARD
         ========================= */
 
         .info-card {
+
             margin-top: 20px;
 
             background: white;
@@ -428,9 +629,16 @@
             box-shadow:
                 0 6px 20px
                 rgba(15,42,74,0.06);
+
+            transition:
+                background 0.3s ease,
+                border 0.3s ease;
+
         }
 
+
         .info-row {
+
             display: flex;
 
             align-items: center;
@@ -442,15 +650,21 @@
             border-bottom:
                 1px solid
                 #f0f2f5;
+
         }
 
+
         .info-row:last-child {
+
             border-bottom: none;
 
             padding-bottom: 0;
+
         }
 
+
         .info-icon {
+
             width: 40px;
             height: 40px;
 
@@ -467,17 +681,23 @@
                 #f2f6fa;
 
             font-size: 19px;
+
         }
 
+
         .info-text {
+
             font-size: 13px;
 
             color: #667085;
 
             line-height: 1.7;
+
         }
 
+
         .info-text strong {
+
             display: block;
 
             color: #344054;
@@ -485,27 +705,156 @@
             font-size: 14px;
 
             margin-bottom: 2px;
+
         }
+
+
 
         /* =========================
            FOOTER
         ========================= */
 
         .footer {
+
             text-align: center;
 
-            padding: 25px 10px 15px;
+            padding:
+                25px 10px 15px;
 
             color: #98a2b3;
 
             font-size: 12px;
 
             line-height: 1.8;
+
         }
 
+
         .footer strong {
+
             color: #0f2a4a;
+
         }
+
+
+
+        /* =================================================
+           DARK MODE
+        ================================================= */
+
+        body.dark {
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #07111f 0%,
+                    #0b1727 50%,
+                    #0f1d2d 100%
+                );
+
+            color: #e5e7eb;
+
+        }
+
+
+        body.dark .welcome {
+
+            background:
+                #142235;
+
+            border-color:
+                #20344b;
+
+            box-shadow:
+                0 8px 25px
+                rgba(0,0,0,0.20);
+
+        }
+
+
+        body.dark .welcome-title {
+
+            color: #ffffff;
+
+        }
+
+
+        body.dark .welcome-text {
+
+            color: #aebaca;
+
+        }
+
+
+        body.dark .section-title h2 {
+
+            color: #ffffff;
+
+        }
+
+
+        body.dark .section-title span {
+
+            color: #7f8da1;
+
+        }
+
+
+        body.dark .info-card {
+
+            background:
+                #142235;
+
+            border-color:
+                #20344b;
+
+        }
+
+
+        body.dark .info-row {
+
+            border-color:
+                #25384d;
+
+        }
+
+
+        body.dark .info-icon {
+
+            background:
+                #1d3045;
+
+        }
+
+
+        body.dark .info-text {
+
+            color: #aebaca;
+
+        }
+
+
+        body.dark .info-text strong {
+
+            color: #e8edf3;
+
+        }
+
+
+        body.dark .footer {
+
+            color: #738197;
+
+        }
+
+
+        body.dark .footer strong {
+
+            color: #dce7f2;
+
+        }
+
+
 
         /* =========================
            MOBILE
@@ -514,145 +863,260 @@
         @media (max-width: 600px) {
 
             .container {
+
                 padding: 12px;
+
             }
+
 
             .header {
-                padding: 24px 18px;
+
+                padding:
+                    24px 18px;
 
                 border-radius: 22px;
+
             }
+
 
             .header h1 {
+
                 font-size: 26px;
+
             }
 
+
             .logo {
+
                 width: 58px;
                 height: 58px;
 
                 font-size: 28px;
+
             }
+
+
+            .theme-toggle {
+
+                width: 44px;
+                height: 44px;
+
+                top: 14px;
+                left: 14px;
+
+                font-size: 20px;
+
+                border-radius: 14px;
+
+            }
+
 
             .tools-grid {
-                grid-template-columns: 1fr 1fr;
+
+                grid-template-columns:
+                    1fr 1fr;
 
                 gap: 10px;
+
             }
 
+
             .tool-card {
+
                 min-height: 150px;
 
                 padding: 15px;
 
                 border-radius: 19px;
+
             }
+
 
             .featured {
-                grid-column: span 2;
+
+                grid-column:
+                    span 2;
+
             }
 
+
             .tool-icon {
+
                 width: 48px;
                 height: 48px;
 
                 font-size: 23px;
+
             }
+
 
             .tool-name {
+
                 font-size: 15px;
+
             }
+
+
+            .featured .tool-name {
+
+                font-size: 17px;
+
+            }
+
 
             .tool-description {
+
                 font-size: 11px;
+
             }
 
+
             .arrow {
+
                 width: 25px;
                 height: 25px;
 
                 left: 12px;
                 bottom: 12px;
+
             }
+
         }
+
 
         @media (max-width: 370px) {
 
             .tools-grid {
-                grid-template-columns: 1fr;
+
+                grid-template-columns:
+                    1fr;
+
             }
 
+
             .featured {
-                grid-column: span 1;
+
+                grid-column:
+                    span 1;
+
             }
+
         }
 
     </style>
+
 </head>
+
 
 <body>
 
+
 <div class="container">
 
-    <!-- HEADER -->
+
+    <!-- =========================
+         HEADER
+    ========================= -->
 
     <header class="header">
 
+
+        <!-- دکمه شب و روز -->
+
+        <button
+            class="theme-toggle"
+            id="themeToggle"
+            onclick="toggleTheme()"
+            aria-label="تغییر حالت شب و روز"
+        >
+            🌙
+        </button>
+
+
         <div class="header-content">
+
 
             <div class="logo">
                 🪚
             </div>
 
+
             <h1>
                 کابینت‌یار
             </h1>
+
 
             <p>
                 دستیار هوشمند شما برای طراحی،
                 محاسبه و مدیریت پروژه‌های کابینت
             </p>
 
+
         </div>
+
 
     </header>
 
 
-    <!-- WELCOME -->
+
+    <!-- =========================
+         WELCOME
+    ========================= -->
 
     <section class="welcome">
 
+
         <div class="welcome-title">
+
             👋 خوش آمدید
+
         </div>
 
+
         <p class="welcome-text">
+
             ابزار موردنظر خود را انتخاب کنید
             تا کارتان را سریع‌تر و دقیق‌تر انجام دهید.
+
         </p>
+
 
     </section>
 
 
-    <!-- TOOLS -->
+
+    <!-- =========================
+         TOOLS TITLE
+    ========================= -->
 
     <div class="section-title">
+
 
         <h2>
             🧰 ابزارهای کابینت‌یار
         </h2>
 
+
         <span>
             انتخاب کنید
         </span>
 
+
     </div>
 
+
+
+    <!-- =========================
+         TOOLS
+    ========================= -->
 
     <div class="tools-grid">
 
 
-        <!-- CUT MASTER -->
+
+        <!-- =========================
+             CUT MASTER
+        ========================= -->
 
         <a
             href="cutmaster.html"
@@ -661,30 +1125,41 @@
 
             <div>
 
+
                 <div class="tool-icon">
                     ✂️
                 </div>
+
 
                 <div class="tool-name">
                     کات مستر
                 </div>
 
+
                 <div class="tool-description">
+
                     مدیریت قطعات و محاسبه
                     برش ورق MDF با امکان
                     چرخش قطعات
+
                 </div>
 
+
             </div>
+
 
             <div class="arrow">
                 ←
             </div>
 
+
         </a>
 
 
-        <!-- PRICE -->
+
+        <!-- =========================
+             PRICE
+        ========================= -->
 
         <a
             href="calculator.html"
@@ -693,29 +1168,40 @@
 
             <div>
 
+
                 <div class="tool-icon">
                     💰
                 </div>
+
 
                 <div class="tool-name">
                     محاسبه قیمت
                 </div>
 
+
                 <div class="tool-description">
+
                     محاسبه سریع قیمت
                     کابینت و پروژه
+
                 </div>
 
+
             </div>
+
 
             <div class="arrow">
                 ←
             </div>
 
+
         </a>
 
 
-        <!-- COUNTERTOP -->
+
+        <!-- =========================
+             COUNTERTOP
+        ========================= -->
 
         <a
             href="countertop.html"
@@ -724,29 +1210,40 @@
 
             <div>
 
+
                 <div class="tool-icon">
                     📐
                 </div>
+
 
                 <div class="tool-name">
                     صفحه کابینت
                 </div>
 
+
                 <div class="tool-description">
+
                     محاسبه متراژ و هزینه
                     صفحه کابینت
+
                 </div>
 
+
             </div>
+
 
             <div class="arrow">
                 ←
             </div>
 
+
         </a>
 
 
-        <!-- HARDWARE -->
+
+        <!-- =========================
+             HARDWARE
+        ========================= -->
 
         <a
             href="hardware.html"
@@ -755,29 +1252,40 @@
 
             <div>
 
+
                 <div class="tool-icon">
                     🔩
                 </div>
+
 
                 <div class="tool-name">
                     یراق‌آلات
                 </div>
 
+
                 <div class="tool-description">
+
                     انتخاب و محاسبه تعداد
                     یراق‌آلات موردنیاز
+
                 </div>
 
+
             </div>
+
 
             <div class="arrow">
                 ←
             </div>
 
+
         </a>
 
 
-        <!-- CUSTOMER ORDER -->
+
+        <!-- =========================
+             CUSTOMER ORDER
+        ========================= -->
 
         <a
             href="order.html"
@@ -786,29 +1294,40 @@
 
             <div>
 
+
                 <div class="tool-icon">
                     📋
                 </div>
+
 
                 <div class="tool-name">
                     ثبت سفارش
                 </div>
 
+
                 <div class="tool-description">
+
                     ثبت اطلاعات مشتری
                     و مدیریت سفارش
+
                 </div>
 
+
             </div>
+
 
             <div class="arrow">
                 ←
             </div>
 
+
         </a>
 
 
-        <!-- CONTACT -->
+
+        <!-- =========================
+             CONTACT
+        ========================= -->
 
         <a
             href="contact.html"
@@ -817,24 +1336,75 @@
 
             <div>
 
+
                 <div class="tool-icon">
                     📞
                 </div>
+
 
                 <div class="tool-name">
                     تماس با ما
                 </div>
 
+
                 <div class="tool-description">
+
                     اطلاعات تماس و
                     ارتباط با کابینت‌یار
+
                 </div>
 
+
             </div>
+
 
             <div class="arrow">
                 ←
             </div>
+
+
+        </a>
+
+
+
+        <!-- =========================
+             UNIT
+        ========================= -->
+
+        <a
+            href="unit.html"
+            class="tool-card featured"
+        >
+
+            <div>
+
+
+                <div class="tool-icon">
+                    📏
+                </div>
+
+
+                <div class="tool-name">
+                    نمایش یونیت
+                </div>
+
+
+                <div class="tool-description">
+
+                    محاسبه ابعاد یونیت،
+                    قطعات و نمایش شماتیک
+                    برای ساخت
+
+                </div>
+
+
+            </div>
+
+
+            <div class="arrow">
+                ←
+            </div>
+
 
         </a>
 
@@ -842,76 +1412,103 @@
     </div>
 
 
-    <!-- INFO -->
+
+    <!-- =========================
+         INFO
+    ========================= -->
 
     <div class="section-title">
+
 
         <h2>
             ✨ درباره کابینت‌یار
         </h2>
 
+
     </div>
+
 
 
     <div class="info-card">
 
 
+
         <div class="info-row">
+
 
             <div class="info-icon">
                 ⚡
             </div>
 
+
             <div class="info-text">
+
 
                 <strong>
                     سریع و ساده
                 </strong>
 
+
                 ابزارها برای استفاده
                 سریع در کارگاه طراحی شده‌اند.
 
+
             </div>
+
 
         </div>
 
 
+
         <div class="info-row">
+
 
             <div class="info-icon">
                 📱
             </div>
 
+
             <div class="info-text">
+
 
                 <strong>
                     مناسب موبایل
                 </strong>
 
+
                 کابینت‌یار برای استفاده
                 راحت روی گوشی طراحی شده است.
 
+
             </div>
+
 
         </div>
 
 
+
         <div class="info-row">
+
 
             <div class="info-icon">
                 🛠️
             </div>
 
+
             <div class="info-text">
+
 
                 <strong>
                     ابزارهای کاربردی
                 </strong>
 
+
                 محاسبه، برش، سفارش و
                 مدیریت پروژه در یک برنامه.
 
+
             </div>
+
 
         </div>
 
@@ -919,25 +1516,157 @@
     </div>
 
 
-    <!-- FOOTER -->
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
 
     <footer class="footer">
+
 
         <strong>
             کابینت‌یار
         </strong>
 
+
         <br>
+
 
         ابزار هوشمند کابینت‌سازها
 
+
         <br><br>
+
 
         نسخه اولیه برنامه
 
+
     </footer>
 
+
 </div>
+
+
+
+<script>
+
+
+/* =================================================
+   حالت شب و روز
+================================================= */
+
+function toggleTheme() {
+
+    const body =
+        document.body;
+
+    const button =
+        document.getElementById(
+            "themeToggle"
+        );
+
+    const themeColor =
+        document.getElementById(
+            "themeColor"
+        );
+
+
+    body.classList.toggle("dark");
+
+
+    const isDark =
+        body.classList.contains("dark");
+
+
+    if (isDark) {
+
+        button.textContent = "☀️";
+
+        themeColor.setAttribute(
+            "content",
+            "#07111f"
+        );
+
+        localStorage.setItem(
+            "kabinetyar-theme",
+            "dark"
+        );
+
+    }
+
+    else {
+
+        button.textContent = "🌙";
+
+        themeColor.setAttribute(
+            "content",
+            "#0f2a4a"
+        );
+
+        localStorage.setItem(
+            "kabinetyar-theme",
+            "light"
+        );
+
+    }
+
+}
+
+
+
+/* =================================================
+   بارگذاری حالت ذخیره‌شده
+================================================= */
+
+function loadTheme() {
+
+    const savedTheme =
+        localStorage.getItem(
+            "kabinetyar-theme"
+        );
+
+
+    if (savedTheme === "dark") {
+
+        document.body.classList.add(
+            "dark"
+        );
+
+
+        document.getElementById(
+            "themeToggle"
+        ).textContent = "☀️";
+
+
+        document.getElementById(
+            "themeColor"
+        ).setAttribute(
+            "content",
+            "#07111f"
+        );
+
+    }
+
+    else {
+
+        document.getElementById(
+            "themeToggle"
+        ).textContent = "🌙";
+
+    }
+
+}
+
+
+
+/* =================================================
+   شروع برنامه
+================================================= */
+
+loadTheme();
+
+
+</script>
 
 
 </body>

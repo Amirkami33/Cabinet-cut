@@ -7,419 +7,782 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
-    <meta name="theme-color" content="#1e293b">
+    <meta name="theme-color"
+          content="#1e293b">
 
     <title>نمایش یونیت | کابینت‌یار</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+          href="style.css">
 </head>
 
 <body>
 
-    <!-- هدر -->
-    <header class="header">
-        <h1>نمایش یونیت</h1>
-        <p>مشاهده و بررسی اجزای یونیت کابینت</p>
-    </header>
+<header class="header">
+
+    <h1>نمایش یونیت</h1>
+
+    <p>
+        محاسبه قطعات و اندازه برش یونیت
+    </p>
+
+</header>
 
 
-    <main class="container">
+<main class="container">
 
-        <!-- دکمه بازگشت -->
-        <button class="back-btn"
-                onclick="window.location.href='index.html'">
-            ← بازگشت به کابینت‌یار
+
+    <!-- بازگشت -->
+
+    <button class="back-btn"
+            onclick="window.location.href='index.html'">
+
+        ← بازگشت به کابینت‌یار
+
+    </button>
+
+
+    <!-- تنظیمات یونیت -->
+
+    <section class="card">
+
+        <h2>
+            مشخصات یونیت
+        </h2>
+
+
+        <!-- نوع یونیت -->
+
+        <div class="form-group">
+
+            <label>
+                نوع یونیت
+            </label>
+
+            <select id="unitType">
+
+                <option value="base">
+                    یونیت زمینی
+                </option>
+
+                <option value="wall">
+                    یونیت دیواری
+                </option>
+
+                <option value="tall">
+                    یونیت ایستاده
+                </option>
+
+                <option value="sink">
+                    یونیت سینک
+                </option>
+
+                <option value="drawer">
+                    یونیت کشویی
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <!-- عرض -->
+
+        <div class="form-group">
+
+            <label>
+                عرض یونیت (میلی‌متر)
+            </label>
+
+            <input
+                type="number"
+                id="unitWidth"
+                placeholder="مثلاً 800"
+                min="100"
+            >
+
+        </div>
+
+
+        <!-- ارتفاع -->
+
+        <div class="form-group">
+
+            <label>
+                ارتفاع کلی یونیت (میلی‌متر)
+            </label>
+
+            <input
+                type="number"
+                id="unitHeight"
+                placeholder="مثلاً 900"
+                min="100"
+            >
+
+        </div>
+
+
+        <!-- عمق -->
+
+        <div class="form-group">
+
+            <label>
+                عمق یونیت (میلی‌متر)
+            </label>
+
+            <input
+                type="number"
+                id="unitDepth"
+                placeholder="مثلاً 580"
+                min="100"
+            >
+
+        </div>
+
+
+        <!-- ضخامت ورق -->
+
+        <div class="form-group">
+
+            <label>
+                ضخامت ورق بدنه
+            </label>
+
+            <select id="boardThickness">
+
+                <option value="16">
+                    16 میلی‌متر
+                </option>
+
+                <option value="18">
+                    18 میلی‌متر
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <!-- پایه -->
+
+        <div class="form-group">
+
+            <label>
+                ارتفاع پایه
+            </label>
+
+            <select id="baseHeight">
+
+                <option value="50">
+                    5 سانتی‌متر
+                </option>
+
+                <option value="60">
+                    6 سانتی‌متر
+                </option>
+
+                <option value="70">
+                    7 سانتی‌متر
+                </option>
+
+                <option value="80">
+                    8 سانتی‌متر
+                </option>
+
+                <option value="90">
+                    9 سانتی‌متر
+                </option>
+
+                <option value="100">
+                    10 سانتی‌متر
+                </option>
+
+                <option value="110">
+                    11 سانتی‌متر
+                </option>
+
+                <option value="120">
+                    12 سانتی‌متر
+                </option>
+
+                <option value="130">
+                    13 سانتی‌متر
+                </option>
+
+                <option value="140">
+                    14 سانتی‌متر
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <!-- نوع پشت -->
+
+        <div class="form-group">
+
+            <label>
+                نوع پشت یونیت
+            </label>
+
+            <select id="backType">
+
+                <option value="3">
+                    پشت 3 میل
+                </option>
+
+                <option value="8">
+                    MDF معمولی
+                </option>
+
+                <option value="5">
+                    فومیزه
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <!-- ضخامت نوار -->
+
+        <div class="form-group">
+
+            <label>
+                ضخامت نوار
+            </label>
+
+            <select id="edgeThickness">
+
+                <option value="1">
+                    1 میلی‌متر
+                </option>
+
+                <option value="2">
+                    2 میلی‌متر
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <!-- تعداد لبه نوار کف -->
+
+        <div class="form-group">
+
+            <label>
+                تعداد لبه نوار کف
+            </label>
+
+            <select id="floorEdges">
+
+                <option value="0">
+                    بدون نوار
+                </option>
+
+                <option value="1">
+                    یک لبه
+                </option>
+
+                <option value="2">
+                    دو لبه
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <button
+            class="btn"
+            onclick="calculateUnit()">
+
+            محاسبه یونیت
+
         </button>
 
+    </section>
 
-        <!-- انتخاب نوع یونیت -->
-        <section class="card">
 
-            <h2>انتخاب یونیت</h2>
+    <!-- نتیجه -->
 
-            <div class="form-group">
+    <section
+        class="card"
+        id="resultSection"
+        style="display:none;">
 
-                <label for="unitType">
-                    نوع یونیت
-                </label>
+        <h2>
+            نتیجه محاسبات
+        </h2>
 
-                <select id="unitType">
 
-                    <option value="">
-                        انتخاب کنید
-                    </option>
+        <div
+            class="result"
+            id="summary">
 
-                    <option value="base">
-                        یونیت زمینی
-                    </option>
+        </div>
 
-                    <option value="wall">
-                        یونیت دیواری
-                    </option>
+    </section>
 
-                    <option value="tall">
-                        یونیت ایستاده
-                    </option>
 
-                    <option value="drawer">
-                        یونیت کشویی
-                    </option>
+    <!-- جدول قطعات -->
 
-                    <option value="sink">
-                        یونیت سینک
-                    </option>
+    <section
+        class="card"
+        id="partsSection"
+        style="display:none;">
 
-                </select>
+        <h2>
+            لیست قطعات
+        </h2>
 
-            </div>
 
+        <div class="table-container">
 
-            <button class="btn"
-                    onclick="showUnit()">
-                نمایش یونیت
-            </button>
+            <table>
 
-        </section>
+                <thead>
 
+                    <tr>
 
-        <!-- اطلاعات یونیت -->
-        <section class="card"
-                 id="unitResult"
-                 style="display: none;">
+                        <th>
+                            قطعه
+                        </th>
 
-            <h2 id="unitTitle">
-                اطلاعات یونیت
-            </h2>
+                        <th>
+                            تعداد
+                        </th>
 
+                        <th>
+                            طول
+                        </th>
 
-            <div class="result">
+                        <th>
+                            عرض
+                        </th>
 
-                <p>
-                    <strong>عرض:</strong>
-                    <span id="unitWidth">---</span>
-                </p>
+                        <th>
+                            نوار
+                        </th>
 
-                <p>
-                    <strong>ارتفاع:</strong>
-                    <span id="unitHeight">---</span>
-                </p>
+                    </tr>
 
-                <p>
-                    <strong>عمق:</strong>
-                    <span id="unitDepth">---</span>
-                </p>
+                </thead>
 
-            </div>
 
-        </section>
+                <tbody id="partsTable">
 
+                </tbody>
 
-        <!-- جدول قطعات -->
-        <section class="card"
-                 id="partsSection"
-                 style="display: none;">
+            </table>
 
-            <h2>قطعات یونیت</h2>
+        </div>
 
-            <div class="table-container">
+    </section>
 
-                <table>
 
-                    <thead>
+</main>
 
-                        <tr>
-                            <th>قطعه</th>
-                            <th>تعداد</th>
-                            <th>طول</th>
-                            <th>عرض</th>
-                        </tr>
 
-                    </thead>
+<footer class="footer">
 
-                    <tbody id="partsTable">
+    کابینت‌یار © 2026
 
-                    </tbody>
+</footer>
 
-                </table>
 
-            </div>
+<script>
 
-        </section>
 
-    </main>
+function calculateUnit() {
 
 
-    <footer class="footer">
-        کابینت‌یار © 2026
-    </footer>
+    /*
+     * دریافت اطلاعات
+     */
 
+    const width =
+        Number(
+            document.getElementById(
+                "unitWidth"
+            ).value
+        );
 
-    <script>
 
-        function showUnit() {
+    const height =
+        Number(
+            document.getElementById(
+                "unitHeight"
+            ).value
+        );
 
-            const type =
-                document.getElementById("unitType").value;
 
-            const result =
-                document.getElementById("unitResult");
+    const depth =
+        Number(
+            document.getElementById(
+                "unitDepth"
+            ).value
+        );
 
-            const partsSection =
-                document.getElementById("partsSection");
 
-            const title =
-                document.getElementById("unitTitle");
+    const thickness =
+        Number(
+            document.getElementById(
+                "boardThickness"
+            ).value
+        );
 
-            const width =
-                document.getElementById("unitWidth");
 
-            const height =
-                document.getElementById("unitHeight");
+    const base =
+        Number(
+            document.getElementById(
+                "baseHeight"
+            ).value
+        );
 
-            const depth =
-                document.getElementById("unitDepth");
 
-            const table =
-                document.getElementById("partsTable");
+    const edge =
+        Number(
+            document.getElementById(
+                "edgeThickness"
+            ).value
+        );
 
 
-            if (type === "") {
+    const floorEdges =
+        Number(
+            document.getElementById(
+                "floorEdges"
+            ).value
+        );
 
-                alert("لطفاً نوع یونیت را انتخاب کنید.");
 
-                return;
-            }
+    const backType =
+        Number(
+            document.getElementById(
+                "backType"
+            ).value
+        );
 
 
-            result.style.display = "block";
+    /*
+     * بررسی اطلاعات
+     */
 
-            partsSection.style.display = "block";
+    if (
+        width <= 0 ||
+        height <= 0 ||
+        depth <= 0
+    ) {
 
+        alert(
+            "لطفاً عرض، ارتفاع و عمق یونیت را وارد کنید."
+        );
 
-            table.innerHTML = "";
+        return;
 
+    }
 
-            if (type === "base") {
 
-                title.innerText = "یونیت زمینی";
+    /*
+     * محاسبه ارتفاع بغل
+     *
+     * ارتفاع کل
+     * منهای پایه
+     * منهای ضخامت کف
+     */
 
-                width.innerText = "قابل تنظیم";
-                height.innerText = "72 سانتی‌متر";
-                depth.innerText = "55 سانتی‌متر";
+    const sideHeight =
+        height -
+        base -
+        thickness;
 
 
-                addPart(
-                    "بغل یونیت",
-                    "2",
-                    "72",
-                    "55"
-                );
+    /*
+     * عرض قطعاتی که بین بغل‌ها قرار می‌گیرند
+     */
 
-                addPart(
-                    "کف",
-                    "1",
-                    "عرض یونیت",
-                    "55"
-                );
+    const innerWidth =
+        width -
+        (thickness * 2);
 
-                addPart(
-                    "طبقه",
-                    "1",
-                    "عرض یونیت",
-                    "50"
-                );
 
-                addPart(
-                    "پشت",
-                    "1",
-                    "عرض یونیت",
-                    "72"
-                );
+    /*
+     * محاسبه عمق کف
+     *
+     * عمق خام
+     * منهای مقدار نوار
+     */
 
-            }
+    const floorDepth =
+        depth -
+        (
+            edge *
+            floorEdges
+        );
 
 
-            else if (type === "wall") {
+    /*
+     * جدول قطعات
+     */
 
-                title.innerText = "یونیت دیواری";
+    const table =
+        document.getElementById(
+            "partsTable"
+        );
 
-                width.innerText = "قابل تنظیم";
-                height.innerText = "70 سانتی‌متر";
-                depth.innerText = "30 سانتی‌متر";
 
+    table.innerHTML = "";
 
-                addPart(
-                    "بغل یونیت",
-                    "2",
-                    "70",
-                    "30"
-                );
 
-                addPart(
-                    "بالا",
-                    "1",
-                    "عرض یونیت",
-                    "30"
-                );
+    /*
+     * بغل اول
+     */
 
-                addPart(
-                    "پایین",
-                    "1",
-                    "عرض یونیت",
-                    "30"
-                );
+    addPart(
+        "بغل یونیت",
+        2,
+        sideHeight,
+        depth,
+        "طبق تنظیمات"
+    );
 
-                addPart(
-                    "طبقه",
-                    "1",
-                    "عرض یونیت",
-                    "25"
-                );
 
-            }
+    /*
+     * کف
+     */
 
+    addPart(
+        "کف",
+        1,
+        innerWidth,
+        floorDepth,
+        floorEdges +
+        " لبه"
+    );
 
-            else if (type === "tall") {
 
-                title.innerText = "یونیت ایستاده";
+    /*
+     * قید جلو 7 سانتی
+     */
 
-                width.innerText = "قابل تنظیم";
-                height.innerText = "قابل تنظیم";
-                depth.innerText = "55 سانتی‌متر";
+    addPart(
+        "قید جلو 7 سانتی",
+        1,
+        innerWidth,
+        70,
+        "بدون نوار"
+    );
 
 
-                addPart(
-                    "بغل یونیت",
-                    "2",
-                    "ارتفاع",
-                    "55"
-                );
+    /*
+     * قید جلو 5 سانتی
+     */
 
-                addPart(
-                    "کف",
-                    "1",
-                    "عرض یونیت",
-                    "55"
-                );
+    addPart(
+        "قید جلو 5 سانتی",
+        1,
+        innerWidth,
+        50,
+        "بدون نوار"
+    );
 
-                addPart(
-                    "سقف",
-                    "1",
-                    "عرض یونیت",
-                    "55"
-                );
 
-                addPart(
-                    "طبقات",
-                    "قابل تنظیم",
-                    "عرض یونیت",
-                    "50"
-                );
+    /*
+     * قید پشت 7 سانتی
+     */
 
-            }
+    addPart(
+        "قید پشت 7 سانتی",
+        1,
+        innerWidth,
+        70,
+        "بدون نوار"
+    );
 
 
-            else if (type === "drawer") {
+    /*
+     * قید پشت 5 سانتی
+     */
 
-                title.innerText = "یونیت کشویی";
+    addPart(
+        "قید پشت 5 سانتی",
+        1,
+        innerWidth,
+        50,
+        "بدون نوار"
+    );
 
-                width.innerText = "قابل تنظیم";
-                height.innerText = "72 سانتی‌متر";
-                depth.innerText = "55 سانتی‌متر";
 
+    /*
+     * پشت
+     */
 
-                addPart(
-                    "بغل یونیت",
-                    "2",
-                    "72",
-                    "55"
-                );
+    const backWidth =
+        innerWidth;
 
-                addPart(
-                    "کف",
-                    "1",
-                    "عرض یونیت",
-                    "55"
-                );
 
-                addPart(
-                    "طبقه",
-                    "قابل تنظیم",
-                    "عرض یونیت",
-                    "50"
-                );
+    const backHeight =
+        sideHeight;
 
-            }
 
+    addPart(
+        "پشت",
+        1,
+        backWidth,
+        backHeight,
+        "بدون نوار"
+    );
 
-            else if (type === "sink") {
 
-                title.innerText = "یونیت سینک";
+    /*
+     * نمایش نتیجه
+     */
 
-                width.innerText = "قابل تنظیم";
-                height.innerText = "72 سانتی‌متر";
-                depth.innerText = "55 سانتی‌متر";
+    document.getElementById(
+        "resultSection"
+    ).style.display = "block";
 
 
-                addPart(
-                    "بغل یونیت",
-                    "2",
-                    "72",
-                    "55"
-                );
+    document.getElementById(
+        "partsSection"
+    ).style.display = "block";
 
-                addPart(
-                    "کف",
-                    "1",
-                    "عرض یونیت",
-                    "55"
-                );
 
-                addPart(
-                    "پشت",
-                    "1",
-                    "عرض یونیت",
-                    "قابل تنظیم"
-                );
+    /*
+     * خلاصه
+     */
 
-            }
+    document.getElementById(
+        "summary"
+    ).innerHTML = `
 
-        }
+        <p>
+            <strong>
+                عرض یونیت:
+            </strong>
 
+            ${width} میلی‌متر
+        </p>
 
-        function addPart(
-            name,
-            quantity,
-            length,
-            width
-        ) {
 
-            const table =
-                document.getElementById("partsTable");
+        <p>
+            <strong>
+                ارتفاع کلی:
+            </strong>
 
+            ${height} میلی‌متر
+        </p>
 
-            const row =
-                document.createElement("tr");
 
+        <p>
+            <strong>
+                عمق:
+            </strong>
 
-            row.innerHTML = `
+            ${depth} میلی‌متر
+        </p>
 
-                <td>${name}</td>
 
-                <td>${quantity}</td>
+        <p>
+            <strong>
+                ارتفاع پایه:
+            </strong>
 
-                <td>${length}</td>
+            ${base} میلی‌متر
+        </p>
 
-                <td>${width}</td>
 
-            `;
+        <p>
+            <strong>
+                ارتفاع بغل:
+            </strong>
 
+            ${sideHeight} میلی‌متر
+        </p>
 
-            table.appendChild(row);
 
-        }
+        <p>
+            <strong>
+                ضخامت ورق:
+            </strong>
 
-    </script>
+            ${thickness} میلی‌متر
+        </p>
+
+
+        <p>
+            <strong>
+                ضخامت نوار:
+            </strong>
+
+            ${edge} میلی‌متر
+        </p>
+
+    `;
+
+}
+
+
+/*
+ * اضافه کردن قطعه به جدول
+ */
+
+function addPart(
+    name,
+    quantity,
+    length,
+    width,
+    edge
+) {
+
+
+    const table =
+        document.getElementById(
+            "partsTable"
+        );
+
+
+    const row =
+        document.createElement(
+            "tr"
+        );
+
+
+    row.innerHTML = `
+
+        <td>
+            ${name}
+        </td>
+
+        <td>
+            ${quantity}
+        </td>
+
+        <td>
+            ${length}
+        </td>
+
+        <td>
+            ${width}
+        </td>
+
+        <td>
+            ${edge}
+        </td>
+
+    `;
+
+
+    table.appendChild(row);
+
+}
+
+
+</script>
 
 </body>
+
 </html>

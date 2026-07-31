@@ -260,27 +260,47 @@ td{
     font-weight:bold;
 }
 
+/* دکمه جهت قطعه */
+
+.orientation-button{
+    width:auto;
+    min-width:115px;
+    margin:0;
+    padding:8px 12px;
+    background:#eef4ff;
+    color:#175cd3;
+    border:1px solid #d0d5dd;
+    font-size:14px;
+    border-radius:10px;
+}
+
+.orientation-button:hover{
+    opacity:.85;
+}
+
+/* رنگ دکمه بر اساس جهت */
+
+.orientation-button.auto-mode{
+    background:#eef4ff;
+    color:#175cd3;
+}
+
+.orientation-button.normal-mode{
+    background:#ecfdf3;
+    color:#067647;
+}
+
+.orientation-button.rotated-mode{
+    background:#fef3f2;
+    color:#b42318;
+}
+
 .unplaced{
     background:#fef3f2;
     color:#b42318;
     padding:12px;
     border-radius:10px;
     margin-top:12px;
-}
-
-.progress{
-    height:10px;
-    background:#e5e7eb;
-    border-radius:10px;
-    overflow:hidden;
-    margin-top:10px;
-}
-
-.progress-bar{
-    height:100%;
-    width:0%;
-    background:#087443;
-    transition:width .3s;
 }
 
 @media(max-width:600px){
@@ -451,27 +471,6 @@ value="1"
 >
 
 
-<label>
-جهت قرارگیری
-</label>
-
-<select id="partOrientation">
-
-<option value="auto">
-🧠 خودکار
-</option>
-
-<option value="normal">
-➡️ عادی
-</option>
-
-<option value="rotated">
-↻ چرخیده ۹۰ درجه
-</option>
-
-</select>
-
-
 <button
 id="addPart"
 type="button"
@@ -616,7 +615,6 @@ style="display:none"
 
 <h2>
 🧩 نقشه برش
-
 </h2>
 
 
@@ -723,7 +721,7 @@ function orientationText(value){
 
         return `
         <span class="orientation-rotated">
-        ↻ ۹۰ درجه
+        ↻ چرخیده
         </span>
         `;
 
@@ -734,6 +732,62 @@ function orientationText(value){
     🧠 خودکار
     </span>
     `;
+
+}
+
+
+/* =================================================
+   کلاس دکمه جهت
+================================================= */
+
+function orientationClass(value){
+
+    if(value==="normal"){
+        return "normal-mode";
+    }
+
+    if(value==="rotated"){
+        return "rotated-mode";
+    }
+
+    return "auto-mode";
+
+}
+
+
+/* =================================================
+   تغییر جهت با کلیک
+================================================= */
+
+function toggleOrientation(index){
+
+    const part=parts[index];
+
+    if(!part){
+        return;
+    }
+
+
+    if(part.orientation==="auto"){
+
+        part.orientation="normal";
+
+    }
+
+    else if(part.orientation==="normal"){
+
+        part.orientation="rotated";
+
+    }
+
+    else{
+
+        part.orientation="auto";
+
+    }
+
+
+    renderParts();
 
 }
 
@@ -766,27 +820,34 @@ function renderParts(){
 
     }
 
+
     let number=1;
+
 
     parts.forEach(function(part,index){
 
         const row=
         document.createElement("tr");
 
+
         const first=number;
+
 
         const last=
         number+
         part.qty-
         1;
 
+
         let numberText;
+
 
         if(part.qty===1){
 
             numberText=first;
 
         }
+
         else{
 
             numberText=
@@ -796,31 +857,55 @@ function renderParts(){
 
         }
 
+
         row.innerHTML=`
 
         <td>
 
         <span class="part-number">
+
         ${numberText}
+
         </span>
 
         </td>
 
+
         <td>
+
         ${part.length}
+
         </td>
 
+
         <td>
+
         ${part.width}
+
         </td>
 
+
         <td>
+
         ${part.qty}
+
         </td>
 
+
         <td>
+
+        <button
+        type="button"
+        class="orientation-button ${orientationClass(part.orientation)}"
+        onclick="toggleOrientation(${index})"
+        >
+
         ${orientationText(part.orientation)}
+
+        </button>
+
         </td>
+
 
         <td>
 
@@ -838,7 +923,9 @@ function renderParts(){
 
         `;
 
+
         partsTable.appendChild(row);
+
 
         number+=part.qty;
 
@@ -862,6 +949,7 @@ function(){
         ).value
     );
 
+
     const width=
     Number(
         document.getElementById(
@@ -869,17 +957,13 @@ function(){
         ).value
     );
 
+
     const qty=
     Number(
         document.getElementById(
             "partQty"
         ).value
     );
-
-    const orientation=
-    document.getElementById(
-        "partOrientation"
-    ).value;
 
 
     if(
@@ -935,7 +1019,7 @@ function(){
 
         qty:qty,
 
-        orientation:orientation
+        orientation:"auto"
 
     });
 
@@ -952,17 +1036,15 @@ function(){
         "partLength"
     ).value="";
 
+
     document.getElementById(
         "partWidth"
     ).value="";
 
+
     document.getElementById(
         "partQty"
     ).value=1;
-
-    document.getElementById(
-        "partOrientation"
-    ).value="auto";
 
 
     document.getElementById(
@@ -973,7 +1055,7 @@ function(){
 
 
 /* =================================================
-   حذف
+   حذف قطعه
 ================================================= */
 
 function deletePart(index){
@@ -999,17 +1081,21 @@ function(){
 
     renderParts();
 
+
     document.getElementById(
         "summaryCard"
     ).style.display="none";
+
 
     document.getElementById(
         "layoutCard"
     ).style.display="none";
 
+
     document.getElementById(
         "unplacedCard"
     ).style.display="none";
+
 
     showMessage(
         "تمام قطعات پاک شدند."
@@ -1054,6 +1140,7 @@ function expandParts(){
 
             });
 
+
             id++;
 
         }
@@ -1086,7 +1173,7 @@ function createSheet(width,height){
 
 
 /* =================================================
-   برخورد
+   برخورد قطعات
 ================================================= */
 
 function overlaps(a,b){
@@ -1128,8 +1215,11 @@ h
     const test={
 
         x:x,
+
         y:y,
+
         w:w,
+
         h:h
 
     };
@@ -1161,7 +1251,7 @@ h
 
 
 /* =================================================
-   جهت‌های ممکن
+   حالت‌های ممکن قطعه
 ================================================= */
 
 function getOrientations(piece){
@@ -1174,8 +1264,11 @@ function getOrientations(piece){
 
             {
                 w:piece.length,
+
                 h:piece.width,
+
                 rotated:false
+
             }
 
         ];
@@ -1191,8 +1284,11 @@ function getOrientations(piece){
 
             {
                 w:piece.width,
+
                 h:piece.length,
+
                 rotated:true
+
             }
 
         ];
@@ -1204,14 +1300,20 @@ function getOrientations(piece){
 
         {
             w:piece.length,
+
             h:piece.width,
+
             rotated:false
+
         },
 
         {
             w:piece.width,
+
             h:piece.length,
+
             rotated:true
+
         }
 
     ];
@@ -1220,16 +1322,20 @@ function getOrientations(piece){
 
 
 /* =================================================
-   پیدا کردن نقاط کاندید
+   نقاط کاندید
 ================================================= */
 
 function candidatePoints(sheet){
 
     const points=[
+
         {
             x:0,
+
             y:0
+
         }
+
     ];
 
 
@@ -1278,7 +1384,7 @@ function candidatePoints(sheet){
 
 
 /* =================================================
-   بهترین جای قطعه
+   پیدا کردن بهترین موقعیت
 ================================================= */
 
 function findBestPosition(
@@ -1288,6 +1394,7 @@ piece
 
     const orientations=
     getOrientations(piece);
+
 
     const points=
     candidatePoints(sheet);
@@ -1315,16 +1422,10 @@ piece
             }
 
 
-            /*
-             امتیاز:
-             ابتدا پایین‌تر بودن
-             سپس راست‌تر بودن
-             سپس فضای مصرفی
-            */
-
             const right=
             point.x+
             orientation.w;
+
 
             const bottom=
             point.y+
@@ -1401,7 +1502,7 @@ sheetHeight
         let bestScore=Infinity;
 
 
-        sheets.forEach(function(sheet,index){
+        sheets.forEach(function(sheet){
 
             const position=
             findBestPosition(
@@ -1416,11 +1517,6 @@ sheetHeight
 
             }
 
-
-            /*
-             ترجیح ورقی که کمترین فضای
-             خالی بعد از قرارگیری داشته باشد
-            */
 
             const usedBefore=
             sheet.pieces.reduce(
@@ -1459,11 +1555,6 @@ sheetHeight
         });
 
 
-        /*
-         اگر در هیچ ورقی جا نشد،
-         ورق جدید بساز
-        */
-
         if(!bestSheet){
 
             const newSheet=
@@ -1501,17 +1592,22 @@ sheetHeight
         piece.x=
         bestPosition.x;
 
+
         piece.y=
         bestPosition.y;
+
 
         piece.w=
         bestPosition.w;
 
+
         piece.h=
         bestPosition.h;
 
+
         piece.rotated=
         bestPosition.rotated;
+
 
         piece.placed=true;
 
@@ -1545,8 +1641,6 @@ function createOrders(){
     const orders=[];
 
 
-    /* بزرگ‌ترین مساحت */
-
     orders.push(
         [...base].sort(function(a,b){
 
@@ -1559,8 +1653,6 @@ function createOrders(){
     );
 
 
-    /* طول بزرگ‌تر */
-
     orders.push(
         [...base].sort(function(a,b){
 
@@ -1570,8 +1662,6 @@ function createOrders(){
     );
 
 
-    /* عرض بزرگ‌تر */
-
     orders.push(
         [...base].sort(function(a,b){
 
@@ -1580,8 +1670,6 @@ function createOrders(){
         })
     );
 
-
-    /* بزرگ‌ترین ضلع */
 
     orders.push(
         [...base].sort(function(a,b){
@@ -1606,16 +1694,16 @@ function createOrders(){
     );
 
 
-    /* محیط بیشتر */
-
     orders.push(
         [...base].sort(function(a,b){
 
             const aPer=
             a.length+a.width;
 
+
             const bPer=
             b.length+b.width;
+
 
             return bPer-aPer;
 
@@ -1629,7 +1717,7 @@ function createOrders(){
 
 
 /* =================================================
-   امتیاز نهایی
+   امتیاز چیدمان
 ================================================= */
 
 function layoutScore(
@@ -1672,12 +1760,6 @@ sheetHeight
     totalArea-usedArea;
 
 
-    /*
-     تعداد ورق اولویت بسیار بالا دارد.
-     سپس قطعات جا نشده.
-     سپس پرت.
-    */
-
     return(
         sheets.length*
         1000000000+
@@ -1690,7 +1772,7 @@ sheetHeight
 
 
 /* =================================================
-   اجرای موتور بهینه‌سازی
+   بهینه‌سازی
 ================================================= */
 
 function optimizeLayout(
@@ -1792,9 +1874,8 @@ sheet
     );
 
 
-    /* ورق */
-
     ctx.fillStyle="#f7e7bd";
+
 
     ctx.fillRect(
         0,
@@ -1807,6 +1888,7 @@ sheet
     ctx.strokeStyle="#8b7355";
 
     ctx.lineWidth=3;
+
 
     ctx.strokeRect(
         0,
@@ -1835,11 +1917,14 @@ sheet
         const x=
         piece.x*scale;
 
+
         const y=
         piece.y*scale;
 
+
         const w=
         piece.w*scale;
+
 
         const h=
         piece.h*scale;
@@ -1863,6 +1948,7 @@ sheet
 
         ctx.lineWidth=1;
 
+
         ctx.strokeRect(
             x,
             y,
@@ -1871,11 +1957,8 @@ sheet
         );
 
 
-        /*
-         شماره
-        */
-
         ctx.fillStyle="#111827";
+
 
         const numberFont=
         Math.max(
@@ -1905,10 +1988,6 @@ sheet
         );
 
 
-        /*
-         ابعاد
-        */
-
         const dimensionFont=
         Math.max(
             8,
@@ -1934,10 +2013,6 @@ sheet
         );
 
 
-        /*
-         چرخش
-        */
-
         if(piece.rotated){
 
             ctx.font=
@@ -1956,10 +2031,6 @@ sheet
 
     });
 
-
-    /*
-     ابعاد ورق
-    */
 
     ctx.fillStyle="#111827";
 
@@ -2198,10 +2269,6 @@ function(){
     expandParts();
 
 
-    /*
-     بررسی قطعات غیرممکن
-    */
-
     const impossible=
     allPieces.filter(function(piece){
 
@@ -2251,6 +2318,7 @@ function(){
         ).style.display="block";
 
     }
+
     else{
 
         document.getElementById(
@@ -2474,7 +2542,7 @@ function(){
 
 
 /* =================================================
-   شروع
+   شروع برنامه
 ================================================= */
 
 renderParts();

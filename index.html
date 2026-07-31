@@ -2,157 +2,142 @@
 <html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>کات مستر</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#1e293b">
+
+    <title>کابینت‌یار</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <div class="app">
-
-        <!-- هدر -->
-        <header class="header">
-            <div>
-                <h1>کات مستر</h1>
-                <p>طراحی و محاسبه یونیت کابینت</p>
-            </div>
-
-            <button class="icon-btn" onclick="showMessage('تنظیمات به‌زودی اضافه می‌شود')">
-                ⚙️
-            </button>
-        </header>
+    <!-- هدر -->
+    <header class="header">
+        <h1>کابینت‌یار</h1>
+        <p>ابزار حرفه‌ای محاسبات کابینت</p>
+    </header>
 
 
-        <!-- محتوای اصلی -->
-        <main class="main">
+    <!-- محتوای اصلی -->
+    <main class="container">
 
-            <section class="welcome-card">
-                <div class="welcome-icon">🪚</div>
+        <section class="card">
 
-                <div>
-                    <h2>شروع یک پروژه جدید</h2>
-                    <p>
-                        ابعاد یونیت را وارد کنید تا قطعات،
-                        لیست برش و چیدمان ورق محاسبه شود.
-                    </p>
-                </div>
+            <h2>ابزارهای کابینت‌یار</h2>
 
-                <button class="primary-btn" onclick="newProject()">
-                    + پروژه جدید
-                </button>
-            </section>
+            <div class="menu">
 
-
-            <!-- بخش‌های برنامه -->
-            <section class="section-title">
-                <h2>ابزارهای پروژه</h2>
-                <span>انتخاب کنید</span>
-            </section>
-
-
-            <div class="menu-grid">
-
-                <button class="menu-card" onclick="openPage('unit')">
-                    <div class="menu-icon">📐</div>
-                    <h3>ورود ابعاد یونیت</h3>
-                    <p>تعریف ابعاد و مشخصات یونیت</p>
+                <!-- محاسبه قیمت کابینت -->
+                <button onclick="openPage('price')">
+                    <span class="menu-icon">💰</span>
+                    محاسبه قیمت کابینت
                 </button>
 
 
-                <button class="menu-card" onclick="openPage('view')">
-                    <div class="menu-icon">🗄️</div>
-                    <h3>نمایش یونیت</h3>
-                    <p>مشاهده نقشه و اندازه‌گذاری</p>
+                <!-- نمایش یونیت -->
+                <button onclick="openPage('units')">
+                    <span class="menu-icon">🗄️</span>
+                    نمایش یونیت
                 </button>
 
 
-                <button class="menu-card" onclick="openPage('cutlist')">
-                    <div class="menu-icon">📋</div>
-                    <h3>لیست برش</h3>
-                    <p>قطعات و ابعاد برش</p>
+                <!-- نقشه چیدمان ورق -->
+                <button onclick="openPage('cutting')">
+                    <span class="menu-icon">📐</span>
+                    نقشه چیدمان ورق
                 </button>
 
 
-                <button class="menu-card" onclick="openPage('layout')">
-                    <div class="menu-icon">🪚</div>
-                    <h3>نقشه چیدمان ورق</h3>
-                    <p>چیدمان بهینه قطعات روی ورق</p>
+                <!-- کات مستر -->
+                <button onclick="openPage('cutmaster')">
+                    <span class="menu-icon">✂️</span>
+                    کات مستر
                 </button>
 
 
-                <button class="menu-card" onclick="openPage('material')">
-                    <div class="menu-icon">📊</div>
-                    <h3>گزارش متریال</h3>
-                    <p>ورق، پرت و مصرف متریال</p>
+                <!-- یراق آلات -->
+                <button onclick="openPage('hardware')">
+                    <span class="menu-icon">🔩</span>
+                    یراق‌آلات
                 </button>
 
 
-                <button class="menu-card" onclick="openPage('export')">
-                    <div class="menu-icon">📤</div>
-                    <h3>خروجی پروژه</h3>
-                    <p>PDF و اشتراک‌گذاری</p>
+                <!-- ثبت سفارش -->
+                <button onclick="openPage('orders')">
+                    <span class="menu-icon">📝</span>
+                    ثبت سفارش مشتری
+                </button>
+
+
+                <!-- محاسبه صفحه کابینت -->
+                <button onclick="openPage('countertop')">
+                    <span class="menu-icon">📏</span>
+                    محاسبه صفحه کابینت
+                </button>
+
+
+                <!-- تماس -->
+                <button onclick="openPage('contact')">
+                    <span class="menu-icon">📞</span>
+                    تماس با ما
                 </button>
 
             </div>
 
+        </section>
 
-            <!-- پروژه‌های اخیر -->
-            <section class="recent-section">
-
-                <div class="section-title">
-                    <h2>پروژه‌های اخیر</h2>
-                    <span>۰ پروژه</span>
-                </div>
-
-                <div class="empty-projects">
-                    <div>📂</div>
-                    <p>هنوز پروژه‌ای ساخته نشده</p>
-                    <small>
-                        برای شروع روی «پروژه جدید» بزنید.
-                    </small>
-                </div>
-
-            </section>
-
-        </main>
+    </main>
 
 
-        <!-- منوی پایین -->
-        <nav class="bottom-nav">
-
-            <button class="nav-item active" onclick="goHome()">
-                <span>⌂</span>
-                <small>خانه</small>
-            </button>
-
-            <button class="nav-item" onclick="openPage('projects')">
-                <span>📁</span>
-                <small>پروژه‌ها</small>
-            </button>
-
-            <button class="nav-item new-btn" onclick="newProject()">
-                <span>＋</span>
-            </button>
-
-            <button class="nav-item" onclick="openPage('units')">
-                <span>▦</span>
-                <small>یونیت‌ها</small>
-            </button>
-
-            <button class="nav-item" onclick="openPage('settings')">
-                <span>⚙</span>
-                <small>تنظیمات</small>
-            </button>
-
-        </nav>
-
-    </div>
+    <!-- فوتر -->
+    <footer class="footer">
+        کابینت‌یار © 2026
+    </footer>
 
 
-    <script src="app.js"></script>
+    <script>
+
+        function openPage(page) {
+
+            if (page === "price") {
+                alert("بخش محاسبه قیمت کابینت");
+            }
+
+            else if (page === "units") {
+                alert("بخش نمایش یونیت");
+            }
+
+            else if (page === "cutting") {
+                alert("بخش نقشه چیدمان ورق");
+            }
+
+            else if (page === "cutmaster") {
+                alert("بخش کات مستر");
+            }
+
+            else if (page === "hardware") {
+                alert("بخش یراق‌آلات");
+            }
+
+            else if (page === "orders") {
+                alert("بخش ثبت سفارش مشتری");
+            }
+
+            else if (page === "countertop") {
+                alert("بخش محاسبه صفحه کابینت");
+            }
+
+            else if (page === "contact") {
+                alert("بخش تماس با ما");
+            }
+
+        }
+
+    </script>
 
 </body>
 </html>

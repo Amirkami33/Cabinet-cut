@@ -23,7 +23,7 @@
     <h1>نمایش یونیت</h1>
 
     <p>
-        محاسبه قطعات و اندازه برش یونیت
+        محاسبه دقیق قطعات یونیت کابینت
     </p>
 
 </header>
@@ -34,15 +34,186 @@
 
     <!-- بازگشت -->
 
-    <button class="back-btn"
-            onclick="window.location.href='index.html'">
+    <button
+        class="back-btn"
+        onclick="window.location.href='index.html'">
 
         ← بازگشت به کابینت‌یار
 
     </button>
 
 
-    <!-- تنظیمات یونیت -->
+    <!-- ========================= -->
+    <!-- تنظیمات اصلی -->
+    <!-- ========================= -->
+
+    <section class="card">
+
+        <h2>
+            تنظیمات ساخت
+        </h2>
+
+
+        <!-- ضخامت ورق -->
+
+        <div class="form-group">
+
+            <label>
+                ضخامت ورق بدنه
+            </label>
+
+            <select id="boardThickness">
+
+                <option value="1.6">
+                    16 میل
+                </option>
+
+                <option value="1.8">
+                    18 میل
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <!-- ضخامت نوار -->
+
+        <div class="form-group">
+
+            <label>
+                ضخامت نوار
+            </label>
+
+            <select id="edgeThickness">
+
+                <option value="0.1">
+                    1 میل
+                </option>
+
+                <option value="0.2" selected>
+                    2 میل
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <!-- بادخور -->
+
+        <div class="form-group">
+
+            <label>
+                بادخور درب
+            </label>
+
+            <select id="doorGap">
+
+                <option value="0.2">
+                    2 میل
+                </option>
+
+                <option value="0.3">
+                    3 میل
+                </option>
+
+                <option value="0.4">
+                    4 میل
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <!-- پایه -->
+
+        <div class="form-group">
+
+            <label>
+                ارتفاع پایه
+            </label>
+
+            <select id="baseHeight">
+
+                <option value="5">
+                    5 سانت
+                </option>
+
+                <option value="6">
+                    6 سانت
+                </option>
+
+                <option value="7">
+                    7 سانت
+                </option>
+
+                <option value="8">
+                    8 سانت
+                </option>
+
+                <option value="9">
+                    9 سانت
+                </option>
+
+                <option value="10">
+                    10 سانت
+                </option>
+
+                <option value="11">
+                    11 سانت
+                </option>
+
+                <option value="12">
+                    12 سانت
+                </option>
+
+                <option value="13">
+                    13 سانت
+                </option>
+
+                <option value="14" selected>
+                    14 سانت
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <!-- پشت -->
+
+        <div class="form-group">
+
+            <label>
+                نوع پشت
+            </label>
+
+            <select id="backType">
+
+                <option value="0.3">
+                    پشت 3 میل
+                </option>
+
+                <option value="0.8">
+                    MDF معمولی
+                </option>
+
+                <option value="0.5">
+                    فومیزه
+                </option>
+
+            </select>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================= -->
+    <!-- مشخصات یونیت -->
+    <!-- ========================= -->
 
     <section class="card">
 
@@ -51,7 +222,7 @@
         </h2>
 
 
-        <!-- نوع یونیت -->
+        <!-- نوع -->
 
         <div class="form-group">
 
@@ -91,15 +262,14 @@
         <div class="form-group">
 
             <label>
-                عرض یونیت (میلی‌متر)
+                عرض یونیت (سانتی‌متر)
             </label>
 
             <input
-                type="number"
+                type="text"
                 id="unitWidth"
-                placeholder="مثلاً 800"
-                min="100"
-            >
+                inputmode="decimal"
+                placeholder="مثلاً 80 یا 80/5">
 
         </div>
 
@@ -109,15 +279,14 @@
         <div class="form-group">
 
             <label>
-                ارتفاع کلی یونیت (میلی‌متر)
+                ارتفاع کلی یونیت (سانتی‌متر)
             </label>
 
             <input
-                type="number"
+                type="text"
                 id="unitHeight"
-                placeholder="مثلاً 900"
-                min="100"
-            >
+                inputmode="decimal"
+                placeholder="مثلاً 90">
 
         </div>
 
@@ -127,167 +296,34 @@
         <div class="form-group">
 
             <label>
-                عمق یونیت (میلی‌متر)
+                عمق یونیت (سانتی‌متر)
             </label>
 
             <input
-                type="number"
+                type="text"
                 id="unitDepth"
-                placeholder="مثلاً 580"
-                min="100"
-            >
+                inputmode="decimal"
+                placeholder="مثلاً 58">
 
         </div>
 
 
-        <!-- ضخامت ورق -->
+        <!-- تعداد درب -->
 
         <div class="form-group">
 
             <label>
-                ضخامت ورق بدنه
+                تعداد درب
             </label>
 
-            <select id="boardThickness">
-
-                <option value="16">
-                    16 میلی‌متر
-                </option>
-
-                <option value="18">
-                    18 میلی‌متر
-                </option>
-
-            </select>
-
-        </div>
-
-
-        <!-- پایه -->
-
-        <div class="form-group">
-
-            <label>
-                ارتفاع پایه
-            </label>
-
-            <select id="baseHeight">
-
-                <option value="50">
-                    5 سانتی‌متر
-                </option>
-
-                <option value="60">
-                    6 سانتی‌متر
-                </option>
-
-                <option value="70">
-                    7 سانتی‌متر
-                </option>
-
-                <option value="80">
-                    8 سانتی‌متر
-                </option>
-
-                <option value="90">
-                    9 سانتی‌متر
-                </option>
-
-                <option value="100">
-                    10 سانتی‌متر
-                </option>
-
-                <option value="110">
-                    11 سانتی‌متر
-                </option>
-
-                <option value="120">
-                    12 سانتی‌متر
-                </option>
-
-                <option value="130">
-                    13 سانتی‌متر
-                </option>
-
-                <option value="140">
-                    14 سانتی‌متر
-                </option>
-
-            </select>
-
-        </div>
-
-
-        <!-- نوع پشت -->
-
-        <div class="form-group">
-
-            <label>
-                نوع پشت یونیت
-            </label>
-
-            <select id="backType">
-
-                <option value="3">
-                    پشت 3 میل
-                </option>
-
-                <option value="8">
-                    MDF معمولی
-                </option>
-
-                <option value="5">
-                    فومیزه
-                </option>
-
-            </select>
-
-        </div>
-
-
-        <!-- ضخامت نوار -->
-
-        <div class="form-group">
-
-            <label>
-                ضخامت نوار
-            </label>
-
-            <select id="edgeThickness">
+            <select id="doorCount">
 
                 <option value="1">
-                    1 میلی‌متر
+                    یک درب
                 </option>
 
                 <option value="2">
-                    2 میلی‌متر
-                </option>
-
-            </select>
-
-        </div>
-
-
-        <!-- تعداد لبه نوار کف -->
-
-        <div class="form-group">
-
-            <label>
-                تعداد لبه نوار کف
-            </label>
-
-            <select id="floorEdges">
-
-                <option value="0">
-                    بدون نوار
-                </option>
-
-                <option value="1">
-                    یک لبه
-                </option>
-
-                <option value="2">
-                    دو لبه
+                    دو درب
                 </option>
 
             </select>
@@ -306,7 +342,9 @@
     </section>
 
 
-    <!-- نتیجه -->
+    <!-- ========================= -->
+    <!-- خلاصه -->
+    <!-- ========================= -->
 
     <section
         class="card"
@@ -314,9 +352,8 @@
         style="display:none;">
 
         <h2>
-            نتیجه محاسبات
+            خلاصه محاسبات
         </h2>
-
 
         <div
             class="result"
@@ -327,7 +364,9 @@
     </section>
 
 
-    <!-- جدول قطعات -->
+    <!-- ========================= -->
+    <!-- قطعات -->
+    <!-- ========================= -->
 
     <section
         class="card"
@@ -335,7 +374,7 @@
         style="display:none;">
 
         <h2>
-            لیست قطعات
+            لیست برش
         </h2>
 
 
@@ -396,36 +435,117 @@
 <script>
 
 
+/* =================================================
+   تبدیل عدد فارسی و /
+================================================= */
+
+function parseMeasurement(value) {
+
+    if (!value) {
+        return NaN;
+    }
+
+    value = value.toString().trim();
+
+
+    const persian =
+        ["۰","۱","۲","۳","۴","۵","۶","۷","۸","۹"];
+
+    const arabic =
+        ["٠","١","٢","٣","٤","٥","٦","٧","٨","٩"];
+
+
+    for (let i = 0; i < 10; i++) {
+
+        value = value.replaceAll(
+            persian[i],
+            i
+        );
+
+        value = value.replaceAll(
+            arabic[i],
+            i
+        );
+
+    }
+
+
+    value = value
+        .replaceAll(",", ".")
+        .replaceAll("/", ".");
+
+
+    return Number(value);
+}
+
+
+
+/* =================================================
+   نمایش اندازه
+================================================= */
+
+function formatMeasurement(number) {
+
+    if (
+        number === undefined ||
+        number === null ||
+        Number.isNaN(number)
+    ) {
+        return "---";
+    }
+
+
+    let result =
+        Number(
+            number.toFixed(2)
+        );
+
+
+    return result
+        .toString()
+        .replace(".", "/");
+}
+
+
+
+/* =================================================
+   محاسبه اندازه با نوار
+================================================= */
+
+/*
+    اگر یک جهت نوار داشته باشد:
+
+    اندازه خام - ضخامت نوار
+
+    فقط یک بار کم می‌شود.
+
+    دو لبه بودن فقط در علامت نمایش داده می‌شود.
+*/
+
+function edgeSize(
+    size,
+    hasEdge,
+    edgeThickness
+) {
+
+    if (!hasEdge) {
+        return size;
+    }
+
+
+    return size - edgeThickness;
+}
+
+
+
+/* =================================================
+   محاسبه یونیت
+================================================= */
+
 function calculateUnit() {
 
 
-    /*
-     * دریافت اطلاعات
-     */
-
-    const width =
-        Number(
-            document.getElementById(
-                "unitWidth"
-            ).value
-        );
-
-
-    const height =
-        Number(
-            document.getElementById(
-                "unitHeight"
-            ).value
-        );
-
-
-    const depth =
-        Number(
-            document.getElementById(
-                "unitDepth"
-            ).value
-        );
-
+    /* تنظیمات */
 
     const thickness =
         Number(
@@ -435,15 +555,7 @@ function calculateUnit() {
         );
 
 
-    const base =
-        Number(
-            document.getElementById(
-                "baseHeight"
-            ).value
-        );
-
-
-    const edge =
+    const edgeThickness =
         Number(
             document.getElementById(
                 "edgeThickness"
@@ -451,15 +563,23 @@ function calculateUnit() {
         );
 
 
-    const floorEdges =
+    const doorGap =
         Number(
             document.getElementById(
-                "floorEdges"
+                "doorGap"
             ).value
         );
 
 
-    const backType =
+    const baseHeight =
+        Number(
+            document.getElementById(
+                "baseHeight"
+            ).value
+        );
+
+
+    const backThickness =
         Number(
             document.getElementById(
                 "backType"
@@ -467,66 +587,118 @@ function calculateUnit() {
         );
 
 
-    /*
-     * بررسی اطلاعات
-     */
+    /* مشخصات یونیت */
+
+    const width =
+        parseMeasurement(
+            document.getElementById(
+                "unitWidth"
+            ).value
+        );
+
+
+    const height =
+        parseMeasurement(
+            document.getElementById(
+                "unitHeight"
+            ).value
+        );
+
+
+    const depth =
+        parseMeasurement(
+            document.getElementById(
+                "unitDepth"
+            ).value
+        );
+
+
+    const doorCount =
+        Number(
+            document.getElementById(
+                "doorCount"
+            ).value
+        );
+
+
+    const unitType =
+        document.getElementById(
+            "unitType"
+        ).value;
+
+
+
+    /* بررسی */
 
     if (
+        Number.isNaN(width) ||
+        Number.isNaN(height) ||
+        Number.isNaN(depth) ||
         width <= 0 ||
         height <= 0 ||
         depth <= 0
     ) {
 
         alert(
-            "لطفاً عرض، ارتفاع و عمق یونیت را وارد کنید."
+            "لطفاً عرض، ارتفاع و عمق یونیت را درست وارد کنید."
         );
 
         return;
-
     }
 
 
-    /*
-     * محاسبه ارتفاع بغل
-     *
-     * ارتفاع کل
-     * منهای پایه
-     * منهای ضخامت کف
-     */
+
+    /* =================================================
+       ارتفاع باکس
+    ================================================= */
+
+    const boxHeight =
+        height - baseHeight;
+
+
+
+    /* =================================================
+       ارتفاع بغل
+       
+       چون کف زیر بغل قرار دارد:
+       
+       ارتفاع کل
+       - پایه
+       - ضخامت کف
+    ================================================= */
 
     const sideHeight =
         height -
-        base -
+        baseHeight -
         thickness;
 
 
-    /*
-     * عرض قطعاتی که بین بغل‌ها قرار می‌گیرند
-     */
+
+    /* =================================================
+       عرض بین دو بغل
+    ================================================= */
 
     const innerWidth =
         width -
         (thickness * 2);
 
 
-    /*
-     * محاسبه عمق کف
-     *
-     * عمق خام
-     * منهای مقدار نوار
-     */
+
+    /* =================================================
+       عمق کف
+
+       فعلاً عمق خام همان عمق واردشده است.
+       نوارکاری در مرحله تعیین لبه قطعه اعمال می‌شود.
+    ================================================= */
 
     const floorDepth =
-        depth -
-        (
-            edge *
-            floorEdges
-        );
+        depth;
 
 
-    /*
-     * جدول قطعات
-     */
+
+    /* =================================================
+       پاک کردن جدول
+    ================================================= */
 
     const table =
         document.getElementById(
@@ -537,123 +709,238 @@ function calculateUnit() {
     table.innerHTML = "";
 
 
-    /*
-     * بغل اول
-     */
+
+    /* =================================================
+       بغل‌ها
+
+       فعلاً یک لبه نوار در طول
+    ================================================= */
 
     addPart(
         "بغل یونیت",
         2,
         sideHeight,
         depth,
-        "طبق تنظیمات"
+        "─"
     );
 
 
-    /*
-     * کف
-     */
+
+    /* =================================================
+       کف
+
+       مثال:
+       اگر عمق 58 و نوار 2 میل باشد:
+
+       58 - 0/2 = 57/8
+
+       فرض فعلی:
+       یک جهت نوار دارد.
+    ================================================= */
+
+    const floorCutDepth =
+        edgeSize(
+            floorDepth,
+            true,
+            edgeThickness
+        );
+
 
     addPart(
         "کف",
         1,
         innerWidth,
-        floorDepth,
-        floorEdges +
-        " لبه"
+        floorCutDepth,
+        "═"
     );
 
 
-    /*
-     * قید جلو 7 سانتی
-     */
+
+    /* =================================================
+       قید جلو 7
+    ================================================= */
 
     addPart(
         "قید جلو 7 سانتی",
         1,
         innerWidth,
-        70,
+        7,
         "بدون نوار"
     );
 
 
-    /*
-     * قید جلو 5 سانتی
-     */
+
+    /* =================================================
+       قید جلو 5
+    ================================================= */
 
     addPart(
         "قید جلو 5 سانتی",
         1,
         innerWidth,
-        50,
+        5,
         "بدون نوار"
     );
 
 
-    /*
-     * قید پشت 7 سانتی
-     */
+
+    /* =================================================
+       قید پشت 7
+    ================================================= */
 
     addPart(
         "قید پشت 7 سانتی",
         1,
         innerWidth,
-        70,
+        7,
         "بدون نوار"
     );
 
 
-    /*
-     * قید پشت 5 سانتی
-     */
+
+    /* =================================================
+       قید پشت 5
+    ================================================= */
 
     addPart(
         "قید پشت 5 سانتی",
         1,
         innerWidth,
-        50,
+        5,
         "بدون نوار"
     );
 
 
-    /*
-     * پشت
-     */
 
-    const backWidth =
-        innerWidth;
+    /* =================================================
+       پشت
 
-
-    const backHeight =
-        sideHeight;
-
+       سر تا سر باکس
+    ================================================= */
 
     addPart(
         "پشت",
         1,
-        backWidth,
-        backHeight,
+        width,
+        boxHeight,
         "بدون نوار"
     );
 
 
+
+    /* =================================================
+       محاسبه درب
+    ================================================= */
+
+
     /*
-     * نمایش نتیجه
-     */
+       درب همیشه چهار طرف نوار دارد.
+
+       بادخور فقط یک بار از اندازه
+       هر جهت مربوطه کم می‌شود.
+
+       برای یک درب:
+
+       عرض درب =
+       عرض یونیت - دو طرف بادخور
+
+       ارتفاع درب =
+       ارتفاع باکس - دو طرف بادخور
+    */
+
+
+    let doorWidth;
+
+
+    let doorHeight =
+        boxHeight -
+        (doorGap * 2);
+
+
+    if (doorCount === 1) {
+
+
+        doorWidth =
+            width -
+            (doorGap * 2);
+
+
+    }
+
+
+    else {
+
+
+        /*
+           برای دو درب:
+
+           فاصله بیرونی چپ
+           + فاصله بین دو درب
+           + فاصله بیرونی راست
+
+           در مجموع سه بادخور
+
+           بنابراین:
+        */
+
+        doorWidth =
+            (
+                width -
+                (doorGap * 3)
+            ) / 2;
+
+    }
+
+
+
+    /*
+       چون چهار طرف درب نوار می‌خورد،
+       اندازه برش هر جهت یک بار
+       به اندازه ضخامت نوار اصلاح می‌شود.
+    */
+
+    const doorCutWidth =
+        edgeSize(
+            doorWidth,
+            true,
+            edgeThickness
+        );
+
+
+    const doorCutHeight =
+        edgeSize(
+            doorHeight,
+            true,
+            edgeThickness
+        );
+
+
+
+    addPart(
+        "درب",
+        doorCount,
+        doorCutWidth,
+        doorCutHeight,
+        "═ ═"
+    );
+
+
+
+    /* =================================================
+       نمایش خلاصه
+    ================================================= */
 
     document.getElementById(
         "resultSection"
-    ).style.display = "block";
+    ).style.display =
+        "block";
 
 
     document.getElementById(
         "partsSection"
-    ).style.display = "block";
+    ).style.display =
+        "block";
 
-
-    /*
-     * خلاصه
-     */
 
     document.getElementById(
         "summary"
@@ -661,28 +948,24 @@ function calculateUnit() {
 
         <p>
             <strong>
-                عرض یونیت:
+                نوع یونیت:
             </strong>
 
-            ${width} میلی‌متر
+            ${getUnitName(unitType)}
         </p>
 
 
         <p>
             <strong>
-                ارتفاع کلی:
+                ابعاد کلی:
             </strong>
 
-            ${height} میلی‌متر
-        </p>
-
-
-        <p>
-            <strong>
-                عمق:
-            </strong>
-
-            ${depth} میلی‌متر
+            ${formatMeasurement(width)}
+            ×
+            ${formatMeasurement(height)}
+            ×
+            ${formatMeasurement(depth)}
+            سانتی‌متر
         </p>
 
 
@@ -691,7 +974,18 @@ function calculateUnit() {
                 ارتفاع پایه:
             </strong>
 
-            ${base} میلی‌متر
+            ${formatMeasurement(baseHeight)}
+            سانتی‌متر
+        </p>
+
+
+        <p>
+            <strong>
+                ارتفاع باکس:
+            </strong>
+
+            ${formatMeasurement(boxHeight)}
+            سانتی‌متر
         </p>
 
 
@@ -700,7 +994,8 @@ function calculateUnit() {
                 ارتفاع بغل:
             </strong>
 
-            ${sideHeight} میلی‌متر
+            ${formatMeasurement(sideHeight)}
+            سانتی‌متر
         </p>
 
 
@@ -709,7 +1004,8 @@ function calculateUnit() {
                 ضخامت ورق:
             </strong>
 
-            ${thickness} میلی‌متر
+            ${formatMeasurement(thickness)}
+            سانتی‌متر
         </p>
 
 
@@ -718,17 +1014,68 @@ function calculateUnit() {
                 ضخامت نوار:
             </strong>
 
-            ${edge} میلی‌متر
+            ${formatMeasurement(edgeThickness)}
+            سانتی‌متر
+        </p>
+
+
+        <p>
+            <strong>
+                بادخور:
+            </strong>
+
+            ${formatMeasurement(doorGap)}
+            سانتی‌متر
+        </p>
+
+
+        <p>
+            <strong>
+                تعداد درب:
+            </strong>
+
+            ${doorCount}
         </p>
 
     `;
-
 }
 
 
-/*
- * اضافه کردن قطعه به جدول
- */
+
+/* =================================================
+   نام یونیت
+================================================= */
+
+function getUnitName(type) {
+
+    const names = {
+
+        base:
+            "یونیت زمینی",
+
+        wall:
+            "یونیت دیواری",
+
+        tall:
+            "یونیت ایستاده",
+
+        sink:
+            "یونیت سینک",
+
+        drawer:
+            "یونیت کشویی"
+
+    };
+
+
+    return names[type] || "---";
+}
+
+
+
+/* =================================================
+   اضافه کردن قطعه
+================================================= */
 
 function addPart(
     name,
@@ -762,11 +1109,11 @@ function addPart(
         </td>
 
         <td>
-            ${length}
+            ${formatMeasurement(length)}
         </td>
 
         <td>
-            ${width}
+            ${formatMeasurement(width)}
         </td>
 
         <td>
@@ -779,7 +1126,6 @@ function addPart(
     table.appendChild(row);
 
 }
-
 
 </script>
 

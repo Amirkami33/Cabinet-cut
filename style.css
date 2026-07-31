@@ -1,1 +1,234 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
+body {
+    font-family: Tahoma, Arial, sans-serif;
+    direction: rtl;
+    background: #f4f6f8;
+    color: #222;
+    min-height: 100vh;
+}
+
+/* هدر */
+.header {
+    background: linear-gradient(135deg, #1e293b, #334155);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+}
+
+.header h1 {
+    font-size: 25px;
+    margin-bottom: 6px;
+}
+
+.header p {
+    font-size: 13px;
+    opacity: 0.8;
+}
+
+/* محتوای اصلی */
+.container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* کارت‌ها */
+.card {
+    background: white;
+    border-radius: 18px;
+    padding: 20px;
+    margin-bottom: 18px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+}
+
+.card h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #1e293b;
+}
+
+/* منوی اصلی */
+.menu {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+}
+
+.menu button {
+    border: none;
+    background: white;
+    border-radius: 18px;
+    padding: 22px 12px;
+    min-height: 120px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: bold;
+    color: #1e293b;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.07);
+    transition: 0.2s;
+}
+
+.menu button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.menu button:active {
+    transform: scale(0.97);
+}
+
+.menu-icon {
+    display: block;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+/* فرم‌ها */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #d7dce2;
+    border-radius: 12px;
+    background: #f9fafb;
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+    transition: 0.2s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #334155;
+    background: white;
+}
+
+/* دکمه‌ها */
+.btn {
+    width: 100%;
+    border: none;
+    border-radius: 12px;
+    padding: 14px;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    background: #1e293b;
+    color: white;
+    transition: 0.2s;
+}
+
+.btn:hover {
+    background: #334155;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+/* دکمه بازگشت */
+.back-btn {
+    border: none;
+    background: transparent;
+    color: #334155;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+/* جدول */
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+th,
+td {
+    padding: 11px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    font-size: 13px;
+}
+
+th {
+    background: #1e293b;
+    color: white;
+}
+
+/* پیام نتیجه */
+.result {
+    margin-top: 15px;
+    padding: 15px;
+    border-radius: 12px;
+    background: #eef2ff;
+    font-size: 15px;
+    line-height: 2;
+}
+
+/* فوتر */
+.footer {
+    text-align: center;
+    padding: 25px 15px;
+    color: #777;
+    font-size: 12px;
+}
+
+/* موبایل */
+@media (max-width: 500px) {
+
+    .container {
+        padding: 14px;
+    }
+
+    .header h1 {
+        font-size: 22px;
+    }
+
+    .menu {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .menu button {
+        min-height: 105px;
+        padding: 15px 8px;
+        font-size: 13px;
+    }
+
+    .menu-icon {
+        font-size: 27px;
+    }
+
+    .card {
+        padding: 16px;
+    }
+}

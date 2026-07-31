@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
 <title>کات مستر | کابینت‌یار</title>
 
 <style>
-*{box-sizing:border-box}
+
+*{
+    box-sizing:border-box;
+}
 
 body{
     margin:0;
@@ -61,7 +69,8 @@ label{
     font-weight:bold;
 }
 
-input,select{
+input,
+select{
     width:100%;
     padding:13px;
     margin-top:7px;
@@ -72,7 +81,8 @@ input,select{
     outline:none;
 }
 
-input:focus,select:focus{
+input:focus,
+select:focus{
     border-color:#0f2a4a;
 }
 
@@ -93,9 +103,21 @@ button:hover{
     opacity:.9;
 }
 
-.btn-danger{background:#b42318}
-.btn-secondary{background:#667085}
-.btn-success{background:#087443}
+.btn-danger{
+    background:#b42318;
+}
+
+.btn-secondary{
+    background:#667085;
+}
+
+.btn-success{
+    background:#087443;
+}
+
+.btn-rotate{
+    background:#175cd3;
+}
 
 .message{
     display:none;
@@ -112,7 +134,7 @@ button:hover{
 table{
     width:100%;
     border-collapse:collapse;
-    min-width:650px;
+    min-width:750px;
 }
 
 th{
@@ -158,6 +180,22 @@ td{
     padding:14px;
     border-radius:12px;
     margin-top:15px;
+    line-height:1.8;
+}
+
+.orientation-auto{
+    color:#175cd3;
+    font-weight:bold;
+}
+
+.orientation-normal{
+    color:#067647;
+    font-weight:bold;
+}
+
+.orientation-rotated{
+    color:#b42318;
+    font-weight:bold;
 }
 
 .sheet-result{
@@ -205,6 +243,14 @@ td{
     line-height:1.8;
 }
 
+.rotation-info{
+    background:#fff7ed;
+    color:#9a3412;
+    padding:12px;
+    border-radius:10px;
+    margin-top:12px;
+}
+
 @media(max-width:600px){
 
     .container{
@@ -218,17 +264,26 @@ td{
     .action-grid{
         grid-template-columns:1fr;
     }
+
 }
+
 </style>
+
 </head>
 
 <body>
 
 <div class="container">
 
+
 <div class="header">
-    <h1>✂️ کات مستر</h1>
-    <p>سیستم هوشمند مدیریت و چیدمان برش ورق کابینت</p>
+
+<h1>✂️ کات مستر</h1>
+
+<p>
+سیستم هوشمند مدیریت و چیدمان برش ورق کابینت
+</p>
+
 </div>
 
 
@@ -238,39 +293,96 @@ td{
 
 <h2>📦 مشخصات ورق</h2>
 
-<label>ابعاد ورق</label>
+<label>
+ابعاد ورق
+</label>
 
 <select id="sheetSize">
-    <option value="366x183">366 × 183 سانتی‌متر</option>
-    <option value="280x207">280 × 207 سانتی‌متر</option>
-    <option value="244x122">244 × 122 سانتی‌متر</option>
+
+<option value="366x183">
+366 × 183 سانتی‌متر
+</option>
+
+<option value="280x207">
+280 × 207 سانتی‌متر
+</option>
+
+<option value="244x122">
+244 × 122 سانتی‌متر
+</option>
+
 </select>
 
-<label>ضخامت ورق</label>
+
+<label>
+ضخامت ورق
+</label>
 
 <select id="thickness">
-    <option value="16">16 میلی‌متر</option>
-    <option value="18">18 میلی‌متر</option>
-    <option value="25">25 میلی‌متر</option>
+
+<option value="16">
+16 میلی‌متر
+</option>
+
+<option value="18">
+18 میلی‌متر
+</option>
+
+<option value="25">
+25 میلی‌متر
+</option>
+
 </select>
 
-<label>جنس ورق</label>
+
+<label>
+جنس ورق
+</label>
 
 <select id="material">
-    <option>MDF</option>
-    <option>هایگلاس</option>
-    <option>پلی گلاس</option>
-    <option>ملامینه</option>
+
+<option>
+MDF
+</option>
+
+<option>
+هایگلاس
+</option>
+
+<option>
+پلی گلاس
+</option>
+
+<option>
+ملامینه
+</option>
+
 </select>
 
+
 <div class="kerf-box">
-    📏 فاصله تیغ برش:
-    <strong>۳ میلی‌متر</strong>
+
+📏 فاصله تیغ برش:
+
+<strong>
+۳ میلی‌متر
+</strong>
+
 </div>
 
+
 <div class="optimize-box">
-    🧠 موتور بهینه‌سازی فعال است.
-    چند حالت مختلف چیدمان بررسی می‌شود و بهترین حالت انتخاب خواهد شد.
+
+🧠 <strong>
+موتور بهینه‌سازی فعال است.
+</strong>
+
+<br>
+
+برای قطعاتی که روی «خودکار» باشند،
+کات‌مستر حالت عادی و چرخیده را بررسی
+و بهترین حالت را انتخاب می‌کند.
+
 </div>
 
 </div>
@@ -280,51 +392,96 @@ td{
 
 <div class="card">
 
-<h2>➕ افزودن قطعه</h2>
+<h2>
+➕ افزودن قطعه
+</h2>
 
-<label>نام قطعه</label>
 
-<input
-    id="partName"
-    type="text"
-    placeholder="مثلاً درب کابینت"
->
-
-<label>طول قطعه (سانتی‌متر)</label>
+<label>
+نام قطعه
+</label>
 
 <input
-    id="partLength"
-    type="number"
-    min="1"
-    step="0.1"
-    placeholder="مثلاً 72"
+id="partName"
+type="text"
+placeholder="مثلاً درب کابینت"
 >
 
-<label>عرض قطعه (سانتی‌متر)</label>
+
+<label>
+طول قطعه (سانتی‌متر)
+</label>
 
 <input
-    id="partWidth"
-    type="number"
-    min="1"
-    step="0.1"
-    placeholder="مثلاً 45"
+id="partLength"
+type="number"
+min="1"
+step="0.1"
+placeholder="مثلاً 72"
 >
 
-<label>تعداد</label>
+
+<label>
+عرض قطعه (سانتی‌متر)
+</label>
 
 <input
-    id="partQty"
-    type="number"
-    min="1"
-    step="1"
-    value="1"
+id="partWidth"
+type="number"
+min="1"
+step="0.1"
+placeholder="مثلاً 45"
 >
 
-<button id="addPart" type="button">
-    ➕ افزودن قطعه
+
+<label>
+تعداد
+</label>
+
+<input
+id="partQty"
+type="number"
+min="1"
+step="1"
+value="1"
+>
+
+
+<label>
+جهت قرارگیری قطعه
+</label>
+
+<select id="partOrientation">
+
+<option value="auto">
+🧠 خودکار
+</option>
+
+<option value="normal">
+➡️ عادی
+</option>
+
+<option value="rotated">
+↻ چرخیده ۹۰ درجه
+</option>
+
+</select>
+
+
+<button
+id="addPart"
+type="button"
+>
+
+➕ افزودن قطعه
+
 </button>
 
-<div id="message" class="message"></div>
+
+<div
+id="message"
+class="message"
+></div>
 
 </div>
 
@@ -333,7 +490,10 @@ td{
 
 <div class="card">
 
-<h2>📋 لیست قطعات</h2>
+<h2>
+📋 لیست قطعات
+</h2>
+
 
 <div class="table-wrapper">
 
@@ -342,22 +502,53 @@ td{
 <thead>
 
 <tr>
-    <th>شماره</th>
-    <th>نام قطعه</th>
-    <th>طول</th>
-    <th>عرض</th>
-    <th>تعداد</th>
-    <th>حذف</th>
+
+<th>
+شماره
+</th>
+
+<th>
+نام قطعه
+</th>
+
+<th>
+طول
+</th>
+
+<th>
+عرض
+</th>
+
+<th>
+تعداد
+</th>
+
+<th>
+جهت
+</th>
+
+<th>
+حذف
+</th>
+
 </tr>
 
 </thead>
 
+
 <tbody id="partsTable">
 
 <tr>
-    <td colspan="6" class="empty">
-        هنوز قطعه‌ای اضافه نشده است.
-    </td>
+
+<td
+colspan="7"
+class="empty"
+>
+
+هنوز قطعه‌ای اضافه نشده است.
+
+</td>
+
 </tr>
 
 </tbody>
@@ -366,22 +557,28 @@ td{
 
 </div>
 
+
 <div class="action-grid">
 
 <button
-    id="clearParts"
-    class="btn-secondary"
-    type="button"
+id="clearParts"
+class="btn-secondary"
+type="button"
 >
-    🗑️ پاک کردن همه
+
+🗑️ پاک کردن همه
+
 </button>
 
+
 <button
-    id="calculate"
-    class="btn-success"
-    type="button"
+id="calculate"
+class="btn-success"
+type="button"
 >
-    🧠 محاسبه و بهینه‌سازی
+
+🧠 محاسبه و بهینه‌سازی
+
 </button>
 
 </div>
@@ -392,16 +589,18 @@ td{
 <!-- خلاصه -->
 
 <div
-    class="card"
-    id="summaryCard"
-    style="display:none"
+class="card"
+id="summaryCard"
+style="display:none"
 >
 
-<h2>📊 خلاصه پروژه</h2>
+<h2>
+📊 خلاصه پروژه
+</h2>
 
 <div
-    id="summary"
-    class="summary"
+id="summary"
+class="summary"
 ></div>
 
 </div>
@@ -410,203 +609,348 @@ td{
 <!-- نقشه -->
 
 <div
-    class="card"
-    id="layoutCard"
-    style="display:none"
+class="card"
+id="layoutCard"
+style="display:none"
 >
 
-<h2>🧩 نقشه بهینه برش</h2>
+<h2>
+🧩 نقشه برش بهینه
+</h2>
+
+<div
+class="rotation-info"
+>
+
+🔄 <strong>
+توجه:
+</strong>
+
+علامت ↻ روی قطعه یعنی آن قطعه
+۹۰ درجه چرخانده شده است.
+
+</div>
 
 <div id="layoutResults"></div>
 
 </div>
+
 
 </div>
 
 
 <script>
 
+
 const parts=[];
 
+
+/*
+۳ میلی‌متر
+بر حسب سانتی‌متر
+*/
+
 const KERF=0.3;
+
 
 const addPartButton=
 document.getElementById("addPart");
 
+
 const partsTable=
 document.getElementById("partsTable");
+
 
 const message=
 document.getElementById("message");
 
 
+/*
+نمایش پیام
+*/
+
 function showMessage(text,error=false){
 
     message.innerText=text;
+
     message.style.display="block";
+
 
     if(error){
 
         message.style.background="#fef3f2";
+
         message.style.color="#b42318";
 
     }else{
 
         message.style.background="#ecfdf3";
+
         message.style.color="#067647";
 
     }
+
 
     setTimeout(function(){
 
         message.style.display="none";
 
     },2500);
+
 }
 
+
+/*
+امن کردن نام قطعه
+*/
 
 function escapeHTML(text){
 
     return String(text)
+
         .replace(/&/g,"&amp;")
+
         .replace(/</g,"&lt;")
+
         .replace(/>/g,"&gt;")
+
         .replace(/"/g,"&quot;")
+
         .replace(/'/g,"&#039;");
 
 }
 
 
+/*
+متن جهت
+*/
+
+function orientationText(
+    orientation
+){
+
+    if(orientation==="normal"){
+
+        return `
+        <span class="orientation-normal">
+        ➡️ عادی
+        </span>
+        `;
+
+    }
+
+
+    if(orientation==="rotated"){
+
+        return `
+        <span class="orientation-rotated">
+        ↻ ۹۰ درجه
+        </span>
+        `;
+
+    }
+
+
+    return `
+    <span class="orientation-auto">
+    🧠 خودکار
+    </span>
+    `;
+
+}
+
+
+/*
+نمایش جدول قطعات
+*/
+
 function renderParts(){
 
     partsTable.innerHTML="";
+
 
     if(parts.length===0){
 
         partsTable.innerHTML=`
 
         <tr>
-            <td colspan="6" class="empty">
-                هنوز قطعه‌ای اضافه نشده است.
-            </td>
+
+        <td
+        colspan="7"
+        class="empty"
+        >
+
+        هنوز قطعه‌ای اضافه نشده است.
+
+        </td>
+
         </tr>
 
         `;
 
         return;
+
     }
 
-    parts.forEach(function(part,index){
+
+    parts.forEach(
+    function(part,index){
 
         const row=
         document.createElement("tr");
 
+
         row.innerHTML=`
 
-        <td>${index+1}</td>
+        <td>
+        ${index+1}
+        </td>
 
-        <td>${escapeHTML(part.name)}</td>
+        <td>
+        ${escapeHTML(part.name)}
+        </td>
 
-        <td>${part.length}</td>
+        <td>
+        ${part.length}
+        </td>
 
-        <td>${part.width}</td>
+        <td>
+        ${part.width}
+        </td>
 
-        <td>${part.qty}</td>
+        <td>
+        ${part.qty}
+        </td>
+
+        <td>
+        ${orientationText(
+            part.orientation
+        )}
+        </td>
 
         <td>
 
-            <button
-                class="btn-danger"
-                type="button"
-                onclick="deletePart(${index})"
-            >
-                حذف
-            </button>
+        <button
+        class="btn-danger"
+        type="button"
+        onclick="deletePart(${index})"
+        >
+
+        حذف
+
+        </button>
 
         </td>
 
         `;
 
+
         partsTable.appendChild(row);
 
     });
+
 }
 
+
+/*
+افزودن قطعه
+*/
 
 addPartButton.addEventListener(
 "click",
 function(){
 
     const name=
-    document.getElementById("partName")
-    .value.trim();
+    document
+    .getElementById("partName")
+    .value
+    .trim();
+
 
     const length=
     Number(
-        document.getElementById("partLength").value
+    document
+    .getElementById("partLength")
+    .value
     );
+
 
     const width=
     Number(
-        document.getElementById("partWidth").value
+    document
+    .getElementById("partWidth")
+    .value
     );
+
 
     const qty=
     Number(
-        document.getElementById("partQty").value
+    document
+    .getElementById("partQty")
+    .value
     );
+
+
+    const orientation=
+    document
+    .getElementById("partOrientation")
+    .value;
 
 
     if(!name){
 
         showMessage(
-            "نام قطعه را وارد کنید.",
-            true
+        "نام قطعه را وارد کنید.",
+        true
         );
 
         return;
+
     }
 
 
     if(
-        !Number.isFinite(length) ||
-        length<=0
+    !Number.isFinite(length) ||
+    length<=0
     ){
 
         showMessage(
-            "طول قطعه معتبر نیست.",
-            true
+        "طول قطعه معتبر نیست.",
+        true
         );
 
         return;
+
     }
 
 
     if(
-        !Number.isFinite(width) ||
-        width<=0
+    !Number.isFinite(width) ||
+    width<=0
     ){
 
         showMessage(
-            "عرض قطعه معتبر نیست.",
-            true
+        "عرض قطعه معتبر نیست.",
+        true
         );
 
         return;
+
     }
 
 
     if(
-        !Number.isInteger(qty) ||
-        qty<=0
+    !Number.isInteger(qty) ||
+    qty<=0
     ){
 
         showMessage(
-            "تعداد قطعه معتبر نیست.",
-            true
+        "تعداد قطعه معتبر نیست.",
+        true
         );
 
         return;
+
     }
 
 
@@ -618,7 +962,9 @@ function(){
 
         width:width,
 
-        qty:qty
+        qty:qty,
+
+        orientation:orientation
 
     });
 
@@ -627,19 +973,45 @@ function(){
 
 
     showMessage(
-        "قطعه با موفقیت اضافه شد."
+    "قطعه با موفقیت اضافه شد."
     );
 
 
-    document.getElementById("partName").value="";
-    document.getElementById("partLength").value="";
-    document.getElementById("partWidth").value="";
-    document.getElementById("partQty").value=1;
+    document.getElementById(
+    "partName"
+    ).value="";
 
-    document.getElementById("partName").focus();
+
+    document.getElementById(
+    "partLength"
+    ).value="";
+
+
+    document.getElementById(
+    "partWidth"
+    ).value="";
+
+
+    document.getElementById(
+    "partQty"
+    ).value=1;
+
+
+    document.getElementById(
+    "partOrientation"
+    ).value="auto";
+
+
+    document.getElementById(
+    "partName"
+    ).focus();
 
 });
 
+
+/*
+حذف قطعه
+*/
 
 function deletePart(index){
 
@@ -649,6 +1021,10 @@ function deletePart(index){
 
 }
 
+
+/*
+پاک کردن همه
+*/
 
 document
 .getElementById("clearParts")
@@ -660,44 +1036,63 @@ function(){
 
     renderParts();
 
-    document.getElementById(
-        "summaryCard"
-    ).style.display="none";
 
     document.getElementById(
-        "layoutCard"
+    "summaryCard"
     ).style.display="none";
+
+
+    document.getElementById(
+    "layoutCard"
+    ).style.display="none";
+
 
     showMessage(
-        "تمام قطعات پاک شدند."
+    "تمام قطعات پاک شدند."
     );
 
 });
 
 
-/* =========================================
-   ساخت لیست قطعات تکی
-========================================= */
+/*
+=========================================
+ساخت قطعات تکی
+=========================================
+*/
 
 function expandParts(){
 
     const result=[];
 
-    parts.forEach(function(part,index){
 
-        for(let i=0;i<part.qty;i++){
+    parts.forEach(
+    function(part,sourceIndex){
+
+        for(
+        let i=0;
+        i<part.qty;
+        i++
+        ){
 
             result.push({
 
-                id:result.length+1,
+                id:
+                result.length+1,
 
-                sourceIndex:index,
+                sourceIndex:
+                sourceIndex,
 
-                name:part.name,
+                name:
+                part.name,
 
-                length:part.length,
+                length:
+                part.length,
 
-                width:part.width,
+                width:
+                part.width,
+
+                orientation:
+                part.orientation,
 
                 rotated:false,
 
@@ -709,15 +1104,22 @@ function expandParts(){
 
     });
 
+
     return result;
+
 }
 
 
-/* =========================================
-   ساخت ورق
-========================================= */
+/*
+=========================================
+ساخت ورق
+=========================================
+*/
 
-function createSheet(width,height){
+function createSheet(
+    width,
+    height
+){
 
     return {
 
@@ -728,29 +1130,44 @@ function createSheet(width,height){
         pieces:[]
 
     };
+
 }
 
 
-/* =========================================
-   بررسی برخورد دو مستطیل
-========================================= */
+/*
+=========================================
+بررسی برخورد
+=========================================
+*/
 
 function overlaps(a,b){
 
     return !(
         a.x+a.w+KERF<=b.x ||
+
         b.x+b.w+KERF<=a.x ||
+
         a.y+a.h+KERF<=b.y ||
+
         b.y+b.h+KERF<=a.y
     );
+
 }
 
 
-/* =========================================
-   بررسی امکان قرارگیری قطعه
-========================================= */
+/*
+=========================================
+آیا قطعه جا می‌شود؟
+=========================================
+*/
 
-function canPlace(sheet,piece,x,y,w,h){
+function canPlace(
+    sheet,
+    x,
+    y,
+    w,
+    h
+){
 
     if(
         x<0 ||
@@ -760,49 +1177,106 @@ function canPlace(sheet,piece,x,y,w,h){
     ){
 
         return false;
+
     }
 
 
     const test={
+
         x:x,
+
         y:y,
+
         w:w,
+
         h:h
+
     };
 
 
     for(
-        let i=0;
-        i<sheet.pieces.length;
-        i++
+    let i=0;
+    i<sheet.pieces.length;
+    i++
     ){
 
         if(
-            overlaps(
-                test,
-                sheet.pieces[i]
-            )
+        overlaps(
+            test,
+            sheet.pieces[i]
+        )
         ){
 
             return false;
+
         }
+
     }
 
 
     return true;
+
 }
 
 
-/* =========================================
-   پیدا کردن بهترین جای ممکن روی یک ورق
-========================================= */
+/*
+=========================================
+جهت‌های مجاز قطعه
+=========================================
+*/
 
-function findBestPosition(
-    sheet,
-    piece
-){
+function getOrientations(piece){
 
-    const orientations=[
+    /*
+    اگر عادی باشد
+    فقط عادی
+    */
+
+    if(
+    piece.orientation==="normal"
+    ){
+
+        return [
+
+            {
+                w:piece.length,
+                h:piece.width,
+                rotated:false
+            }
+
+        ];
+
+    }
+
+
+    /*
+    اگر چرخیده باشد
+    فقط چرخیده
+    */
+
+    if(
+    piece.orientation==="rotated"
+    ){
+
+        return [
+
+            {
+                w:piece.width,
+                h:piece.length,
+                rotated:true
+            }
+
+        ];
+
+    }
+
+
+    /*
+    حالت خودکار
+    هر دو حالت
+    */
+
+    return [
 
         {
             w:piece.length,
@@ -818,53 +1292,71 @@ function findBestPosition(
 
     ];
 
+}
+
+
+/*
+=========================================
+پیدا کردن بهترین جای قطعه
+=========================================
+*/
+
+function findBestPosition(
+    sheet,
+    piece
+){
+
+    const orientations=
+    getOrientations(piece);
+
 
     let best=null;
 
 
+    const xs=[0];
+
+    const ys=[0];
+
+
+    sheet.pieces.forEach(
+    function(p){
+
+        xs.push(
+            p.x+
+            p.w+
+            KERF
+        );
+
+
+        ys.push(
+            p.y+
+            p.h+
+            KERF
+        );
+
+    });
+
+
     for(
-        let o=0;
-        o<orientations.length;
-        o++
+    let o=0;
+    o<orientations.length;
+    o++
     ){
 
         const orientation=
         orientations[o];
 
 
-        /*
-        نقاط کاندید:
-        گوشه ورق و کنار تمام قطعات
-        */
-
-        const xs=[0];
-
-        const ys=[0];
-
-
-        sheet.pieces.forEach(function(p){
-
-            xs.push(
-                p.x+p.w+KERF
-            );
-
-            ys.push(
-                p.y+p.h+KERF
-            );
-
-        });
-
-
         for(
-            let xi=0;
-            xi<xs.length;
-            xi++
+        let xi=0;
+        xi<xs.length;
+        xi++
         ){
 
             for(
-                let yi=0;
-                yi<ys.length;
-                yi++
+            let yi=0;
+            yi<ys.length;
+            yi++
             ){
 
                 const x=xs[xi];
@@ -873,36 +1365,38 @@ function findBestPosition(
 
 
                 if(
-                    !canPlace(
-                        sheet,
-                        piece,
-                        x,
-                        y,
-                        orientation.w,
-                        orientation.h
-                    )
+                !canPlace(
+                    sheet,
+                    x,
+                    y,
+                    orientation.w,
+                    orientation.h
+                )
                 ){
 
                     continue;
+
                 }
 
 
                 /*
-                امتیاز:
-                پایین‌تر و چپ‌تر بهتر است
+                امتیاز پایین‌تر بهتر است.
                 */
 
                 const score=
+
                     y*100000+
-                    x+
+
+                    x*10+
+
                     orientation.w*
                     orientation.h*
                     0.001;
 
 
                 if(
-                    best===null ||
-                    score<best.score
+                best===null ||
+                score<best.score
                 ){
 
                     best={
@@ -911,9 +1405,11 @@ function findBestPosition(
 
                         y:y,
 
-                        w:orientation.w,
+                        w:
+                        orientation.w,
 
-                        h:orientation.h,
+                        h:
+                        orientation.h,
 
                         rotated:
                         orientation.rotated,
@@ -932,12 +1428,15 @@ function findBestPosition(
 
 
     return best;
+
 }
 
 
-/* =========================================
-   یک روش کامل چیدمان
-========================================= */
+/*
+=========================================
+چیدمان یک ترتیب
+=========================================
+*/
 
 function packWithOrder(
     sourcePieces,
@@ -946,9 +1445,12 @@ function packWithOrder(
 ){
 
     const pieces=
-    sourcePieces.map(function(p){
+    sourcePieces.map(
+    function(p){
 
-        return {...p};
+        return {
+            ...p
+        };
 
     });
 
@@ -956,7 +1458,8 @@ function packWithOrder(
     const sheets=[];
 
 
-    pieces.forEach(function(piece){
+    pieces.forEach(
+    function(piece){
 
         let bestSheet=null;
 
@@ -965,10 +1468,14 @@ function packWithOrder(
         let bestScore=Infinity;
 
 
+        /*
+        بررسی ورق‌های موجود
+        */
+
         for(
-            let i=0;
-            i<sheets.length;
-            i++
+        let i=0;
+        i<sheets.length;
+        i++
         ){
 
             const position=
@@ -978,52 +1485,57 @@ function packWithOrder(
             );
 
 
-            if(position){
+            if(!position){
 
-                /*
-                ترجیح با ورقی است که
-                کمترین فضای خالی بعد از
-                قرارگیری داشته باشد.
-                */
+                continue;
 
-                const used=
-                sheets[i].pieces.reduce(
-                    function(sum,p){
-
-                        return sum+
-                        p.w*p.h;
-
-                    },
-                    0
-                );
+            }
 
 
-                const newUsed=
-                used+
-                position.w*
-                position.h;
+            const used=
+            sheets[i].pieces.reduce(
+            function(sum,p){
+
+                return sum+
+                p.w*p.h;
+
+            },
+            0
+            );
 
 
-                const waste=
-                sheetWidth*
-                sheetHeight-
-                newUsed;
+            const newUsed=
+            used+
+            position.w*
+            position.h;
 
 
-                if(waste<bestScore){
+            const waste=
+            sheetWidth*
+            sheetHeight-
+            newUsed;
 
-                    bestScore=waste;
 
-                    bestSheet=sheets[i];
+            if(
+            waste<bestScore
+            ){
 
-                    bestPosition=position;
+                bestScore=waste;
 
-                }
+                bestSheet=
+                sheets[i];
+
+                bestPosition=
+                position;
 
             }
 
         }
 
+
+        /*
+        اگر جا نشد ورق جدید
+        */
 
         if(!bestSheet){
 
@@ -1034,7 +1546,9 @@ function packWithOrder(
             );
 
 
-            sheets.push(bestSheet);
+            sheets.push(
+                bestSheet
+            );
 
 
             bestPosition=
@@ -1046,22 +1560,33 @@ function packWithOrder(
         }
 
 
+        /*
+        ثبت قطعه
+        */
+
         if(bestPosition){
 
-            piece.x=bestPosition.x;
+            piece.x=
+            bestPosition.x;
 
-            piece.y=bestPosition.y;
+            piece.y=
+            bestPosition.y;
 
-            piece.w=bestPosition.w;
+            piece.w=
+            bestPosition.w;
 
-            piece.h=bestPosition.h;
+            piece.h=
+            bestPosition.h;
 
             piece.rotated=
             bestPosition.rotated;
 
             piece.placed=true;
 
-            bestSheet.pieces.push(piece);
+
+            bestSheet.pieces.push(
+                piece
+            );
 
         }else{
 
@@ -1075,135 +1600,130 @@ function packWithOrder(
 
 
     return sheets;
+
 }
 
 
-/* =========================================
-   تولید چند ترتیب مختلف
-========================================= */
+/*
+=========================================
+تولید حالت‌های مختلف مرتب‌سازی
+=========================================
+*/
 
 function generateOrders(){
 
-    const base=expandParts();
+    const base=
+    expandParts();
 
 
     const orders=[];
 
 
     /*
-    حالت ۱:
-    مساحت بزرگ به کوچک
+    ۱. مساحت
     */
 
     orders.push(
-        [...base].sort(function(a,b){
+    [...base].sort(
+    function(a,b){
 
-            return (
-                b.length*b.width-
-                a.length*a.width
-            );
+        return(
+            b.length*b.width-
+            a.length*a.width
+        );
 
-        })
+    })
     );
 
 
     /*
-    حالت ۲:
-    طول بزرگ به کوچک
+    ۲. طول
     */
 
     orders.push(
-        [...base].sort(function(a,b){
+    [...base].sort(
+    function(a,b){
 
-            return b.length-a.length;
+        return b.length-a.length;
 
-        })
+    })
     );
 
 
     /*
-    حالت ۳:
-    عرض بزرگ به کوچک
+    ۳. عرض
     */
 
     orders.push(
-        [...base].sort(function(a,b){
+    [...base].sort(
+    function(a,b){
 
-            return b.width-a.width;
+        return b.width-a.width;
 
-        })
+    })
     );
 
 
     /*
-    حالت ۴:
-    بزرگ‌ترین ضلع اول
+    ۴. بزرگ‌ترین ضلع
     */
 
     orders.push(
-        [...base].sort(function(a,b){
+    [...base].sort(
+    function(a,b){
 
-            const maxA=
-            Math.max(a.length,a.width);
+        const maxA=
+        Math.max(
+            a.length,
+            a.width
+        );
 
-            const maxB=
-            Math.max(b.length,b.width);
 
-            return maxB-maxA;
+        const maxB=
+        Math.max(
+            b.length,
+            b.width
+        );
 
-        })
+
+        return maxB-maxA;
+
+    })
     );
 
 
     /*
-    حالت ۵:
-    محیط بزرگ‌تر اول
+    ۵. محیط
     */
 
     orders.push(
-        [...base].sort(function(a,b){
+    [...base].sort(
+    function(a,b){
 
-            const pA=
-            2*(a.length+a.width);
-
-            const pB=
-            2*(b.length+b.width);
-
-            return pB-pA;
-
-        })
-    );
+        const pA=
+        2*(a.length+a.width);
 
 
-    /*
-    حالت ۶:
-    ترکیبی
-    */
+        const pB=
+        2*(b.length+b.width);
 
-    orders.push(
-        [...base].sort(function(a,b){
 
-            const scoreA=
-            a.length*a.width+
-            Math.max(a.length,a.width)*100;
+        return pB-pA;
 
-            const scoreB=
-            b.length*b.width+
-            Math.max(b.length,b.width)*100;
-
-            return scoreB-scoreA;
-
-        })
+    })
     );
 
 
     return orders;
+
 }
 
 
-/* =========================================
-   امتیازدهی نتیجه
-========================================= */
+/*
+=========================================
+امتیاز نهایی
+=========================================
+*/
 
 function scoreLayout(
     sheets,
@@ -1211,52 +1731,52 @@ function scoreLayout(
     sheetHeight
 ){
 
-    const sheetCount=
-    sheets.length;
+    let used=0;
 
 
-    let totalUsed=0;
-
-
-    sheets.forEach(function(sheet){
+    sheets.forEach(
+    function(sheet){
 
         sheet.pieces.forEach(
-            function(piece){
+        function(piece){
 
-                totalUsed+=
-                piece.w*piece.h;
+            used+=
+            piece.w*
+            piece.h;
 
-            }
-        );
+        });
 
     });
 
 
     const totalArea=
+    sheets.length*
     sheetWidth*
-    sheetHeight*
-    sheetCount;
+    sheetHeight;
 
 
     const waste=
-    totalArea-totalUsed;
+    totalArea-used;
 
 
     /*
-    اول تعداد ورق مهم است.
-    سپس پرت.
+    تعداد ورق اولویت اول است.
     */
 
-    return (
-        sheetCount*100000000+
+    return(
+        sheets.length*
+        100000000+
         waste
     );
+
 }
 
 
-/* =========================================
-   اجرای بهینه‌سازی
-========================================= */
+/*
+=========================================
+بهینه‌سازی
+=========================================
+*/
 
 function optimizeLayout(
     sheetWidth,
@@ -1272,7 +1792,8 @@ function optimizeLayout(
     let bestScore=Infinity;
 
 
-    orders.forEach(function(order){
+    orders.forEach(
+    function(order){
 
         const result=
         packWithOrder(
@@ -1290,7 +1811,9 @@ function optimizeLayout(
         );
 
 
-        if(score<bestScore){
+        if(
+        score<bestScore
+        ){
 
             bestScore=score;
 
@@ -1302,14 +1825,20 @@ function optimizeLayout(
 
 
     return best;
+
 }
 
 
-/* =========================================
-   رسم ورق
-========================================= */
+/*
+=========================================
+رسم ورق
+=========================================
+*/
 
-function drawSheet(canvas,sheet){
+function drawSheet(
+    canvas,
+    sheet
+){
 
     const ctx=
     canvas.getContext("2d");
@@ -1330,14 +1859,18 @@ function drawSheet(canvas,sheet){
     canvas.width=
     Math.max(
         300,
-        Math.round(sheet.width*scale)
+        Math.round(
+            sheet.width*scale
+        )
     );
 
 
     canvas.height=
     Math.max(
         220,
-        Math.round(sheet.height*scale)
+        Math.round(
+            sheet.height*scale
+        )
     );
 
 
@@ -1395,18 +1928,23 @@ function drawSheet(canvas,sheet){
         const x=
         piece.x*scale;
 
+
         const y=
         piece.y*scale;
 
+
         const w=
         piece.w*scale;
+
 
         const h=
         piece.h*scale;
 
 
         ctx.fillStyle=
-        colors[index%colors.length];
+        colors[
+            index%colors.length
+        ];
 
 
         ctx.fillRect(
@@ -1430,19 +1968,24 @@ function drawSheet(canvas,sheet){
 
 
         /*
-        شماره
+        شماره قطعه
         */
 
         ctx.fillStyle="#111827";
 
         ctx.font=
         "bold "+
-        Math.max(9,11*scale)+
+        Math.max(
+            9,
+            11*scale
+        )+
         "px Tahoma";
+
 
         ctx.textAlign="right";
 
         ctx.textBaseline="top";
+
 
         ctx.fillText(
             "#"+piece.id,
@@ -1452,12 +1995,13 @@ function drawSheet(canvas,sheet){
 
 
         /*
-        متن
+        نام
         */
 
         ctx.textAlign="center";
 
         ctx.textBaseline="middle";
+
 
         const fontSize=
         Math.max(
@@ -1478,10 +2022,15 @@ function drawSheet(canvas,sheet){
         piece.name;
 
 
-        if(name.length>18){
+        if(
+        name.length>18
+        ){
 
             name=
-            name.substring(0,18)+
+            name.substring(
+                0,
+                18
+            )+
             "…";
 
         }
@@ -1490,9 +2039,13 @@ function drawSheet(canvas,sheet){
         ctx.fillText(
             name,
             x+w/2,
-            y+h/2-8
+            y+h/2-10
         );
 
+
+        /*
+        ابعاد واقعی قرارگیری
+        */
 
         ctx.font=
         Math.max(
@@ -1507,16 +2060,29 @@ function drawSheet(canvas,sheet){
             " × "+
             piece.h,
             x+w/2,
-            y+h/2+9
+            y+h/2+7
         );
 
 
+        /*
+        علامت چرخش
+        */
+
         if(piece.rotated){
 
+            ctx.font=
+            "bold "+
+            Math.max(
+                9,
+                fontSize-1
+            )+
+            "px Tahoma";
+
+
             ctx.fillText(
-                "↻ چرخش",
+                "↻ چرخش ۹۰°",
                 x+w/2,
-                y+h/2+25
+                y+h/2+24
             );
 
         }
@@ -1530,11 +2096,14 @@ function drawSheet(canvas,sheet){
 
     ctx.fillStyle="#111827";
 
-    ctx.font="bold 14px Tahoma";
+    ctx.font=
+    "bold 14px Tahoma";
+
 
     ctx.textAlign="center";
 
     ctx.textBaseline="bottom";
+
 
     ctx.fillText(
         sheet.width+
@@ -1548,9 +2117,11 @@ function drawSheet(canvas,sheet){
 }
 
 
-/* =========================================
-   نمایش نتایج
-========================================= */
+/*
+=========================================
+نمایش نقشه‌ها
+=========================================
+*/
 
 function renderLayouts(
     sheets,
@@ -1577,13 +2148,14 @@ function renderLayouts(
 
         const usedArea=
         sheet.pieces.reduce(
-            function(sum,piece){
+        function(sum,piece){
 
-                return sum+
-                piece.w*piece.h;
+            return sum+
+            piece.w*
+            piece.h;
 
-            },
-            0
+        },
+        0
         );
 
 
@@ -1597,8 +2169,19 @@ function renderLayouts(
         100-efficiency;
 
 
+        const rotatedCount=
+        sheet.pieces.filter(
+        function(piece){
+
+            return piece.rotated;
+
+        }).length;
+
+
         const section=
-        document.createElement("div");
+        document.createElement(
+            "div"
+        );
 
 
         section.className=
@@ -1617,30 +2200,43 @@ function renderLayouts(
         <div class="sheet-info">
 
             ابعاد ورق:
+
             <strong>
-                ${sheetWidth} × ${sheetHeight}
+            ${sheetWidth} × ${sheetHeight}
             </strong>
+
             سانتی‌متر
 
             <br>
 
             تعداد قطعات:
+
             <strong>
-                ${sheet.pieces.length}
+            ${sheet.pieces.length}
+            </strong>
+
+            <br>
+
+            قطعات چرخیده:
+
+            <strong>
+            ${rotatedCount}
             </strong>
 
             <br>
 
             استفاده از ورق:
+
             <strong>
-                ${efficiency.toFixed(1)}%
+            ${efficiency.toFixed(1)}%
             </strong>
 
             <br>
 
             پرت تئوری:
+
             <strong>
-                ${waste.toFixed(1)}%
+            ${waste.toFixed(1)}%
             </strong>
 
         </div>
@@ -1649,8 +2245,8 @@ function renderLayouts(
         <div class="canvas-wrapper">
 
             <canvas
-                class="sheet-canvas"
-                id="sheetCanvas${index}"
+            class="sheet-canvas"
+            id="sheetCanvas${index}"
             ></canvas>
 
         </div>
@@ -1663,15 +2259,16 @@ function renderLayouts(
 
             <br>
 
-            🔄 علامت «چرخش» یعنی قطعه
-            برای استفاده بهتر از فضا چرخانده شده است.
+            ↻ یعنی قطعه ۹۰ درجه چرخیده است.
 
         </div>
 
         `;
 
 
-        container.appendChild(section);
+        container.appendChild(
+            section
+        );
 
 
         const canvas=
@@ -1690,9 +2287,11 @@ function renderLayouts(
 }
 
 
-/* =========================================
-   محاسبه
-========================================= */
+/*
+=========================================
+محاسبه نهایی
+=========================================
+*/
 
 document
 .getElementById("calculate")
@@ -1708,6 +2307,7 @@ function(){
         );
 
         return;
+
     }
 
 
@@ -1728,39 +2328,37 @@ function(){
 
     const totalPieces=
     parts.reduce(
-        function(sum,part){
+    function(sum,part){
 
-            return sum+part.qty;
+        return sum+
+        part.qty;
 
-        },
-        0
+    },
+    0
     );
 
 
     const totalArea=
     parts.reduce(
-        function(sum,part){
+    function(sum,part){
 
-            return sum+
-            part.length*
-            part.width*
-            part.qty;
+        return sum+
+        part.length*
+        part.width*
+        part.qty;
 
-        },
-        0
+    },
+    0
     );
 
 
     showMessage(
-        "در حال محاسبه بهترین چیدمان..."
+        "در حال پیدا کردن بهترین چیدمان..."
     );
 
 
-    /*
-    اجرای موتور بهینه‌سازی
-    */
-
-    setTimeout(function(){
+    setTimeout(
+    function(){
 
         const sheets=
         optimizeLayout(
@@ -1785,6 +2383,55 @@ function(){
         100-efficiency;
 
 
+        const autoCount=
+        parts.filter(
+        function(part){
+
+            return part.orientation==="auto";
+
+        }).reduce(
+        function(sum,part){
+
+            return sum+part.qty;
+
+        },
+        0
+        );
+
+
+        const forcedRotated=
+        parts.filter(
+        function(part){
+
+            return part.orientation==="rotated";
+
+        }).reduce(
+        function(sum,part){
+
+            return sum+part.qty;
+
+        },
+        0
+        );
+
+
+        const actualRotated=
+        sheets.reduce(
+        function(sum,sheet){
+
+            return sum+
+            sheet.pieces.filter(
+            function(piece){
+
+                return piece.rotated;
+
+            }).length;
+
+        },
+        0
+        );
+
+
         document.getElementById(
             "summary"
         ).innerHTML=`
@@ -1794,73 +2441,108 @@ function(){
         <br>
 
         جنس:
+
         <strong>
-            ${escapeHTML(
-                document.getElementById(
-                    "material"
-                ).value
-            )}
+        ${escapeHTML(
+            document.getElementById(
+                "material"
+            ).value
+        )}
         </strong>
 
         <br>
 
         ضخامت:
+
         <strong>
-            ${document.getElementById(
-                "thickness"
-            ).value
-            } میلی‌متر
+        ${document.getElementById(
+            "thickness"
+        ).value}
+        میلی‌متر
         </strong>
 
         <br>
 
         ابعاد:
+
         <strong>
-            ${sheetWidth} × ${sheetHeight}
+        ${sheetWidth} × ${sheetHeight}
         </strong>
+
         سانتی‌متر
 
         <hr>
 
         تعداد کل قطعات:
+
         <strong>
-            ${totalPieces}
+        ${totalPieces}
         </strong>
 
         <br>
 
         تعداد ورق موردنیاز:
+
         <strong>
-            ${sheets.length}
+        ${sheets.length}
         </strong>
 
         <br>
 
         مساحت کل قطعات:
+
         <strong>
-            ${totalArea.toLocaleString("fa-IR")}
+        ${totalArea.toLocaleString("fa-IR")}
         </strong>
+
         سانتی‌متر مربع
 
         <br>
 
         راندمان کلی:
+
         <strong>
-            ${efficiency.toFixed(1)}%
+        ${efficiency.toFixed(1)}%
         </strong>
 
         <br>
 
         پرت کلی:
+
         <strong>
-            ${waste.toFixed(1)}%
+        ${waste.toFixed(1)}%
+        </strong>
+
+        <br>
+
+        قطعات با جهت خودکار:
+
+        <strong>
+        ${autoCount}
+        </strong>
+
+        <br>
+
+        قطعاتی که مجبور به چرخش بودند:
+
+        <strong>
+        ${forcedRotated}
+        </strong>
+
+        <br>
+
+        تعداد قطعات چرخیده در نقشه:
+
+        <strong>
+        ${actualRotated}
         </strong>
 
         <br>
 
         تیغ برش:
+
         <strong>
-            ۳ میلی‌متر
+        ۳ میلی‌متر
         </strong>
 
         `;
@@ -1890,7 +2572,9 @@ function(){
         });
 
 
-    },50);
+    },
+    50
+    );
 
 });
 
@@ -1900,4 +2584,5 @@ renderParts();
 </script>
 
 </body>
+
 </html>

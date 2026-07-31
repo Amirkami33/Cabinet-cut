@@ -27,12 +27,6 @@
         }
 
 
-        html {
-            transition:
-                background 0.3s ease;
-        }
-
-
         body {
 
             margin: 0;
@@ -57,7 +51,6 @@
             transition:
                 background 0.3s ease,
                 color 0.3s ease;
-
         }
 
 
@@ -70,9 +63,7 @@
             margin: auto;
 
             padding: 18px;
-
         }
-
 
 
         /* =========================
@@ -103,7 +94,6 @@
             box-shadow:
                 0 12px 30px
                 rgba(15, 42, 74, 0.18);
-
         }
 
 
@@ -123,7 +113,6 @@
 
             top: -80px;
             left: -60px;
-
         }
 
 
@@ -143,7 +132,6 @@
 
             bottom: -60px;
             right: -30px;
-
         }
 
 
@@ -152,7 +140,6 @@
             position: relative;
 
             z-index: 2;
-
         }
 
 
@@ -179,21 +166,17 @@
 
             margin-bottom: 14px;
 
-            backdrop-filter:
-                blur(10px);
-
+            backdrop-filter: blur(10px);
         }
 
 
         .header h1 {
 
-            margin:
-                0 0 8px;
+            margin: 0 0 8px;
 
             font-size: 30px;
 
             font-weight: 800;
-
         }
 
 
@@ -207,37 +190,29 @@
 
             color:
                 rgba(255,255,255,0.82);
-
         }
-
 
 
         /* =========================
            THEME BUTTON
         ========================= */
 
-        .theme-toggle {
+        .theme-button {
 
             position: absolute;
 
-            top: 18px;
             left: 18px;
+            top: 18px;
 
-            z-index: 10;
-
-            width: 48px;
-            height: 48px;
+            width: 46px;
+            height: 46px;
 
             border: none;
 
-            border-radius: 16px;
+            border-radius: 15px;
 
             background:
-                rgba(255,255,255,0.12);
-
-            border:
-                1px solid
-                rgba(255,255,255,0.18);
+                rgba(255,255,255,0.13);
 
             color: white;
 
@@ -250,23 +225,18 @@
             align-items: center;
             justify-content: center;
 
-            backdrop-filter:
-                blur(10px);
+            backdrop-filter: blur(10px);
 
             transition:
                 transform 0.2s ease,
                 background 0.2s ease;
-
         }
 
 
-        .theme-toggle:active {
+        .theme-button:active {
 
-            transform:
-                scale(0.90);
-
+            transform: scale(0.92);
         }
-
 
 
         /* =========================
@@ -290,12 +260,6 @@
             border:
                 1px solid
                 #edf1f5;
-
-            transition:
-                background 0.3s ease,
-                border 0.3s ease,
-                box-shadow 0.3s ease;
-
         }
 
 
@@ -308,7 +272,6 @@
             color: #0f2a4a;
 
             margin-bottom: 7px;
-
         }
 
 
@@ -321,9 +284,7 @@
             line-height: 1.9;
 
             margin: 0;
-
         }
-
 
 
         /* =========================
@@ -338,9 +299,7 @@
 
             justify-content: space-between;
 
-            margin:
-                24px 3px 12px;
-
+            margin: 24px 3px 12px;
         }
 
 
@@ -351,7 +310,6 @@
             color: #0f2a4a;
 
             font-size: 19px;
-
         }
 
 
@@ -360,9 +318,7 @@
             font-size: 12px;
 
             color: #98a2b3;
-
         }
-
 
 
         /* =========================
@@ -377,7 +333,6 @@
                 repeat(2, 1fr);
 
             gap: 13px;
-
         }
 
 
@@ -413,13 +368,12 @@
             overflow: hidden;
 
             box-shadow:
-                0 10px 25px
-                rgba(15, 42, 74, 0.18);
+                0 8px 24px
+                rgba(15, 42, 74, 0.16);
 
             transition:
                 transform 0.18s ease,
                 box-shadow 0.18s ease;
-
         }
 
 
@@ -429,17 +383,17 @@
 
             position: absolute;
 
-            width: 160px;
-            height: 160px;
+            width: 130px;
+            height: 130px;
 
             border-radius: 50%;
 
             background:
                 rgba(255,255,255,0.045);
 
-            top: -80px;
-            left: -60px;
+            left: -50px;
 
+            bottom: -60px;
         }
 
 
@@ -449,58 +403,35 @@
 
             position: absolute;
 
-            width: 100px;
-            height: 100px;
+            width: 90px;
+            height: 90px;
 
             border-radius: 50%;
 
             background:
                 rgba(255,255,255,0.035);
 
-            left: -35px;
-            bottom: -45px;
+            right: -30px;
 
+            top: -35px;
         }
 
 
         .tool-card:active {
 
-            transform:
-                scale(0.97);
+            transform: scale(0.97);
 
             box-shadow:
-                0 5px 15px
-                rgba(15, 42, 74, 0.18);
-
+                0 4px 14px
+                rgba(15, 42, 74, 0.14);
         }
 
-
-
-        /* =========================
-           FEATURED
-        ========================= */
-
-        .featured {
-
-            grid-column:
-                span 2;
-
-            min-height: 170px;
-
-        }
-
-
-
-        /* =========================
-           TOOL CONTENT
-        ========================= */
 
         .tool-card > div {
 
             position: relative;
 
             z-index: 2;
-
         }
 
 
@@ -519,19 +450,15 @@
             background:
                 rgba(255,255,255,0.13);
 
+            border:
+                1px solid
+                rgba(255,255,255,0.08);
+
             color: white;
 
             font-size: 26px;
 
             margin-bottom: 14px;
-
-            border:
-                1px solid
-                rgba(255,255,255,0.08);
-
-            backdrop-filter:
-                blur(8px);
-
         }
 
 
@@ -544,14 +471,6 @@
             color: white;
 
             margin-bottom: 6px;
-
-        }
-
-
-        .featured .tool-name {
-
-            font-size: 19px;
-
         }
 
 
@@ -563,26 +482,19 @@
 
             color:
                 rgba(255,255,255,0.75);
-
-            max-width: 90%;
-
         }
 
-
-
-        /* =========================
-           ARROW
-        ========================= */
 
         .arrow {
 
             position: absolute;
 
             left: 15px;
+
             bottom: 16px;
 
-            width: 30px;
-            height: 30px;
+            width: 28px;
+            height: 28px;
 
             border-radius: 50%;
 
@@ -596,20 +508,32 @@
 
             color: white;
 
-            font-size: 17px;
+            font-size: 16px;
 
             z-index: 3;
-
-            border:
-                1px solid
-                rgba(255,255,255,0.08);
-
         }
 
 
+        /* =========================
+           FEATURED
+        ========================= */
+
+        .featured {
+
+            grid-column: span 2;
+
+            min-height: 170px;
+        }
+
+
+        .featured .tool-name {
+
+            font-size: 19px;
+        }
+
 
         /* =========================
-           INFO CARD
+           INFO
         ========================= */
 
         .info-card {
@@ -629,11 +553,6 @@
             box-shadow:
                 0 6px 20px
                 rgba(15,42,74,0.06);
-
-            transition:
-                background 0.3s ease,
-                border 0.3s ease;
-
         }
 
 
@@ -650,7 +569,6 @@
             border-bottom:
                 1px solid
                 #f0f2f5;
-
         }
 
 
@@ -659,7 +577,6 @@
             border-bottom: none;
 
             padding-bottom: 0;
-
         }
 
 
@@ -678,10 +595,9 @@
             border-radius: 12px;
 
             background:
-                #f2f6fa;
+                #edf4fb;
 
             font-size: 19px;
-
         }
 
 
@@ -692,7 +608,6 @@
             color: #667085;
 
             line-height: 1.7;
-
         }
 
 
@@ -705,9 +620,7 @@
             font-size: 14px;
 
             margin-bottom: 2px;
-
         }
-
 
 
         /* =========================
@@ -718,29 +631,25 @@
 
             text-align: center;
 
-            padding:
-                25px 10px 15px;
+            padding: 25px 10px 15px;
 
             color: #98a2b3;
 
             font-size: 12px;
 
             line-height: 1.8;
-
         }
 
 
         .footer strong {
 
             color: #0f2a4a;
-
         }
 
 
-
-        /* =================================================
+        /* =========================
            DARK MODE
-        ================================================= */
+        ========================= */
 
         body.dark {
 
@@ -748,112 +657,93 @@
                 linear-gradient(
                     180deg,
                     #07111f 0%,
-                    #0b1727 50%,
-                    #0f1d2d 100%
+                    #0b1728 50%,
+                    #101d2e 100%
                 );
 
             color: #e5e7eb;
-
         }
 
 
         body.dark .welcome {
 
-            background:
-                #142235;
+            background: #142236;
 
-            border-color:
-                #20344b;
+            border-color: #24364d;
 
             box-shadow:
-                0 8px 25px
-                rgba(0,0,0,0.20);
-
+                0 8px 24px
+                rgba(0,0,0,0.2);
         }
 
 
         body.dark .welcome-title {
 
             color: #ffffff;
-
         }
 
 
         body.dark .welcome-text {
 
-            color: #aebaca;
-
+            color: #aab7c8;
         }
 
 
         body.dark .section-title h2 {
 
             color: #ffffff;
-
         }
 
 
         body.dark .section-title span {
 
-            color: #7f8da1;
-
+            color: #718096;
         }
 
 
         body.dark .info-card {
 
-            background:
-                #142235;
+            background: #142236;
 
-            border-color:
-                #20344b;
-
+            border-color: #24364d;
         }
 
 
         body.dark .info-row {
 
-            border-color:
-                #25384d;
-
+            border-color: #26384e;
         }
 
 
         body.dark .info-icon {
 
             background:
-                #1d3045;
-
+                rgba(255,255,255,0.08);
         }
 
 
         body.dark .info-text {
 
-            color: #aebaca;
-
+            color: #aab7c8;
         }
 
 
         body.dark .info-text strong {
 
-            color: #e8edf3;
-
+            color: #f1f5f9;
         }
 
 
         body.dark .footer {
 
-            color: #738197;
-
+            color: #718096;
         }
 
 
         body.dark .footer strong {
 
-            color: #dce7f2;
-
+            color: #dbeafe;
         }
-
 
 
         /* =========================
@@ -865,24 +755,20 @@
             .container {
 
                 padding: 12px;
-
             }
 
 
             .header {
 
-                padding:
-                    24px 18px;
+                padding: 24px 18px;
 
                 border-radius: 22px;
-
             }
 
 
             .header h1 {
 
                 font-size: 26px;
-
             }
 
 
@@ -892,22 +778,20 @@
                 height: 58px;
 
                 font-size: 28px;
-
             }
 
 
-            .theme-toggle {
+            .theme-button {
 
-                width: 44px;
-                height: 44px;
-
-                top: 14px;
                 left: 14px;
+                top: 14px;
+
+                width: 42px;
+                height: 42px;
+
+                border-radius: 13px;
 
                 font-size: 20px;
-
-                border-radius: 14px;
-
             }
 
 
@@ -917,7 +801,6 @@
                     1fr 1fr;
 
                 gap: 10px;
-
             }
 
 
@@ -928,15 +811,12 @@
                 padding: 15px;
 
                 border-radius: 19px;
-
             }
 
 
             .featured {
 
-                grid-column:
-                    span 2;
-
+                grid-column: span 2;
             }
 
 
@@ -946,28 +826,24 @@
                 height: 48px;
 
                 font-size: 23px;
-
             }
 
 
             .tool-name {
 
                 font-size: 15px;
-
             }
 
 
             .featured .tool-name {
 
                 font-size: 17px;
-
             }
 
 
             .tool-description {
 
                 font-size: 11px;
-
             }
 
 
@@ -978,9 +854,7 @@
 
                 left: 12px;
                 bottom: 12px;
-
             }
-
         }
 
 
@@ -988,19 +862,14 @@
 
             .tools-grid {
 
-                grid-template-columns:
-                    1fr;
-
+                grid-template-columns: 1fr;
             }
 
 
             .featured {
 
-                grid-column:
-                    span 1;
-
+                grid-column: span 1;
             }
-
         }
 
     </style>
@@ -1024,8 +893,8 @@
         <!-- دکمه شب و روز -->
 
         <button
-            class="theme-toggle"
-            id="themeToggle"
+            class="theme-button"
+            id="themeButton"
             onclick="toggleTheme()"
             aria-label="تغییر حالت شب و روز"
         >
@@ -1053,7 +922,6 @@
 
 
         </div>
-
 
     </header>
 
@@ -1086,11 +954,10 @@
 
 
     <!-- =========================
-         TOOLS TITLE
+         TOOLS
     ========================= -->
 
     <div class="section-title">
-
 
         <h2>
             🧰 ابزارهای کابینت‌یار
@@ -1101,14 +968,9 @@
             انتخاب کنید
         </span>
 
-
     </div>
 
 
-
-    <!-- =========================
-         TOOLS
-    ========================= -->
 
     <div class="tools-grid">
 
@@ -1124,7 +986,6 @@
         >
 
             <div>
-
 
                 <div class="tool-icon">
                     ✂️
@@ -1144,7 +1005,6 @@
 
                 </div>
 
-
             </div>
 
 
@@ -1152,6 +1012,44 @@
                 ←
             </div>
 
+        </a>
+
+
+
+        <!-- =========================
+             UNIT
+        ========================= -->
+
+        <a
+            href="units.html"
+            class="tool-card"
+        >
+
+            <div>
+
+                <div class="tool-icon">
+                    📐
+                </div>
+
+
+                <div class="tool-name">
+                    نمایش یونیت
+                </div>
+
+
+                <div class="tool-description">
+
+                    محاسبه ابعاد یونیت،
+                    قطعات و نمایش شماتیک
+
+                </div>
+
+            </div>
+
+
+            <div class="arrow">
+                ←
+            </div>
 
         </a>
 
@@ -1167,7 +1065,6 @@
         >
 
             <div>
-
 
                 <div class="tool-icon">
                     💰
@@ -1186,14 +1083,12 @@
 
                 </div>
 
-
             </div>
 
 
             <div class="arrow">
                 ←
             </div>
-
 
         </a>
 
@@ -1210,9 +1105,8 @@
 
             <div>
 
-
                 <div class="tool-icon">
-                    📐
+                    📏
                 </div>
 
 
@@ -1228,14 +1122,12 @@
 
                 </div>
 
-
             </div>
 
 
             <div class="arrow">
                 ←
             </div>
-
 
         </a>
 
@@ -1251,7 +1143,6 @@
         >
 
             <div>
-
 
                 <div class="tool-icon">
                     🔩
@@ -1270,14 +1161,12 @@
 
                 </div>
 
-
             </div>
 
 
             <div class="arrow">
                 ←
             </div>
-
 
         </a>
 
@@ -1293,7 +1182,6 @@
         >
 
             <div>
-
 
                 <div class="tool-icon">
                     📋
@@ -1312,14 +1200,12 @@
 
                 </div>
 
-
             </div>
 
 
             <div class="arrow">
                 ←
             </div>
-
 
         </a>
 
@@ -1335,7 +1221,6 @@
         >
 
             <div>
-
 
                 <div class="tool-icon">
                     📞
@@ -1354,57 +1239,12 @@
 
                 </div>
 
-
             </div>
 
 
             <div class="arrow">
                 ←
             </div>
-
-
-        </a>
-
-
-
-        <!-- =========================
-             UNIT
-        ========================= -->
-
-        <a
-            href="unit.html"
-            class="tool-card featured"
-        >
-
-            <div>
-
-
-                <div class="tool-icon">
-                    📏
-                </div>
-
-
-                <div class="tool-name">
-                    نمایش یونیت
-                </div>
-
-
-                <div class="tool-description">
-
-                    محاسبه ابعاد یونیت،
-                    قطعات و نمایش شماتیک
-                    برای ساخت
-
-                </div>
-
-
-            </div>
-
-
-            <div class="arrow">
-                ←
-            </div>
-
 
         </a>
 
@@ -1419,18 +1259,15 @@
 
     <div class="section-title">
 
-
         <h2>
             ✨ درباره کابینت‌یار
         </h2>
-
 
     </div>
 
 
 
     <div class="info-card">
-
 
 
         <div class="info-row">
@@ -1443,7 +1280,6 @@
 
             <div class="info-text">
 
-
                 <strong>
                     سریع و ساده
                 </strong>
@@ -1452,9 +1288,7 @@
                 ابزارها برای استفاده
                 سریع در کارگاه طراحی شده‌اند.
 
-
             </div>
-
 
         </div>
 
@@ -1470,7 +1304,6 @@
 
             <div class="info-text">
 
-
                 <strong>
                     مناسب موبایل
                 </strong>
@@ -1479,9 +1312,7 @@
                 کابینت‌یار برای استفاده
                 راحت روی گوشی طراحی شده است.
 
-
             </div>
-
 
         </div>
 
@@ -1497,7 +1328,6 @@
 
             <div class="info-text">
 
-
                 <strong>
                     ابزارهای کاربردی
                 </strong>
@@ -1506,9 +1336,7 @@
                 محاسبه، برش، سفارش و
                 مدیریت پروژه در یک برنامه.
 
-
             </div>
-
 
         </div>
 
@@ -1540,7 +1368,6 @@
 
         نسخه اولیه برنامه
 
-
     </footer>
 
 
@@ -1555,14 +1382,14 @@
    حالت شب و روز
 ================================================= */
 
-function toggleTheme() {
+function setTheme(theme) {
 
     const body =
         document.body;
 
     const button =
         document.getElementById(
-            "themeToggle"
+            "themeButton"
         );
 
     const themeColor =
@@ -1571,14 +1398,9 @@ function toggleTheme() {
         );
 
 
-    body.classList.toggle("dark");
+    if (theme === "dark") {
 
-
-    const isDark =
-        body.classList.contains("dark");
-
-
-    if (isDark) {
+        body.classList.add("dark");
 
         button.textContent = "☀️";
 
@@ -1587,14 +1409,11 @@ function toggleTheme() {
             "#07111f"
         );
 
-        localStorage.setItem(
-            "kabinetyar-theme",
-            "dark"
-        );
-
     }
 
     else {
+
+        body.classList.remove("dark");
 
         button.textContent = "🌙";
 
@@ -1603,55 +1422,39 @@ function toggleTheme() {
             "#0f2a4a"
         );
 
-        localStorage.setItem(
-            "kabinetyar-theme",
-            "light"
-        );
-
     }
+
+
+    localStorage.setItem(
+        "cabinetYarTheme",
+        theme
+    );
 
 }
 
 
 
 /* =================================================
-   بارگذاری حالت ذخیره‌شده
+   تغییر حالت
 ================================================= */
 
-function loadTheme() {
+function toggleTheme() {
 
-    const savedTheme =
-        localStorage.getItem(
-            "kabinetyar-theme"
-        );
-
-
-    if (savedTheme === "dark") {
-
-        document.body.classList.add(
+    const isDark =
+        document.body.classList.contains(
             "dark"
         );
 
 
-        document.getElementById(
-            "themeToggle"
-        ).textContent = "☀️";
+    if (isDark) {
 
-
-        document.getElementById(
-            "themeColor"
-        ).setAttribute(
-            "content",
-            "#07111f"
-        );
+        setTheme("light");
 
     }
 
     else {
 
-        document.getElementById(
-            "themeToggle"
-        ).textContent = "🌙";
+        setTheme("dark");
 
     }
 
@@ -1660,10 +1463,30 @@ function loadTheme() {
 
 
 /* =================================================
-   شروع برنامه
+   بازیابی حالت ذخیره شده
 ================================================= */
 
-loadTheme();
+(function loadTheme() {
+
+    const savedTheme =
+        localStorage.getItem(
+            "cabinetYarTheme"
+        );
+
+
+    if (savedTheme === "dark") {
+
+        setTheme("dark");
+
+    }
+
+    else {
+
+        setTheme("light");
+
+    }
+
+})();
 
 
 </script>

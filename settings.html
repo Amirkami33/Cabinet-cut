@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>تنظیمات استادکار | کابینت‌یار</title>
+
+<style>
+
+body{
+font-family:tahoma,Arial;
+background:#f3f4f6;
+margin:0;
+padding:20px;
+}
+
+.container{
+max-width:500px;
+margin:auto;
+}
+
+.card{
+background:white;
+border-radius:20px;
+padding:20px;
+margin-bottom:20px;
+box-shadow:0 5px 20px #0002;
+}
+
+h1{
+text-align:center;
+}
+
+label{
+display:block;
+margin-top:12px;
+font-weight:bold;
+}
+
+input,textarea{
+width:100%;
+padding:12px;
+border-radius:12px;
+border:1px solid #ddd;
+font-size:16px;
+margin-top:5px;
+box-sizing:border-box;
+}
+
+textarea{
+height:90px;
+}
+
+button{
+width:100%;
+padding:14px;
+border:none;
+border-radius:15px;
+background:#6b4f2a;
+color:white;
+font-size:17px;
+margin-top:15px;
+}
+
+.preview{
+
+background:#fafafa;
+border-radius:15px;
+padding:20px;
+line-height:2;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<h1>⚙️ تنظیمات استادکار</h1>
+
+<label>
+نام استادکار / کارگاه
+</label>
+
+<input id="name">
+
+
+<label>
+شماره تماس
+</label>
+
+<input id="phone" type="tel">
+
+
+<label>
+شهر
+</label>
+
+<input id="city">
+
+
+<label>
+شماره کارت
+</label>
+
+<input id="card">
+
+
+<label>
+نام صاحب کارت
+</label>
+
+<input id="cardName">
+
+
+<label>
+متن پایانی فاکتور
+</label>
+
+<textarea id="footer">
+با تشکر از اعتماد شما
+</textarea>
+
+
+<button onclick="saveData()">
+💾 ذخیره تنظیمات
+</button>
+
+
+</div>
+
+
+
+<div class="card">
+
+<h2>
+👁 پیش‌نمایش فاکتور
+</h2>
+
+
+<div class="preview" id="preview">
+
+کابینت‌یار
+
+<br>
+
+نام استادکار:
+-
+
+<br>
+
+شماره کارت:
+-
+
+<br>
+
+با تشکر از اعتماد شما
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+<script>
+
+
+function saveData(){
+
+let data={
+
+name:name.value,
+
+phone:phone.value,
+
+city:city.value,
+
+card:card.value,
+
+cardName:cardName.value,
+
+footer:footer.value
+
+};
+
+
+localStorage.setItem(
+"cabinetMaster",
+JSON.stringify(data)
+);
+
+
+updatePreview();
+
+
+alert("تنظیمات ذخیره شد ✅");
+
+
+}
+
+
+
+function loadData(){
+
+let data=
+JSON.parse(localStorage.getItem("cabinetMaster"));
+
+
+if(data){
+
+name.value=data.name || "";
+
+phone.value=data.phone || "";
+
+city.value=data.city || "";
+
+card.value=data.card || "";
+
+cardName.value=data.cardName || "";
+
+footer.value=data.footer || "";
+
+}
+
+
+updatePreview();
+
+}
+
+
+
+function updatePreview(){
+
+preview.innerHTML=`
+
+<b>کابینت‌یار</b>
+
+<br><br>
+
+${name.value || "-"}
+
+<br>
+
+شماره تماس:
+${phone.value || "-"}
+
+<br><br>
+
+شماره کارت:
+
+<br>
+
+${card.value || "-"}
+
+<br>
+
+به نام:
+
+${cardName.value || "-"}
+
+<br><br>
+
+${footer.value || ""}
+
+`;
+
+}
+
+
+document.querySelectorAll("input,textarea")
+.forEach(item=>{
+
+item.addEventListener(
+"input",
+updatePreview
+);
+
+});
+
+
+loadData();
+
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>محاسبه قیمت | کابینت‌یار</title>
+
+
+<style>
+
+*{
+box-sizing:border-box;
+}
+
+body{
+
+margin:0;
+padding:20px;
+
+font-family:tahoma,Arial;
+
+background:#f3f6fa;
+
+}
+
+
+.container{
+
+max-width:520px;
+
+margin:auto;
+
+}
+
+
+.card{
+
+background:white;
+
+padding:20px;
+
+border-radius:22px;
+
+margin-bottom:20px;
+
+box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+}
+
+
+h1,h2{
+
+text-align:center;
+
+color:#0f2a4a;
+
+}
+
+
+label{
+
+display:block;
+
+margin-top:12px;
+
+font-weight:bold;
+
+}
+
+
+input,select{
+
+width:100%;
+
+padding:13px;
+
+border-radius:12px;
+
+border:1px solid #ddd;
+
+margin-top:6px;
+
+font-size:16px;
+
+}
+
+
+button{
+
+width:100%;
+
+padding:14px;
+
+border:none;
+
+border-radius:15px;
+
+background:#0f2a4a;
+
+color:white;
+
+font-size:16px;
+
+margin-top:15px;
+
+}
+
+
+.result{
+
+background:#f8fafc;
+
+border-radius:18px;
+
+padding:18px;
+
+line-height:2;
+
+border:1px dashed #ccc;
+
+}
+
+
+.price{
+
+font-size:24px;
+
+font-weight:bold;
+
+color:#0f2a4a;
+
+}
+
+
+</style>
+
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+<div class="card">
+
+
+<h1>
+💰 محاسبه قیمت کابینت
+</h1>
+
+
+<label>
+نام مشتری
+</label>
+
+<input id="customerName">
+
+
+<label>
+شماره همراه مشتری
+</label>
+
+<input id="customerPhone">
+
+
+<label>
+قیمت یک متر کابینت کامل (تومان)
+</label>
+
+<input 
+id="basePrice"
+type="number"
+>
+
+
+<label>
+نوع کابینت
+</label>
+
+<select id="type" onchange="checkShow()">
+
+<option value="60">
+کابینت زمینی - ۶۰٪
+</option>
+
+<option value="40">
+کابینت دیواری - ۴۰٪
+</option>
+
+<option value="180">
+کابینت کمدی - ۱۸۰٪
+</option>
+
+<option value="open90">
+اُپن ساده - ۹۰٪
+</option>
+
+<option value="open145">
+اُپن دکوراتیو - ۱۴۵٪
+</option>
+
+<option value="cover100">
+کاور یخچال - ۱۰۰٪
+</option>
+
+<option value="show">
+کابینت ویترینی
+</option>
+
+
+</select>
+
+
+<div id="showBox" style="display:none">
+
+
+<label>
+نوع ویترین
+</label>
+
+
+<select id="showPercent">
+
+<option value="80">
+ویترینی ساده - ۸۰٪
+</option>
+
+<option value="100">
+ویترینی معمولی - ۱۰۰٪
+</option>
+
+<option value="120">
+ویترینی لوکس - ۱۲۰٪
+</option>
+
+</select>
+
+
+</div>
+
+
+<label>
+متراژ
+</label>
+
+<input 
+id="meter"
+type="number"
+>
+
+
+<button onclick="calculate()">
+
+محاسبه قیمت
+
+</button>
+
+
+</div>
+
+
+
+<div class="card">
+
+
+<h2>
+نتیجه
+</h2>
+
+
+<div class="result" id="result">
+
+هنوز محاسبه‌ای انجام نشده
+
+</div>
+
+
+<button onclick="goInvoice()">
+
+📄 ساخت فاکتور
+
+</button>
+
+
+</div>
+
+
+</div>
+
+
+
+<script>
+
+
+let finalAmount=0;
+
+
+
+function checkShow(){
+
+
+let type =
+document.getElementById("type").value;
+
+
+document.getElementById("showBox").style.display =
+type==="show" ? "block" : "none";
+
+
+}
+
+
+
+function calculate(){
+
+
+let base =
+Number(document.getElementById("basePrice").value);
+
+
+let meter =
+Number(document.getElementById("meter").value);
+
+
+let type =
+document.getElementById("type").value;
+
+
+let percent;
+
+
+if(type==="show"){
+
+percent =
+Number(
+document.getElementById("showPercent").value
+);
+
+}
+
+else{
+
+percent =
+Number(type);
+
+}
+
+
+
+finalAmount =
+base *
+(percent/100) *
+meter;
+
+
+
+document.getElementById("result").innerHTML=
+
+`
+
+مبلغ نهایی:
+
+<br>
+
+<div class="price">
+
+${finalAmount.toLocaleString("fa-IR")}
+
+تومان
+
+</div>
+
+
+<br>
+
+به حروف:
+
+<br>
+
+${numberText(finalAmount)}
+
+`;
+
+
+
+}
+
+
+
+function numberText(num){
+
+
+return Number(num).toLocaleString("fa-IR");
+
+
+}
+
+
+
+function goInvoice(){
+
+
+localStorage.setItem(
+"invoiceData",
+JSON.stringify({
+
+name:
+document.getElementById("customerName").value,
+
+phone:
+document.getElementById("customerPhone").value,
+
+amount:
+finalAmount
+
+})
+
+);
+
+
+window.location.href="invoice.html";
+
+
+}
+
+
+
+</script>
+
+
+</body>
+
+</html>
